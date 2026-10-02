@@ -13,8 +13,9 @@ import {
   Sparkles,
   ArrowRight,
   RefreshCw,
+  UserCheck,
 } from "lucide-react";
-import { LinkedInIcon, GithubIcon, TwitterXIcon, InstagramIcon } from "@/components/icons";
+import { LinkedInIcon, GithubIcon, TwitterXIcon, InstagramIcon, WhatsAppIcon } from "@/components/icons";
 
 export function Contact() {
   const [formData, setFormData] = React.useState({
@@ -159,21 +160,50 @@ export function Contact() {
                   </div>
                 </a>
 
+                {/* WhatsApp Direct: Daniel Díaz */}
                 <a
-                  href="https://wa.me/56987654321"
+                  href="https://wa.me/56995127788"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3.5 p-3 rounded-xl hover:bg-white dark:hover:bg-slate-800 transition-colors group"
+                  className="flex items-center justify-between p-3.5 rounded-xl border border-emerald-200/80 dark:border-emerald-900/50 bg-emerald-50/50 dark:bg-emerald-950/20 hover:bg-emerald-100/60 dark:hover:bg-emerald-950/40 transition-colors group"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-                    <Phone className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-xs text-slate-500 dark:text-slate-400 font-medium">WhatsApp / Teléfono</div>
-                    <div className="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-                      +56 9 8765 4321
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+                      <WhatsAppIcon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-xs text-slate-500 dark:text-slate-400 font-medium">Liderazgo Técnico</div>
+                      <div className="text-sm font-bold text-slate-900 dark:text-white">
+                        Daniel Díaz <span className="text-xs font-normal text-emerald-600 dark:text-emerald-400 ml-1">+56 9 9512 7788</span>
+                      </div>
                     </div>
                   </div>
+                  <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 group-hover:translate-x-0.5 transition-transform">
+                    Chatear
+                  </span>
+                </a>
+
+                {/* WhatsApp Direct: Paola Huenuman */}
+                <a
+                  href="https://wa.me/56953797437"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between p-3.5 rounded-xl border border-emerald-200/80 dark:border-emerald-900/50 bg-emerald-50/50 dark:bg-emerald-950/20 hover:bg-emerald-100/60 dark:hover:bg-emerald-950/40 transition-colors group"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+                      <WhatsAppIcon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-xs text-slate-500 dark:text-slate-400 font-medium">Gestión & Clientes</div>
+                      <div className="text-sm font-bold text-slate-900 dark:text-white">
+                        Paola Huenuman <span className="text-xs font-normal text-emerald-600 dark:text-emerald-400 ml-1">+56 9 5379 7437</span>
+                      </div>
+                    </div>
+                  </div>
+                  <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 group-hover:translate-x-0.5 transition-transform">
+                    Chatear
+                  </span>
                 </a>
 
                 <div className="flex items-center gap-3.5 p-3 rounded-xl">

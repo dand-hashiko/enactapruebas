@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { ArrowRight, Sparkles, CheckCircle2, ShieldCheck, Zap, Activity, Terminal, ArrowUpRight } from "lucide-react";
+import { LaunchCountdown } from "@/components/countdown";
 
 export function Hero() {
   return (
@@ -19,6 +20,9 @@ export function Hero() {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Headline and Call to Actions */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+            {/* Countdown Badge from Enacta Brand */}
+            <LaunchCountdown />
+
             {/* Pill Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-indigo-200 dark:border-indigo-900/60 bg-indigo-50/80 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 text-xs sm:text-sm font-medium mb-6 shadow-xs backdrop-blur-xs">
               <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
