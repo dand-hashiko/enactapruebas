@@ -1,6 +1,7 @@
 import React from "react";
 import { BioTealShader } from "./bio-teal-shader";
 import { PhoneMockup } from "./phone-mockup";
+import { HeroTextView } from "./hero-text-view";
 
 export function StitchHero() {
   return (
@@ -25,23 +26,12 @@ export function StitchHero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           {/* Left Column: Copy & Actions (lg:col-span-7) constrained to square footprint matching subtitle */}
           <div className="lg:col-span-7 space-y-6 text-left flex flex-col items-start w-full">
-            <div className="w-full max-w-[480px] space-y-6">
-              {/* Responsive Display Headline: 6 lines fitted into square ratio bounding box, avoiding overflow */}
-              <h1 className="text-2xl sm:text-3xl md:text-[34px] lg:text-[36px] xl:text-[38px] leading-[1.06] font-heading text-white tracking-tight text-left drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] max-w-[480px] break-normal uppercase">
-                <span className="block">Tu sitio web</span>
-                <span className="block">profesional y</span>
-                <span className="block">soporte de</span>
-                <span className="block">infraestructura,</span>
-                <span className="block text-primary underline decoration-primary/50 underline-offset-8">
-                  sin dolores de
-                </span>
-                <span className="block text-primary underline decoration-primary/50 underline-offset-8">
-                  cabeza.
-                </span>
-              </h1>
+            <div className="w-full max-w-[530px] space-y-6">
+              {/* Dedicated TextView Component: Fits within square ratio without shrinking font or overflowing */}
+              <HeroTextView />
 
               {/* Subtitle following the exact same line width boundary */}
-              <p className="font-body-md sm:font-body-lg text-sm sm:text-base text-white/90 max-w-[480px] leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+              <p className="font-body-md sm:font-body-lg text-sm sm:text-base text-white/90 max-w-[530px] leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
                 Suscripción mensual transparente con desarrollo web de alta velocidad,
                 dominio .cl, hosting administrado y soporte de ingeniería en terreno
                 24/7 para empresas en Chile.

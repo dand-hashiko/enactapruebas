@@ -44,13 +44,6 @@ export function StitchBooking() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 relative z-10">
             {/* Column Left: Context & Direct Contact Links */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#101015] rounded-full text-primary font-code-sm text-xs border border-primary/20">
-                <span className="material-symbols-outlined text-[16px]">
-                  video_call
-                </span>
-                <span>// CALENDARIO DIRECTO DE INGENIERÍA</span>
-              </div>
-
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading text-white tracking-tight">
                 Agendemos un Google Meet de 45 minutos
               </h2>

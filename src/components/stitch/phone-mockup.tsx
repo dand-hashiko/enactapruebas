@@ -103,21 +103,15 @@ export function PhoneMockup() {
 
           {/* CENTER SCREEN: ENACTA.CL Live Brand Experience */}
           <div className="relative z-20 px-5 py-3 space-y-3.5 flex flex-col items-center text-center my-auto">
-            {/* Logo Icon & Status Badge */}
-            <div className="flex items-center gap-2">
-              <div className="relative h-6 w-6">
-                <Image
-                  alt="Enacta"
-                  className="h-6 w-auto object-contain"
-                  src="/images/enacta-logo.png"
-                  width={24}
-                  height={24}
-                />
-              </div>
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-black/80 backdrop-blur-md rounded-full border border-primary/40 text-[9px] text-primary font-code-sm uppercase tracking-wider">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                <span>Chile // Terreno 24/7</span>
-              </div>
+            {/* Logo Icon */}
+            <div className="relative h-6 w-6">
+              <Image
+                alt="Enacta"
+                className="h-6 w-auto object-contain"
+                src="/images/enacta-logo.png"
+                width={24}
+                height={24}
+              />
             </div>
 
             {/* Hero Brand Title inside Phone */}
