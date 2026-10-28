@@ -22,50 +22,58 @@ export function StitchHero() {
       {/* Hero Main Content */}
       <div className="max-w-7xl mx-auto w-full relative z-10 space-y-12 pt-4">
         {/* Split Grid: Headline & Value Prop on Left, 3D Phone Mockup on Right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-          {/* Left Column: Copy & Actions (lg:col-span-7) */}
-          <div className="lg:col-span-7 space-y-6 text-left flex flex-col items-start">
-            {/* Responsive Display Headline */}
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[64px] xl:text-[72px] leading-[1.08] font-heading text-white tracking-tight text-left drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]">
-              Tu sitio web profesional y soporte de infraestructura,{" "}
-              <span className="text-primary underline decoration-primary/50 underline-offset-8">
-                sin dolores de cabeza.
-              </span>
-            </h1>
-
-            {/* Subtitle */}
-            <p className="font-body-md sm:font-body-lg text-base sm:text-lg text-white/90 max-w-2xl leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-              Suscripción mensual transparente con desarrollo web de alta velocidad,
-              dominio .cl, hosting administrado y soporte de ingeniería en terreno
-              24/7 para empresas en Chile.
-            </p>
-
-            {/* Direct Call to Actions */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto pt-2">
-              <a
-                href="#planes-web"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-primary text-black font-body-md font-bold rounded-xl shadow-[0_0_30px_rgba(0,229,163,0.4)] hover:bg-primary-fixed hover:scale-[1.02] transition-all text-center cursor-pointer"
-              >
-                <span>Ver Planes Mensuales</span>
-                <span className="material-symbols-outlined text-[18px]">
-                  arrow_forward
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+          {/* Left Column: Copy & Actions (lg:col-span-7) constrained to square footprint matching subtitle */}
+          <div className="lg:col-span-7 space-y-6 text-left flex flex-col items-start w-full">
+            <div className="w-full max-w-[480px] space-y-6">
+              {/* Responsive Display Headline: 6 lines fitted into square ratio bounding box, avoiding overflow */}
+              <h1 className="text-2xl sm:text-3xl md:text-[34px] lg:text-[36px] xl:text-[38px] leading-[1.06] font-heading text-white tracking-tight text-left drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] max-w-[480px] break-normal uppercase">
+                <span className="block">Tu sitio web</span>
+                <span className="block">profesional y</span>
+                <span className="block">soporte de</span>
+                <span className="block">infraestructura,</span>
+                <span className="block text-primary underline decoration-primary/50 underline-offset-8">
+                  sin dolores de
                 </span>
-              </a>
-
-              <a
-                href="#agendamiento"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-black/80 hover:bg-black text-white font-body-md font-semibold rounded-xl border border-white/[0.15] backdrop-blur-md shadow-lg transition-all text-center cursor-pointer"
-              >
-                <span className="material-symbols-outlined text-[18px] text-primary">
-                  calendar_month
+                <span className="block text-primary underline decoration-primary/50 underline-offset-8">
+                  cabeza.
                 </span>
-                <span>Agendar Reunión (Meet 45 min)</span>
-              </a>
+              </h1>
+
+              {/* Subtitle following the exact same line width boundary */}
+              <p className="font-body-md sm:font-body-lg text-sm sm:text-base text-white/90 max-w-[480px] leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+                Suscripción mensual transparente con desarrollo web de alta velocidad,
+                dominio .cl, hosting administrado y soporte de ingeniería en terreno
+                24/7 para empresas en Chile.
+              </p>
+
+              {/* Direct Call to Actions */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto pt-2">
+                <a
+                  href="#planes-web"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary text-black font-body-md font-bold rounded-xl shadow-[0_0_30px_rgba(0,229,163,0.4)] hover:bg-primary-fixed hover:scale-[1.02] transition-all text-center cursor-pointer text-sm"
+                >
+                  <span>Ver Planes Mensuales</span>
+                  <span className="material-symbols-outlined text-[18px]">
+                    arrow_forward
+                  </span>
+                </a>
+
+                <a
+                  href="#agendamiento"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-black/80 hover:bg-black text-white font-body-md font-semibold rounded-xl border border-white/[0.15] backdrop-blur-md shadow-lg transition-all text-center cursor-pointer text-sm"
+                >
+                  <span className="material-symbols-outlined text-[18px] text-primary">
+                    calendar_month
+                  </span>
+                  <span>Agendar Reunión (Meet 45 min)</span>
+                </a>
+              </div>
             </div>
           </div>
 
           {/* Right Column: 3D Smartphone Device Overlapping in Foreground (lg:col-span-5) */}
-          <div className="lg:col-span-5 flex items-center justify-center w-full relative z-30 lg:-ml-6 xl:-ml-10 lg:scale-105 xl:scale-110">
+          <div className="lg:col-span-5 flex items-center justify-center lg:justify-end w-full relative z-30">
             <PhoneMockup />
           </div>
         </div>
