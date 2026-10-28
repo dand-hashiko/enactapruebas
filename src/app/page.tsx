@@ -1,5 +1,5 @@
-import { EnactaLanding } from "@/components/enacta-landing";
+import { StitchPage } from "@/components/stitch/stitch-page";
 
 export default function Home() {
-  return <EnactaLanding />;
+  return <StitchPage />;
 }

@@ -1,47 +1,34 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#0f131c",
+};
 
 export const metadata: Metadata = {
-  title: "Enacta | Soluciones Digitales, Cloud & Desarrollo Web de Alto Rendimiento",
+  title: "Enacta // Ingeniería de Software & Hardware en Terreno",
   description:
-    "Transformamos empresas mediante software a medida, desarrollo web SPA moderno, arquitecturas cloud escalables e inteligencia artificial. Despliegues ultrarrápidos y arquitectura de vanguardia.",
-  keywords: [
-    "Enacta",
-    "Desarrollo Web Chile",
-    "Next.js",
-    "Software a medida",
-    "Cloud Architecture",
-    "Vercel",
-    "Inteligencia Artificial",
-    "Landing Page SPA",
-  ],
-  authors: [{ name: "Enacta SpA", url: "https://enacta.cl" }],
-  creator: "Enacta SpA",
-  openGraph: {
-    type: "website",
-    locale: "es_CL",
-    url: "https://enacta.cl",
-    title: "Enacta | Soluciones Digitales & Desarrollo de Alto Rendimiento",
-    description:
-      "Transformamos tu visión en productos digitales de impacto global. Desarrollo web moderno, escalabilidad cloud y soluciones inteligentes.",
-    siteName: "Enacta",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Enacta | Soluciones Digitales",
-    description: "Desarrollo web moderno, arquitecturas cloud e IA aplicada.",
+    "Arquitectura de software de misión crítica, infraestructura en terreno y planes de mantención proactiva para pymes y corporaciones en Chile y Latinoamérica.",
+  icons: {
+    icon: "/images/enacta-logo.png",
   },
 };
 
@@ -51,18 +38,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" suppressHydrationWarning className="scroll-smooth">
+    <html lang="es" className="dark scroll-smooth">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+        />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-slate-50 dark:bg-[#090d16] text-slate-900 dark:text-slate-100 antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-300`}
+        className={`${inter.variable} ${jetbrainsMono.variable} bg-background font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange={false}
-        >
-          {children}
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   );
