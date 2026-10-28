@@ -3,25 +3,25 @@
 @import "tailwindcss";
 
 @theme {
-  --color-surface: #0f131c;
-  --color-surface-dim: #0f131c;
-  --color-surface-bright: #353943;
-  --color-surface-container-lowest: #0a0e17;
-  --color-surface-container-low: #181b25;
-  --color-surface-container: #1c1f29;
-  --color-surface-container-high: #262a34;
-  --color-surface-container-highest: #31353f;
-  --color-on-surface: #dfe2ef;
-  --color-on-surface-variant: #bacbbf;
-  --color-inverse-surface: #dfe2ef;
-  --color-inverse-on-surface: #2c303a;
-  --color-outline: #84958a;
-  --color-outline-variant: #3b4a42;
+  --color-surface: #070709;
+  --color-surface-dim: #050507;
+  --color-surface-bright: #1f1f26;
+  --color-surface-container-lowest: #000000;
+  --color-surface-container-low: #0a0a0d;
+  --color-surface-container: #111116;
+  --color-surface-container-high: #181820;
+  --color-surface-container-highest: #22222c;
+  --color-on-surface: #ffffff;
+  --color-on-surface-variant: #9aa3af;
+  --color-inverse-surface: #ffffff;
+  --color-inverse-on-surface: #111116;
+  --color-outline: #2c2d38;
+  --color-outline-variant: #1a1a22;
   --color-surface-tint: #00e2a0;
-  --color-primary: #6effc3;
-  --color-on-primary: #003825;
+  --color-primary: #00e5a3;
+  --color-on-primary: #002619;
   --color-primary-container: #00e5a3;
-  --color-on-primary-container: #006143;
+  --color-on-primary-container: #003d29;
   --color-inverse-primary: #006c4b;
   --color-secondary: #c0c1ff;
   --color-on-secondary: #1000a9;
@@ -47,9 +47,9 @@
   --color-tertiary-fixed-dim: #ffb95f;
   --color-on-tertiary-fixed: #2a1700;
   --color-on-tertiary-fixed-variant: #653e00;
-  --color-background: #0f131c;
-  --color-on-background: #dfe2ef;
-  --color-surface-variant: #31353f;
+  --color-background: #000000;
+  --color-on-background: #ffffff;
+  --color-surface-variant: #16161c;
 
   --spacing-space-xs: 0.25rem;
   --spacing-space-sm: 0.5rem;
@@ -72,8 +72,8 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #0f131c;
-  color: #dfe2ef;
+  background-color: #000000;
+  color: #ffffff;
   font-family: var(--font-inter);
   scroll-behavior: smooth;
   overflow-x: hidden;

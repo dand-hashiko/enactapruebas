@@ -14,7 +14,7 @@ export function StitchNavbar() {
   ];
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-white/[0.04] shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <header className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-xl border-b border-white/[0.08] shadow-[0_1px_8px_rgba(0,0,0,0.5)]">
       <div className="h-20 w-full px-4 sm:px-6 lg:px-12 flex items-center justify-between">
         {/* Brand Logo & Node Status */}
         <div className="flex items-center gap-3 sm:gap-6">
@@ -33,7 +33,7 @@ export function StitchNavbar() {
                 priority
               />
             </div>
-            <span className="font-code-lg text-code-lg tracking-wider font-semibold text-on-surface uppercase">
+            <span className="font-code-lg text-code-lg tracking-wider font-semibold text-white uppercase">
               ENACTA
               <span className="text-primary font-code-sm text-code-sm">
                 .CL
@@ -41,7 +41,7 @@ export function StitchNavbar() {
             </span>
           </a>
 
-          <div className="hidden xl:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low rounded border border-white/[0.02]">
+          <div className="hidden xl:flex items-center gap-space-xs px-space-sm py-1 bg-[#0a0a0d] rounded border border-white/[0.06]">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             <span className="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">
               LATAM Integration Node // Chile
@@ -54,7 +54,7 @@ export function StitchNavbar() {
           {navLinks.map((link) => (
             <a
               key={link.href}
-              className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-1 font-medium"
+              className="font-body-md text-body-md text-on-surface-variant hover:text-white transition-colors py-1 font-medium"
               href={link.href}
             >
               {link.label}
@@ -65,7 +65,7 @@ export function StitchNavbar() {
         {/* Action Button & Mobile Hamburger Toggle */}
         <div className="flex items-center gap-2 sm:gap-3">
           <a
-            className="hidden sm:inline-flex items-center gap-space-xs px-space-md py-space-xs bg-primary text-on-primary font-headline-md text-body-sm font-semibold rounded hover:bg-primary-fixed transition-colors shadow-[0_0_16px_rgba(0,229,163,0.2)]"
+            className="hidden sm:inline-flex items-center gap-space-xs px-space-md py-space-xs bg-primary text-black font-headline-md text-body-sm font-bold rounded-lg hover:bg-primary-fixed transition-colors shadow-[0_0_16px_rgba(0,229,163,0.25)]"
             href="#agendamiento"
           >
             <span className="material-symbols-outlined text-[16px]">

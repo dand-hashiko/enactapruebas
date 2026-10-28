@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { BioTealShader } from "./bio-teal-shader";
 import confetti from "canvas-confetti";
 
 export function StitchBooking() {
@@ -21,7 +20,6 @@ export function StitchBooking() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate short network latency
     await new Promise((resolve) => setTimeout(resolve, 600));
     setIsSubmitting(false);
     setIsSubmitted(true);
@@ -38,68 +36,51 @@ export function StitchBooking() {
 
   return (
     <section
-      className="relative w-full px-space-md lg:px-margin-desktop py-space-xl overflow-hidden bg-surface"
+      className="relative w-full px-4 sm:px-6 lg:px-12 py-20 sm:py-28 bg-black overflow-hidden border-b border-white/[0.08]"
       id="agendamiento"
     >
-      {/* Bio-Teal Kinetic Shader Background */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
-        <BioTealShader
-          id="shader-canvas-AGENDAMIENTO"
-          className="w-full h-full block opacity-95"
-          speedMultiplier={0.14}
-        />
-      </div>
-
-      {/* Obsidian / Surface Depth Vignettes */}
-      <div className="absolute inset-0 bg-gradient-to-b from-surface-container-lowest/60 via-transparent to-surface-container-lowest/70 pointer-events-none z-0" />
-      <div className="absolute inset-0 bg-surface/20 pointer-events-none z-0" />
-
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="bg-surface-container/70 backdrop-blur-xl border border-primary/30 rounded-2xl p-space-lg lg:p-space-xl relative overflow-hidden shadow-2xl shadow-[0_0_50px_rgba(0,229,163,0.15)]">
-          {/* Accent decorative glow inside container */}
-          <div className="absolute -top-24 -right-24 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-xl relative z-10">
+        <div className="bg-[#08080c] border border-white/[0.08] rounded-2xl p-6 sm:p-10 lg:p-12 relative overflow-hidden shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 relative z-10">
             {/* Column Left: Context & Direct Contact Links */}
-            <div className="lg:col-span-5 space-y-space-md">
-              <div className="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-high rounded text-primary font-code-sm text-code-sm">
+            <div className="lg:col-span-5 space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#101015] rounded-full text-primary font-code-sm text-xs border border-primary/20">
                 <span className="material-symbols-outlined text-[16px]">
                   video_call
                 </span>
-                <span>CALENDARIO DIRECTO DE INGENIERÍA</span>
+                <span>// CALENDARIO DIRECTO DE INGENIERÍA</span>
               </div>
 
-              <h2 className="font-headline-xl text-headline-xl text-on-surface">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
                 Agendemos un Google Meet de 45 minutos
               </h2>
 
-              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              <p className="font-body-md text-sm sm:text-base text-on-surface-variant leading-relaxed">
                 Analicemos los requerimientos de tu proyecto: ya sea crear un
                 nuevo sitio web profesional, sincronizar tus ventas o instalar
                 cableado y servidores en tu local u oficina.
               </p>
 
-              <div className="p-space-sm bg-surface-container-high rounded-xl space-y-space-xs border border-white/[0.04]">
-                <div className="font-body-sm text-body-sm font-semibold text-on-surface flex items-center gap-space-xs">
+              <div className="p-4 bg-black rounded-xl space-y-2 border border-white/[0.06]">
+                <div className="text-xs font-semibold text-white flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
                   <span>Liderazgo técnico del llamado:</span>
                 </div>
-                <div className="font-body-sm text-body-sm text-on-surface pl-3">
-                  <strong>Daniel Díaz</strong> • Lead Software Architect &amp;
-                  Infrastructure
+                <div className="text-xs text-on-surface-variant pl-4">
+                  <strong className="text-white">Daniel Díaz</strong> • Lead Software Architect &amp; Infrastructure
                 </div>
-                <div className="font-body-sm text-body-sm text-on-surface pl-3">
-                  <strong>Paola Huenuman</strong> • Client Operations Partner
+                <div className="text-xs text-on-surface-variant pl-4">
+                  <strong className="text-white">Paola Huenuman</strong> • Client Operations Partner
                 </div>
               </div>
 
-              <div className="space-y-space-xs pt-space-xs">
-                <div className="font-code-sm text-code-sm text-on-surface-variant uppercase tracking-wider font-semibold">
+              <div className="space-y-3 pt-2">
+                <div className="font-code-sm text-xs text-primary uppercase tracking-wider font-semibold">
                   ¿Prefieres conversar por WhatsApp ahora mismo?
                 </div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2.5">
                   <a
-                    className="flex items-center gap-space-sm p-space-xs bg-surface-container-lowest hover:bg-surface-bright rounded text-on-surface transition-colors border border-white/[0.02]"
+                    className="flex items-center gap-3 p-3 bg-black hover:bg-[#14141c] rounded-xl text-white transition-colors border border-white/[0.06]"
                     href="https://wa.me/56995127788"
                     rel="noopener noreferrer"
                     target="_blank"
@@ -107,12 +88,12 @@ export function StitchBooking() {
                     <span className="material-symbols-outlined text-primary text-[20px]">
                       chat
                     </span>
-                    <span className="font-code-sm text-code-sm">
-                      WhatsApp Línea 1: <strong>+569 9512 7788</strong>
+                    <span className="font-code-sm text-xs">
+                      WhatsApp Línea 1: <strong className="text-primary">+569 9512 7788</strong>
                     </span>
                   </a>
                   <a
-                    className="flex items-center gap-space-sm p-space-xs bg-surface-container-lowest hover:bg-surface-bright rounded text-on-surface transition-colors border border-white/[0.02]"
+                    className="flex items-center gap-3 p-3 bg-black hover:bg-[#14141c] rounded-xl text-white transition-colors border border-white/[0.06]"
                     href="https://wa.me/56953797437"
                     rel="noopener noreferrer"
                     target="_blank"
@@ -120,19 +101,19 @@ export function StitchBooking() {
                     <span className="material-symbols-outlined text-primary text-[20px]">
                       chat
                     </span>
-                    <span className="font-code-sm text-code-sm">
-                      WhatsApp Línea 2: <strong>+569 5379 7437</strong>
+                    <span className="font-code-sm text-xs">
+                      WhatsApp Línea 2: <strong className="text-primary">+569 5379 7437</strong>
                     </span>
                   </a>
                   <a
-                    className="flex items-center gap-space-sm p-space-xs bg-surface-container-lowest hover:bg-surface-bright rounded text-on-surface transition-colors border border-white/[0.02]"
+                    className="flex items-center gap-3 p-3 bg-black hover:bg-[#14141c] rounded-xl text-white transition-colors border border-white/[0.06]"
                     href="mailto:contacto@enacta.cl"
                   >
                     <span className="material-symbols-outlined text-primary text-[20px]">
                       mail
                     </span>
-                    <span className="font-code-sm text-code-sm">
-                      Correo: <strong>contacto@enacta.cl</strong>
+                    <span className="font-code-sm text-xs">
+                      Correo: <strong className="text-white">contacto@enacta.cl</strong>
                     </span>
                   </a>
                 </div>
@@ -140,30 +121,30 @@ export function StitchBooking() {
             </div>
 
             {/* Column Right: Fast Booking Form */}
-            <div className="lg:col-span-7 bg-surface-container-lowest/80 backdrop-blur-md p-space-lg rounded-xl shadow-xl flex flex-col justify-between border border-primary/20">
+            <div className="lg:col-span-7 bg-black p-6 sm:p-8 rounded-2xl border border-white/[0.08] shadow-xl flex flex-col justify-between">
               {!isSubmitted ? (
                 <form
-                  className="space-y-space-sm"
+                  className="space-y-4"
                   id="booking-form"
                   onSubmit={handleSubmit}
                 >
-                  <div className="font-headline-md text-headline-md text-on-surface font-semibold flex items-center justify-between">
-                    <span>Reserva tu horario</span>
-                    <span className="font-code-sm text-code-sm px-2 py-0.5 bg-primary/10 text-primary rounded">
+                  <div className="flex items-center justify-between pb-2 border-b border-white/[0.06]">
+                    <span className="text-lg font-bold text-white">Reserva tu horario</span>
+                    <span className="font-code-sm text-xs px-2.5 py-0.5 bg-primary/10 text-primary rounded-full border border-primary/20">
                       Sin compromiso
                     </span>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
-                    <div className="space-y-1">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="space-y-1.5">
                       <label
-                        className="font-code-sm text-code-sm text-on-surface-variant block"
+                        className="font-code-sm text-xs text-on-surface-variant block"
                         htmlFor="contact-name"
                       >
                         Tu Nombre y Apellido *
                       </label>
                       <input
-                        className="w-full bg-surface-container px-space-sm py-2.5 rounded text-on-surface placeholder:text-on-surface-variant/40 focus:outline-none focus:ring-1 focus:ring-primary font-body-sm text-body-sm border border-white/[0.04]"
+                        className="w-full bg-[#0a0a0d] px-3.5 py-3 rounded-xl text-white placeholder:text-on-surface-variant/40 focus:outline-none focus:ring-1 focus:ring-primary text-sm border border-white/[0.08]"
                         id="contact-name"
                         placeholder="Ej: Marcela González"
                         required
@@ -174,15 +155,15 @@ export function StitchBooking() {
                         }
                       />
                     </div>
-                    <div className="space-y-1">
+                    <div className="space-y-1.5">
                       <label
-                        className="font-code-sm text-code-sm text-on-surface-variant block"
+                        className="font-code-sm text-xs text-on-surface-variant block"
                         htmlFor="contact-email"
                       >
                         Correo Electrónico *
                       </label>
                       <input
-                        className="w-full bg-surface-container px-space-sm py-2.5 rounded text-on-surface placeholder:text-on-surface-variant/40 focus:outline-none focus:ring-1 focus:ring-primary font-body-sm text-body-sm border border-white/[0.04]"
+                        className="w-full bg-[#0a0a0d] px-3.5 py-3 rounded-xl text-white placeholder:text-on-surface-variant/40 focus:outline-none focus:ring-1 focus:ring-primary text-sm border border-white/[0.08]"
                         id="contact-email"
                         placeholder="marcela@empresa.cl"
                         required
@@ -195,16 +176,16 @@ export function StitchBooking() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
-                    <div className="space-y-1">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="space-y-1.5">
                       <label
-                        className="font-code-sm text-code-sm text-on-surface-variant block"
+                        className="font-code-sm text-xs text-on-surface-variant block"
                         htmlFor="contact-phone"
                       >
                         Teléfono / WhatsApp *
                       </label>
                       <input
-                        className="w-full bg-surface-container px-space-sm py-2.5 rounded text-on-surface placeholder:text-on-surface-variant/40 focus:outline-none focus:ring-1 focus:ring-primary font-body-sm text-body-sm border border-white/[0.04]"
+                        className="w-full bg-[#0a0a0d] px-3.5 py-3 rounded-xl text-white placeholder:text-on-surface-variant/40 focus:outline-none focus:ring-1 focus:ring-primary text-sm border border-white/[0.08]"
                         id="contact-phone"
                         placeholder="+56 9 1234 5678"
                         required
@@ -215,54 +196,42 @@ export function StitchBooking() {
                         }
                       />
                     </div>
-                    <div className="space-y-1">
+
+                    <div className="space-y-1.5">
                       <label
-                        className="font-code-sm text-code-sm text-on-surface-variant block"
+                        className="font-code-sm text-xs text-on-surface-variant block"
                         htmlFor="contact-service"
                       >
-                        Servicio de Interés Principal
+                        Servicio Principal de Interés
                       </label>
                       <select
-                        className="w-full bg-surface-container px-space-sm py-2.5 rounded text-on-surface focus:outline-none focus:ring-1 focus:ring-primary font-body-sm text-body-sm border border-white/[0.04]"
+                        className="w-full bg-[#0a0a0d] px-3.5 py-3 rounded-xl text-white focus:outline-none focus:ring-1 focus:ring-primary text-sm border border-white/[0.08]"
                         id="contact-service"
                         value={formData.service}
                         onChange={(e) =>
                           setFormData({ ...formData, service: e.target.value })
                         }
                       >
-                        <option value="plan-landing">
-                          Plan Web Inicial / Landing ($19.990/m)
-                        </option>
-                        <option value="plan-pyme">
-                          Plan Web Pyme Corporativa ($29.990/m)
-                        </option>
-                        <option value="plan-ecommerce">
-                          Plan Web E-Commerce ($49.990/m)
-                        </option>
-                        <option value="software-pos">
-                          Software POS e Inventario
-                        </option>
-                        <option value="redes-fierro">
-                          Redes &amp; Servidores en Terreno
-                        </option>
-                        <option value="consultoria-mixta">
-                          Solución Integral Mixta
-                        </option>
+                        <option value="plan-landing">Plan 01 // Landing Inicial ($19.990/mes)</option>
+                        <option value="plan-pyme">Plan 02 // Pyme Corporativa ($29.990/mes)</option>
+                        <option value="plan-ecommerce">Plan 03 // E-Commerce ($49.990/mes)</option>
+                        <option value="fierro-terreno">Terreno // Cableado, Servidores &amp; Redes</option>
+                        <option value="software-pos">Software // POS &amp; Bodega Offline</option>
                       </select>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
-                    <div className="space-y-1">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="space-y-1.5">
                       <label
-                        className="font-code-sm text-code-sm text-on-surface-variant block"
-                        htmlFor="preferred-date"
+                        className="font-code-sm text-xs text-on-surface-variant block"
+                        htmlFor="contact-date"
                       >
-                        Fecha Preferida
+                        Fecha Tentativa
                       </label>
                       <input
-                        className="w-full bg-surface-container px-space-sm py-2.5 rounded text-on-surface focus:outline-none focus:ring-1 focus:ring-primary font-body-sm text-body-sm border border-white/[0.04]"
-                        id="preferred-date"
+                        className="w-full bg-[#0a0a0d] px-3.5 py-3 rounded-xl text-white focus:outline-none focus:ring-1 focus:ring-primary text-sm border border-white/[0.08]"
+                        id="contact-date"
                         type="date"
                         value={formData.date}
                         onChange={(e) =>
@@ -270,41 +239,40 @@ export function StitchBooking() {
                         }
                       />
                     </div>
-                    <div className="space-y-1">
+                    <div className="space-y-1.5">
                       <label
-                        className="font-code-sm text-code-sm text-on-surface-variant block"
-                        htmlFor="preferred-time"
+                        className="font-code-sm text-xs text-on-surface-variant block"
+                        htmlFor="contact-time"
                       >
-                        Horario Preferido
+                        Horario Preferente
                       </label>
                       <select
-                        className="w-full bg-surface-container px-space-sm py-2.5 rounded text-on-surface focus:outline-none focus:ring-1 focus:ring-primary font-body-sm text-body-sm border border-white/[0.04]"
-                        id="preferred-time"
+                        className="w-full bg-[#0a0a0d] px-3.5 py-3 rounded-xl text-white focus:outline-none focus:ring-1 focus:ring-primary text-sm border border-white/[0.08]"
+                        id="contact-time"
                         value={formData.time}
                         onChange={(e) =>
                           setFormData({ ...formData, time: e.target.value })
                         }
                       >
                         <option value="10:00">10:00 hrs (Mañana)</option>
-                        <option value="11:30">11:30 hrs (Mañana)</option>
-                        <option value="15:00">15:00 hrs (Tarde)</option>
-                        <option value="16:30">16:30 hrs (Tarde)</option>
-                        <option value="18:00">18:00 hrs (Cierre)</option>
+                        <option value="12:00">12:00 hrs (Mediodía)</option>
+                        <option value="15:30">15:30 hrs (Tarde)</option>
+                        <option value="17:00">17:00 hrs (Final de jornada)</option>
                       </select>
                     </div>
                   </div>
 
-                  <div className="space-y-1">
+                  <div className="space-y-1.5">
                     <label
-                      className="font-code-sm text-code-sm text-on-surface-variant block"
-                      htmlFor="project-notes"
+                      className="font-code-sm text-xs text-on-surface-variant block"
+                      htmlFor="contact-notes"
                     >
-                      Detalles del proyecto o requerimiento (opcional)
+                      Cuéntanos brevemente sobre tu proyecto
                     </label>
                     <textarea
-                      className="w-full bg-surface-container px-space-sm py-2 rounded text-on-surface placeholder:text-on-surface-variant/40 focus:outline-none focus:ring-1 focus:ring-primary font-body-sm text-body-sm border border-white/[0.04]"
-                      id="project-notes"
-                      placeholder="Cuéntanos brevemente si tienes sitio actual, cuántos locales o computadores posees..."
+                      className="w-full bg-[#0a0a0d] px-3.5 py-2.5 rounded-xl text-white placeholder:text-on-surface-variant/40 focus:outline-none focus:ring-1 focus:ring-primary text-sm border border-white/[0.08]"
+                      id="contact-notes"
+                      placeholder="Ej: Necesitamos renovar el sitio web de nuestra maestranza y conectar un catálogo de repuestos..."
                       rows={3}
                       value={formData.notes}
                       onChange={(e) =>
@@ -313,44 +281,39 @@ export function StitchBooking() {
                     />
                   </div>
 
-                  <div className="pt-space-xs">
-                    <button
-                      className="w-full inline-flex items-center justify-center gap-space-xs py-3.5 px-space-md bg-primary text-on-primary font-body-md font-bold rounded shadow-[0_0_20px_rgba(0,229,163,0.3)] hover:bg-primary-fixed transition-all hover:scale-[1.01] cursor-pointer disabled:opacity-50"
-                      disabled={isSubmitting}
-                      type="submit"
-                    >
-                      <span className="material-symbols-outlined text-[18px]">
-                        calendar_month
-                      </span>
-                      <span>
-                        {isSubmitting
-                          ? "Procesando solicitud..."
-                          : "Confirmar Solicitud de Meet (45 min)"}
-                      </span>
-                    </button>
-                  </div>
+                  <button
+                    className="w-full py-3.5 px-4 bg-primary text-black font-bold rounded-xl shadow-[0_0_24px_rgba(0,229,163,0.3)] hover:bg-primary-fixed hover:scale-[1.01] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                    disabled={isSubmitting}
+                    type="submit"
+                  >
+                    <span className="material-symbols-outlined text-[18px]">
+                      send
+                    </span>
+                    <span>
+                      {isSubmitting ? "Enviando solicitud..." : "Confirmar Agendamiento de Reunión"}
+                    </span>
+                  </button>
                 </form>
               ) : (
-                <div
-                  className="p-space-lg bg-primary/10 rounded-lg text-center space-y-space-sm my-auto border border-primary/30"
-                  id="booking-confirmation"
-                >
-                  <span className="material-symbols-outlined text-primary text-[42px]">
-                    check_circle
-                  </span>
-                  <div className="font-headline-md text-headline-md font-bold text-on-surface">
-                    ¡Solicitud de reunión recibida con éxito!
+                <div className="py-12 flex flex-col items-center justify-center text-center space-y-4">
+                  <div className="w-16 h-16 rounded-full bg-primary/20 text-primary flex items-center justify-center border border-primary/40">
+                    <span className="material-symbols-outlined text-[32px]">
+                      check
+                    </span>
                   </div>
-                  <p className="font-body-md text-on-surface-variant max-w-md mx-auto">
-                    Te contactaremos a <strong>{formData.email}</strong> y por
-                    WhatsApp al <strong>{formData.phone}</strong> para coordinar el
-                    enlace de Google Meet.
+                  <h3 className="text-2xl font-bold text-white">
+                    ¡Solicitud de Reunión Recibida!
+                  </h3>
+                  <p className="text-sm text-on-surface-variant max-w-md">
+                    Daniel Díaz o Paola Huenuman se pondrán en contacto contigo vía
+                    WhatsApp o correo para confirmar la invitación de Google Meet.
                   </p>
                   <button
+                    type="button"
                     onClick={() => setIsSubmitted(false)}
-                    className="mt-4 px-4 py-2 bg-surface-container hover:bg-surface-bright text-primary font-code-sm text-code-sm rounded border border-primary/20 transition-all cursor-pointer"
+                    className="pt-2 text-primary font-code-sm text-xs underline cursor-pointer"
                   >
-                    Enviar otra solicitud
+                    Enviar otra consulta
                   </button>
                 </div>
               )}

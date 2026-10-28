@@ -13,45 +13,40 @@ export function StitchPricing() {
 
   return (
     <section
-      className="relative w-full px-space-md lg:px-margin-desktop py-space-xl bg-gradient-to-b from-surface via-surface-container-low to-surface overflow-hidden border-t border-b border-primary/10"
+      className="relative w-full px-4 sm:px-6 lg:px-12 py-20 sm:py-28 bg-black overflow-hidden border-b border-white/[0.08]"
       id="planes-web"
     >
-      <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[720px] h-[340px] bg-primary/10 rounded-full blur-3xl" />
-      </div>
-
-      <div className="max-w-7xl mx-auto space-y-space-lg relative z-10">
+      <div className="max-w-7xl mx-auto space-y-12 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-space-xs">
-          <div className="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container rounded text-primary font-code-sm text-code-sm">
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#101015] rounded-full text-primary font-code-sm text-xs border border-primary/20">
             <span className="material-symbols-outlined text-[14px]">tune</span>
-            <span>PLANES WEB CON MANTENCIÓN PROACTIVA</span>
+            <span>// PLANES MENSUALES CON MANTENCIÓN PROACTIVA</span>
           </div>
-          <h2 className="font-headline-xl text-headline-xl text-on-surface">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
             Tu presencia digital sin pagar fortunas por adelantado
           </h2>
-          <p className="font-body-lg text-body-lg text-on-surface-variant">
-            Paga una suscripción mensual fija sin letras chicas. Incluye desarrollo,
-            dominio .cl, hosting ultra veloz y horas mensuales de cambios y
-            soporte con nosotros.
+          <p className="font-body-md sm:font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+            Suscripción mensual fija sin letras chicas. Incluye desarrollo web de alto impacto,
+            dominio .cl, hosting ultra veloz y horas mensuales de cambios con ingenieros en Chile.
           </p>
 
           {/* Toggle Switch Mensual / Anual */}
-          <div className="pt-space-sm flex items-center justify-center gap-space-sm">
+          <div className="pt-4 flex items-center justify-center gap-3">
             <button
               type="button"
               onClick={() => setIsAnnual(false)}
-              className={`font-code-md text-code-md transition-colors ${
+              className={`font-code-md text-xs sm:text-sm transition-colors cursor-pointer ${
                 !isAnnual
-                  ? "font-semibold text-primary"
-                  : "text-on-surface-variant hover:text-on-surface"
+                  ? "font-bold text-primary"
+                  : "text-on-surface-variant hover:text-white"
               }`}
             >
-              Mensual
+              Facturación Mensual
             </button>
             <button
               aria-label="Cambiar periodo de facturación"
-              className="w-14 h-8 bg-surface-container-high rounded-full p-1 transition-colors relative cursor-pointer"
+              className="w-14 h-8 bg-[#181820] rounded-full p-1 transition-colors relative cursor-pointer border border-white/[0.1]"
               type="button"
               onClick={() => setIsAnnual(!isAnnual)}
             >
@@ -64,14 +59,14 @@ export function StitchPricing() {
             <button
               type="button"
               onClick={() => setIsAnnual(true)}
-              className={`font-code-md text-code-md flex items-center gap-1.5 transition-colors ${
+              className={`font-code-md text-xs sm:text-sm flex items-center gap-1.5 transition-colors cursor-pointer ${
                 isAnnual
-                  ? "font-semibold text-primary"
-                  : "text-on-surface-variant hover:text-on-surface"
+                  ? "font-bold text-primary"
+                  : "text-on-surface-variant hover:text-white"
               }`}
             >
-              <span>Anual</span>
-              <span className="px-2 py-0.5 bg-primary/10 text-primary rounded-full text-[10px] font-bold">
+              <span>Pago Anual</span>
+              <span className="px-2 py-0.5 bg-primary/10 text-primary border border-primary/30 rounded-full text-[10px] font-bold">
                 2 meses gratis
               </span>
             </button>
@@ -79,92 +74,85 @@ export function StitchPricing() {
         </div>
 
         {/* Pricing Matrix (3 Cards) */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-space-lg pt-space-sm">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 pt-2">
           {/* CARD 1: Landing Inicial */}
-          <div className="bg-surface-container rounded-xl p-space-lg flex flex-col justify-between shadow-lg relative transition-all hover:-translate-y-1 border border-white/[0.04] hover:border-primary/20">
-            <div className="space-y-space-sm">
+          <div className="bg-[#08080c] rounded-2xl p-6 sm:p-8 flex flex-col justify-between border border-white/[0.08] hover:border-primary/40 transition-all hover:-translate-y-1">
+            <div className="space-y-4">
               <div className="flex justify-between items-center">
-                <span className="font-code-sm text-code-sm text-on-surface-variant uppercase tracking-wider">
-                  Plan 01 // Solistas &amp; Pymes
+                <span className="font-code-sm text-xs text-primary uppercase tracking-wider font-semibold">
+                  // PLAN 01
                 </span>
-                <span className="font-code-sm text-code-sm px-2 py-0.5 bg-surface-container-high rounded text-on-surface">
+                <span className="font-code-sm text-xs px-2.5 py-0.5 bg-[#14141c] rounded text-on-surface-variant border border-white/[0.04]">
                   5 días hábiles
                 </span>
               </div>
-              <h3 className="font-headline-md text-headline-md text-on-surface font-semibold">
+              <h3 className="text-xl sm:text-2xl font-bold text-white">
                 Landing Inicial / Emprendedor
               </h3>
-              <p className="font-body-sm text-body-sm text-on-surface-variant">
-                Ideal para profesionales independientes, consultores y emprendedores
+              <p className="font-body-sm text-sm text-on-surface-variant leading-relaxed">
+                Ideal para profesionales independientes, consultores y pymes
                 que necesitan capturar clientes por WhatsApp hoy.
               </p>
 
               {/* Price Container */}
-              <div className="p-space-sm bg-surface-container-lowest rounded space-y-1">
-                <div className="flex items-baseline gap-1">
-                  <span className="text-primary font-headline-xl font-bold">
+              <div className="p-4 bg-black rounded-xl border border-white/[0.06] space-y-1">
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-primary text-3xl sm:text-4xl font-bold font-jetbrains-mono">
                     {prices.plan1}
                   </span>
-                  <span className="font-code-sm text-code-sm text-on-surface-variant">
+                  <span className="font-code-sm text-xs text-on-surface-variant">
                     CLP / mes
                   </span>
                 </div>
-                <div className="font-code-sm text-code-sm text-on-surface-variant">
+                <div className="font-code-sm text-[11px] text-on-surface-variant">
                   {isAnnual ? "Facturado anualmente ($166.500/año)" : "o desde $29.990 inicial llave en mano"}
                 </div>
               </div>
 
               {/* Features List */}
-              <ul className="space-y-space-xs font-body-sm text-body-sm text-on-surface pt-space-xs">
-                <li className="flex items-start gap-space-xs">
+              <ul className="space-y-2.5 text-sm text-white pt-2">
+                <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     check_circle
                   </span>
-                  <span>
-                    Landing page de <strong>hasta 6 secciones</strong> responsivas
-                  </span>
+                  <span>Landing page de <strong>hasta 6 secciones</strong> responsivas</span>
                 </li>
-                <li className="flex items-start gap-space-xs">
+                <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     check_circle
                   </span>
-                  <span>
-                    <strong>Dominio .cl propio incluido</strong> y configurado
-                  </span>
+                  <span><strong>Dominio .cl propio incluido</strong> y configurado</span>
                 </li>
-                <li className="flex items-start gap-space-xs">
+                <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     check_circle
                   </span>
-                  <span>
-                    Hosting ultrarrápido con <strong>Certificado SSL</strong>
-                  </span>
+                  <span>Hosting ultrarrápido con <strong>Certificado SSL</strong> bancario</span>
                 </li>
-                <li className="flex items-start gap-space-xs">
+                <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     check_circle
                   </span>
                   <span>Botón directo de WhatsApp flotante + Formulario</span>
                 </li>
-                <li className="flex items-start gap-space-xs">
+                <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     check_circle
                   </span>
                   <span>SEO técnico base para indexación en Google</span>
                 </li>
-                <li className="flex items-start gap-space-xs">
+                <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     check_circle
                   </span>
-                  <span>
-                    <strong>45 minutos/mes</strong> de soporte y cambios menores
-                  </span>
+                  <span><strong>45 minutos/mes</strong> de soporte y cambios menores</span>
                 </li>
               </ul>
             </div>
-            <div className="pt-space-md">
+
+            <div className="pt-6">
               <a
-                className="w-full inline-flex items-center justify-center gap-space-xs py-3 px-space-md bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-md font-semibold rounded transition-all"
+                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 bg-[#14141c] hover:bg-[#1e1e28] text-white font-semibold rounded-xl border border-white/[0.08] transition-all"
                 href="https://wa.me/56995127788?text=Hola%20Enacta,%20me%20interesa%20contratar%20el%20Plan%20Inicial%20Landing"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -178,100 +166,88 @@ export function StitchPricing() {
           </div>
 
           {/* CARD 2: Pyme Corporativa (DESTACADA) */}
-          <div className="bg-surface-container rounded-xl p-space-lg flex flex-col justify-between shadow-2xl relative transition-all hover:-translate-y-1 bg-gradient-to-b from-surface-container via-surface-container to-surface-container-high shadow-[0_0_30px_rgba(0,229,163,0.15)] border border-primary/30">
+          <div className="bg-[#0b0c12] rounded-2xl p-6 sm:p-8 flex flex-col justify-between border-2 border-primary/50 shadow-2xl shadow-[0_0_40px_rgba(0,229,163,0.14)] relative transition-all hover:-translate-y-1">
             {/* Top badge */}
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-space-sm py-0.5 bg-primary text-on-primary font-code-sm text-code-sm font-bold rounded-full shadow-md uppercase tracking-wider">
+            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-primary text-black font-code-sm text-xs font-bold rounded-full shadow-lg uppercase tracking-wider">
               MÁS ELEGIDO POR EMPRESAS
             </div>
-            <div className="space-y-space-sm pt-space-xs">
+
+            <div className="space-y-4 pt-1">
               <div className="flex justify-between items-center">
-                <span className="font-code-sm text-code-sm text-primary uppercase tracking-wider font-semibold">
-                  Plan 02 // Empresas en Crecimiento
+                <span className="font-code-sm text-xs text-primary uppercase tracking-wider font-semibold">
+                  // PLAN 02
                 </span>
-                <span className="font-code-sm text-code-sm px-2 py-0.5 bg-surface-container-lowest rounded text-primary">
+                <span className="font-code-sm text-xs px-2.5 py-0.5 bg-primary/10 text-primary rounded border border-primary/20">
                   10 días hábiles
                 </span>
               </div>
-              <h3 className="font-headline-md text-headline-md text-on-surface font-semibold">
+              <h3 className="text-xl sm:text-2xl font-bold text-white">
                 Pyme Corporativa &amp; Catálogo
               </h3>
-              <p className="font-body-sm text-body-sm text-on-surface-variant">
-                Pensado para empresas de servicios, constructoras, maestranzas o
-                consultoras que requieren credibilidad absoluta y catálogo.
+              <p className="font-body-sm text-sm text-on-surface-variant leading-relaxed">
+                Diseñado para empresas de servicios, constructoras, maestranzas o
+                consultoras que requieren credibilidad absoluta y catálogo interactivo.
               </p>
 
               {/* Price Container */}
-              <div className="p-space-sm bg-surface-container-lowest rounded space-y-1">
-                <div className="flex items-baseline gap-1">
-                  <span className="text-primary font-headline-xl font-bold">
+              <div className="p-4 bg-black rounded-xl border border-primary/25 space-y-1">
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-primary text-3xl sm:text-4xl font-bold font-jetbrains-mono">
                     {prices.plan2}
                   </span>
-                  <span className="font-code-sm text-code-sm text-on-surface-variant">
+                  <span className="font-code-sm text-xs text-on-surface-variant">
                     CLP / mes
                   </span>
                 </div>
-                <div className="font-code-sm text-code-sm text-primary">
-                  {isAnnual ? "Facturado anualmente ($249.900/año)" : "Todo lo de la Landing Inicial y mucho más"}
+                <div className="font-code-sm text-[11px] text-primary">
+                  {isAnnual ? "Facturado anualmente ($249.900/año)" : "Todo lo del Plan Inicial y soporte ampliado"}
                 </div>
               </div>
 
               {/* Features List */}
-              <ul className="space-y-space-xs font-body-sm text-body-sm text-on-surface pt-space-xs">
-                <li className="flex items-start gap-space-xs">
+              <ul className="space-y-2.5 text-sm text-white pt-2">
+                <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     verified
                   </span>
-                  <span>
-                    <strong>Hasta 5 páginas completas</strong> (Inicio, Nosotros,
-                    Servicios, etc.)
-                  </span>
+                  <span><strong>Hasta 5 páginas completas</strong> (Inicio, Nosotros, Servicios, etc.)</span>
                 </li>
-                <li className="flex items-start gap-space-xs">
+                <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     verified
                   </span>
-                  <span>
-                    <strong>Catálogo interactivo</strong> de productos
-                    sincronizable
-                  </span>
+                  <span><strong>Catálogo interactivo</strong> de productos o servicios</span>
                 </li>
-                <li className="flex items-start gap-space-xs">
+                <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     verified
                   </span>
-                  <span>
-                    <strong>3 correos corporativos</strong> dedicados
-                    (@tuempresa.cl)
-                  </span>
+                  <span><strong>3 correos corporativos</strong> (@tuempresa.cl) dedicados</span>
                 </li>
-                <li className="flex items-start gap-space-xs">
+                <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     verified
                   </span>
-                  <span>
-                    Optimización de ficha <strong>Google Business Profile</strong>
-                  </span>
+                  <span>Optimización de ficha en <strong>Google Business Profile</strong></span>
                 </li>
-                <li className="flex items-start gap-space-xs">
+                <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     verified
                   </span>
                   <span>Reporte mensual de rendimiento y visitantes reales</span>
                 </li>
-                <li className="flex items-start gap-space-xs">
+                <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     verified
                   </span>
-                  <span>
-                    <strong>2 horas al mes</strong> de mantención y
-                    modificaciones
-                  </span>
+                  <span><strong>2 horas al mes</strong> de soporte técnico y cambios</span>
                 </li>
               </ul>
             </div>
-            <div className="pt-space-md">
+
+            <div className="pt-6">
               <a
-                className="w-full inline-flex items-center justify-center gap-space-xs py-3.5 px-space-md bg-primary text-on-primary font-body-md font-bold rounded shadow-[0_0_18px_rgba(0,229,163,0.3)] hover:bg-primary-fixed transition-all hover:scale-[1.01]"
+                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 bg-primary text-black font-bold rounded-xl shadow-[0_0_20px_rgba(0,229,163,0.3)] hover:bg-primary-fixed hover:scale-[1.01] transition-all"
                 href="https://wa.me/56995127788?text=Hola%20Enacta,%20quiero%20el%20Plan%20Pyme%20Corporativa%20de%20$29.990"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -285,94 +261,83 @@ export function StitchPricing() {
           </div>
 
           {/* CARD 3: E-Commerce & Plataforma */}
-          <div className="bg-surface-container rounded-xl p-space-lg flex flex-col justify-between shadow-lg relative transition-all hover:-translate-y-1 border border-white/[0.04] hover:border-primary/20">
-            <div className="space-y-space-sm">
+          <div className="bg-[#08080c] rounded-2xl p-6 sm:p-8 flex flex-col justify-between border border-white/[0.08] hover:border-primary/40 transition-all hover:-translate-y-1">
+            <div className="space-y-4">
               <div className="flex justify-between items-center">
-                <span className="font-code-sm text-code-sm text-on-surface-variant uppercase tracking-wider">
-                  Plan 03 // Venta Digital &amp; Stock
+                <span className="font-code-sm text-xs text-primary uppercase tracking-wider font-semibold">
+                  // PLAN 03
                 </span>
-                <span className="font-code-sm text-code-sm px-2 py-0.5 bg-surface-container-high rounded text-on-surface">
+                <span className="font-code-sm text-xs px-2.5 py-0.5 bg-[#14141c] rounded text-on-surface-variant border border-white/[0.04]">
                   15 días hábiles
                 </span>
               </div>
-              <h3 className="font-headline-md text-headline-md text-on-surface font-semibold">
+              <h3 className="text-xl sm:text-2xl font-bold text-white">
                 E-Commerce &amp; Plataforma
               </h3>
-              <p className="font-body-sm text-body-sm text-on-surface-variant">
+              <p className="font-body-sm text-sm text-on-surface-variant leading-relaxed">
                 Comercio online de alta velocidad integrado a pasarelas de pago
-                chilenas y listo para conectar con tu bodega.
+                chilenas (Webpay / Transbank) y listo para sincronizar bodega.
               </p>
 
               {/* Price Container */}
-              <div className="p-space-sm bg-surface-container-lowest rounded space-y-1">
-                <div className="flex items-baseline gap-1">
-                  <span className="text-primary font-headline-xl font-bold">
+              <div className="p-4 bg-black rounded-xl border border-white/[0.06] space-y-1">
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-primary text-3xl sm:text-4xl font-bold font-jetbrains-mono">
                     {prices.plan3}
                   </span>
-                  <span className="font-code-sm text-code-sm text-on-surface-variant">
+                  <span className="font-code-sm text-xs text-on-surface-variant">
                     CLP / mes
                   </span>
                 </div>
-                <div className="font-code-sm text-code-sm text-on-surface-variant">
-                  {isAnnual ? "Facturado anualmente ($416.500/año)" : "Tienda con pasarela Webpay y stock sincronizado"}
+                <div className="font-code-sm text-[11px] text-on-surface-variant">
+                  {isAnnual ? "Facturado anualmente ($416.500/año)" : "Tienda con Webpay y stock sincronizado"}
                 </div>
               </div>
 
               {/* Features List */}
-              <ul className="space-y-space-xs font-body-sm text-body-sm text-on-surface pt-space-xs">
-                <li className="flex items-start gap-space-xs">
+              <ul className="space-y-2.5 text-sm text-white pt-2">
+                <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     check_circle
                   </span>
-                  <span>
-                    Tienda online configurada con <strong>hasta 100 productos</strong>
-                  </span>
+                  <span>Tienda online configurada con <strong>hasta 100 productos</strong></span>
                 </li>
-                <li className="flex items-start gap-space-xs">
+                <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     check_circle
                   </span>
-                  <span>
-                    Pasarelas <strong>Webpay Plus, Transbank &amp; MercadoPago</strong>
-                  </span>
+                  <span>Pasarelas <strong>Webpay Plus, Transbank &amp; MercadoPago</strong></span>
                 </li>
-                <li className="flex items-start gap-space-xs">
+                <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     check_circle
                   </span>
-                  <span>
-                    Cálculo de envíos por Starken, Chilexpress o Blue Express
-                  </span>
+                  <span>Cálculo de envíos por Starken, Chilexpress o Blue Express</span>
                 </li>
-                <li className="flex items-start gap-space-xs">
+                <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     check_circle
                   </span>
-                  <span>
-                    Sincronización con <strong>software de stock y boletas</strong>
-                  </span>
+                  <span>Sincronización con <strong>software de stock y boletas</strong></span>
                 </li>
-                <li className="flex items-start gap-space-xs">
+                <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     check_circle
                   </span>
-                  <span>
-                    <strong>5 correos corporativos</strong> dedicados
-                  </span>
+                  <span><strong>5 correos corporativos</strong> dedicados</span>
                 </li>
-                <li className="flex items-start gap-space-xs">
+                <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     check_circle
                   </span>
-                  <span>
-                    <strong>4 horas al mes</strong> de soporte técnico y cambios
-                  </span>
+                  <span><strong>4 horas al mes</strong> de soporte técnico y cambios</span>
                 </li>
               </ul>
             </div>
-            <div className="pt-space-md">
+
+            <div className="pt-6">
               <a
-                className="w-full inline-flex items-center justify-center gap-space-xs py-3 px-space-md bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-md font-semibold rounded transition-all"
+                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 bg-[#14141c] hover:bg-[#1e1e28] text-white font-semibold rounded-xl border border-white/[0.08] transition-all"
                 href="https://wa.me/56995127788?text=Hola%20Enacta,%20quiero%20el%20Plan%20E-Commerce%20y%20Plataforma%20de%20$49.990"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -387,13 +352,13 @@ export function StitchPricing() {
         </div>
 
         {/* Legal & Transparent Notice */}
-        <div className="p-space-sm bg-surface-container-low rounded-lg text-center font-code-sm text-code-sm text-on-surface-variant flex flex-col md:flex-row items-center justify-center gap-space-xs border border-white/[0.04]">
-          <span className="material-symbols-outlined text-primary text-[16px]">
+        <div className="p-4 bg-[#0a0a0d] rounded-xl text-center text-xs sm:text-sm text-on-surface-variant flex flex-col md:flex-row items-center justify-center gap-2 border border-white/[0.06]">
+          <span className="material-symbols-outlined text-primary text-[18px]">
             verified_user
           </span>
           <span>
             Valores netos + IVA en caso de requerir factura. Sin cláusulas de amarre:
-            el dominio y el código siempre son tuyos.
+            el dominio y el código siempre son 100% de tu propiedad.
           </span>
         </div>
       </div>

@@ -3,12 +3,12 @@ import Image from "next/image";
 
 export function StitchFooter() {
   return (
-    <footer className="w-full bg-surface-container-lowest text-on-surface-variant pt-space-xl pb-space-lg shadow-[0_-1px_8px_rgba(0,0,0,0.04)] relative z-10 border-t border-white/[0.04]">
-      <div className="w-full px-space-md lg:px-margin-desktop mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg mb-space-xl">
+    <footer className="w-full bg-black text-on-surface-variant pt-16 pb-12 border-t border-white/[0.08] relative z-10">
+      <div className="w-full px-4 sm:px-6 lg:px-12 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Col 1 */}
-          <div className="space-y-space-sm">
-            <div className="flex items-center gap-space-sm mb-space-xs">
+          <div className="space-y-3">
+            <div className="flex items-center gap-2.5 mb-2">
               <div className="relative h-6 w-6">
                 <Image
                   alt="Enacta Logo"
@@ -18,40 +18,40 @@ export function StitchFooter() {
                   height={24}
                 />
               </div>
-              <span className="font-code-lg text-code-lg font-semibold text-on-surface">
+              <span className="font-code-lg text-code-lg font-semibold text-white">
                 ENACTA INGENIERÍA
               </span>
             </div>
-            <p className="font-body-sm text-body-sm text-on-surface-variant max-w-sm">
+            <p className="font-body-sm text-sm text-on-surface-variant max-w-sm leading-relaxed">
               Arquitectura de software de misión crítica, infraestructura en
               terreno y planes de mantención proactiva para pymes y corporaciones
               en Chile y Latinoamérica.
             </p>
-            <div className="flex items-center gap-space-xs font-code-sm text-code-sm text-primary pt-space-xs">
+            <div className="flex items-center gap-2 font-code-sm text-xs text-primary pt-1">
               <span className="w-2 h-2 rounded-full bg-primary" />
               <span>Operación continua en terreno 24/7</span>
             </div>
           </div>
 
           {/* Col 2 */}
-          <div className="space-y-space-sm">
-            <div className="font-label-md text-label-md text-on-surface uppercase tracking-wider">
-              Nodos Operativos
+          <div className="space-y-3">
+            <div className="font-label-md text-xs text-white uppercase tracking-wider font-semibold">
+              // Nodos Operativos
             </div>
-            <div className="space-y-space-xs font-body-sm text-body-sm">
-              <div className="p-space-xs bg-surface-container rounded border border-white/[0.02]">
-                <div className="text-on-surface font-semibold">
+            <div className="space-y-2 font-body-sm text-xs">
+              <div className="p-3 bg-[#0a0a0e] rounded-xl border border-white/[0.04]">
+                <div className="text-white font-semibold">
                   Nodo Central: Santiago de Chile
                 </div>
-                <div className="text-on-surface-variant font-code-sm text-code-sm">
+                <div className="text-on-surface-variant font-code-sm text-[11px] mt-0.5">
                   Providencia / Las Condes // Región Metropolitana
                 </div>
               </div>
-              <div className="p-space-xs bg-surface-container rounded border border-white/[0.02]">
-                <div className="text-on-surface font-semibold">
+              <div className="p-3 bg-[#0a0a0e] rounded-xl border border-white/[0.04]">
+                <div className="text-white font-semibold">
                   Nodo Sur: Temuco
                 </div>
-                <div className="text-on-surface-variant font-code-sm text-code-sm">
+                <div className="text-on-surface-variant font-code-sm text-[11px] mt-0.5">
                   Cobertura Araucanía, Los Ríos &amp; Biobío
                 </div>
               </div>
@@ -59,91 +59,88 @@ export function StitchFooter() {
           </div>
 
           {/* Col 3 */}
-          <div className="space-y-space-sm">
-            <div className="font-label-md text-label-md text-on-surface uppercase tracking-wider">
-              Contacto Directo &amp; Liderazgo
+          <div className="space-y-3">
+            <div className="font-label-md text-xs text-white uppercase tracking-wider font-semibold">
+              // Contacto Directo &amp; Liderazgo
             </div>
-            <div className="space-y-space-xs font-body-sm text-body-sm">
+            <div className="space-y-2 font-body-sm text-xs">
               <div className="flex flex-col">
-                <span className="text-on-surface font-medium">Daniel Díaz</span>
-                <span className="text-on-surface-variant font-code-sm text-code-sm">
+                <span className="text-white font-medium">Daniel Díaz</span>
+                <span className="text-on-surface-variant font-code-sm text-[11px]">
                   Lead Software Architect &amp; Infrastructure
                 </span>
               </div>
               <div className="flex flex-col">
-                <span className="text-on-surface font-medium">Paola Huenuman</span>
-                <span className="text-on-surface-variant font-code-sm text-code-sm">
+                <span className="text-white font-medium">Paola Huenuman</span>
+                <span className="text-on-surface-variant font-code-sm text-[11px]">
                   Operations &amp; Client Engineering Partner
                 </span>
               </div>
-              <div className="pt-space-xs space-y-1">
+              <div className="pt-2 space-y-1.5">
                 <a
-                  className="flex items-center gap-space-xs text-on-surface hover:text-primary transition-colors font-code-sm text-code-sm"
+                  className="flex items-center gap-2 text-white hover:text-primary transition-colors font-code-sm text-xs"
                   href="mailto:contacto@enacta.cl"
                 >
-                  <span className="material-symbols-outlined text-[14px]">
+                  <span className="material-symbols-outlined text-[14px] text-primary">
                     alternate_email
                   </span>
                   contacto@enacta.cl
                 </a>
                 <a
-                  className="flex items-center gap-space-xs text-on-surface hover:text-primary transition-colors font-code-sm text-code-sm"
+                  className="flex items-center gap-2 text-white hover:text-primary transition-colors font-code-sm text-xs"
                   href="https://wa.me/56995127788"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <span className="material-symbols-outlined text-[14px]">
+                  <span className="material-symbols-outlined text-[14px] text-primary">
                     chat
                   </span>
-                  WhatsApp Corporativo (+569 9512 7788)
+                  WhatsApp (+569 9512 7788)
                 </a>
               </div>
             </div>
           </div>
 
           {/* Col 4 */}
-          <div className="space-y-space-sm">
-            <div className="font-label-md text-label-md text-on-surface uppercase tracking-wider">
-              Stack &amp; Core Tecnológico
+          <div className="space-y-3">
+            <div className="font-label-md text-xs text-white uppercase tracking-wider font-semibold">
+              // Stack &amp; Core Tecnológico
             </div>
-            <div className="flex flex-wrap gap-space-xs font-code-sm text-code-sm">
-              <span className="px-space-xs py-0.5 bg-surface-container-high rounded text-on-surface">
+            <div className="flex flex-wrap gap-1.5 font-code-sm text-[11px]">
+              <span className="px-2.5 py-1 bg-[#101015] border border-white/[0.06] rounded text-white">
                 PostgreSQL
               </span>
-              <span className="px-space-xs py-0.5 bg-surface-container-high rounded text-on-surface">
+              <span className="px-2.5 py-1 bg-[#101015] border border-white/[0.06] rounded text-white">
                 Docker
               </span>
-              <span className="px-space-xs py-0.5 bg-surface-container-high rounded text-on-surface">
+              <span className="px-2.5 py-1 bg-[#101015] border border-white/[0.06] rounded text-white">
                 Linux Debian
               </span>
-              <span className="px-space-xs py-0.5 bg-surface-container-high rounded text-on-surface">
+              <span className="px-2.5 py-1 bg-[#101015] border border-white/[0.06] rounded text-white">
                 React / Next.js
               </span>
-              <span className="px-space-xs py-0.5 bg-surface-container-high rounded text-on-surface">
+              <span className="px-2.5 py-1 bg-[#101015] border border-white/[0.06] rounded text-white">
                 Node.js
               </span>
-              <span className="px-space-xs py-0.5 bg-surface-container-high rounded text-on-surface">
+              <span className="px-2.5 py-1 bg-[#101015] border border-white/[0.06] rounded text-white">
                 MikroTik
               </span>
-              <span className="px-space-xs py-0.5 bg-surface-container-high rounded text-on-surface">
+              <span className="px-2.5 py-1 bg-[#101015] border border-white/[0.06] rounded text-white">
                 Ubiquiti UniFi
               </span>
-              <span className="px-space-xs py-0.5 bg-surface-container-high rounded text-on-surface">
+              <span className="px-2.5 py-1 bg-[#101015] border border-white/[0.06] rounded text-white">
                 Tailscale VPN
               </span>
-              <span className="px-space-xs py-0.5 bg-surface-container-high rounded text-on-surface">
-                Nginx Reverse Proxy
-              </span>
             </div>
-            <div className="pt-space-xs">
+            <div className="pt-2">
               <a
-                className="inline-flex items-center gap-space-xs font-code-sm text-code-sm text-primary hover:text-primary-fixed"
+                className="inline-flex items-center gap-1.5 font-code-sm text-xs text-primary hover:text-primary-fixed"
                 href="#agendamiento"
               >
                 <span className="material-symbols-outlined text-[14px]">
-                  calculate
+                  calendar_month
                 </span>
-                <span>Lanzar cotizador online inmediato →</span>
+                <span>Agendar reunión técnica 45 min →</span>
               </a>
             </div>
           </div>
