@@ -119,7 +119,7 @@ function TeamTextContent() {
       </div>
 
       {/* Main Headline */}
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-bold text-white leading-[1.12] tracking-tight">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-heading text-white leading-[1.12] tracking-tight">
         Arquitectura de sistemas en el{" "}
         <span className="text-primary underline decoration-primary/40 underline-offset-8">
           corazón de tu negocio

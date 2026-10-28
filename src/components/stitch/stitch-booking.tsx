@@ -51,7 +51,7 @@ export function StitchBooking() {
                 <span>// CALENDARIO DIRECTO DE INGENIERÍA</span>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading text-white tracking-tight">
                 Agendemos un Google Meet de 45 minutos
               </h2>
 

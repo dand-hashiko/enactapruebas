@@ -32,7 +32,7 @@ export function StitchHero() {
             </div>
 
             {/* Responsive Display Headline */}
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[64px] xl:text-[72px] leading-[1.08] font-bold text-white tracking-tight text-left drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[64px] xl:text-[72px] leading-[1.08] font-heading text-white tracking-tight text-left drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]">
               Tu sitio web profesional y soporte de infraestructura,{" "}
               <span className="text-primary underline decoration-primary/50 underline-offset-8">
                 sin dolores de cabeza.

@@ -24,7 +24,7 @@ export function StitchPricing() {
             <span className="material-symbols-outlined text-[14px]">tune</span>
             <span>// PLANES MENSUALES CON MANTENCIÓN PROACTIVA</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading text-white tracking-tight">
             Tu presencia digital sin pagar fortunas por adelantado
           </h2>
           <p className="font-body-md sm:font-body-lg text-on-surface-variant max-w-2xl mx-auto">
@@ -87,7 +87,7 @@ export function StitchPricing() {
                   5 días hábiles
                 </span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white">
+              <h3 className="text-xl sm:text-2xl font-heading text-white">
                 Landing Inicial / Emprendedor
               </h3>
               <p className="font-body-sm text-sm text-on-surface-variant leading-relaxed">
@@ -185,7 +185,7 @@ export function StitchPricing() {
                   10 días hábiles
                 </span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white">
+              <h3 className="text-xl sm:text-2xl font-heading text-white">
                 Pyme Corporativa &amp; Catálogo
               </h3>
               <p className="font-body-sm text-sm text-on-surface-variant leading-relaxed">
@@ -275,7 +275,7 @@ export function StitchPricing() {
                   15 días hábiles
                 </span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white">
+              <h3 className="text-xl sm:text-2xl font-heading text-white">
                 E-Commerce &amp; Plataforma
               </h3>
               <p className="font-body-sm text-sm text-on-surface-variant leading-relaxed">
