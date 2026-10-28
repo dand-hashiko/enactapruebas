@@ -1,83 +1,159 @@
 /**
  * Typography Architecture & Controller (SoC Pattern)
  *
- * Provides a centralized Font Management API.
- * Enables runtime font editing, headless context switches,
- * and effortless long-term maintenance of the typography system.
+ * Categorized into 5 distinct text roles:
+ * 1. titulos: Encabezados y títulos principales (h1-h6, nombres de planes, tarjetas)
+ * 2. subtitulos: Subtítulos, descripciones de sección y lead copy
+ * 3. botones: Botones interactivos, CTAs y disparadores de acción
+ * 4. otros1: Badges, métricas numéricas, SLAs, chips técnicos y precios
+ * 5. otros2: Texto de cuerpo general, viñetas de características, pie de página
  */
 
-export interface TypographyTheme {
-  heading: string;
-  body: string;
-  mono: string;
-  script: string;
+export type TypographyCategory =
+  | "titulos"
+  | "subtitulos"
+  | "botones"
+  | "otros1"
+  | "otros2";
+
+export interface TypographyCategoryConfig {
+  fontFamily: string;
+  letterSpacing?: string;
+  textTransform?: "uppercase" | "none" | "capitalize" | "lowercase";
+}
+
+export interface TypographyThemeConfig {
+  titulos: TypographyCategoryConfig;
+  subtitulos: TypographyCategoryConfig;
+  botones: TypographyCategoryConfig;
+  otros1: TypographyCategoryConfig;
+  otros2: TypographyCategoryConfig;
 }
 
 export class TypographyManager {
-  private static defaultTheme: TypographyTheme = {
-    heading: "'BBH Bartle', sans-serif",
-    body: "'Share Tech Mono', monospace",
-    mono: "'Share Tech Mono', monospace",
-    script: "'Caveat', cursive, sans-serif",
+  private static defaultTheme: TypographyThemeConfig = {
+    titulos: {
+      fontFamily: "'BBH Bartle', sans-serif",
+      letterSpacing: "-0.01em",
+      textTransform: "uppercase",
+    },
+    subtitulos: {
+      fontFamily: "'Share Tech Mono', monospace",
+      letterSpacing: "normal",
+      textTransform: "none",
+    },
+    botones: {
+      fontFamily: "'Share Tech Mono', monospace",
+      letterSpacing: "0.02em",
+      textTransform: "none",
+    },
+    otros1: {
+      fontFamily: "'Share Tech Mono', monospace",
+      letterSpacing: "0.04em",
+      textTransform: "uppercase",
+    },
+    otros2: {
+      fontFamily: "'Share Tech Mono', monospace",
+      letterSpacing: "normal",
+      textTransform: "none",
+    },
   };
 
-  private static currentTheme: TypographyTheme = {
+  private static currentTheme: TypographyThemeConfig = {
     ...TypographyManager.defaultTheme,
   };
 
   /**
-   * Returns current active font configuration.
+   * Retorna la configuración completa del sistema tipográfico.
    */
-  public static getTheme(): TypographyTheme {
+  public static getTheme(): TypographyThemeConfig {
     return { ...this.currentTheme };
   }
 
   /**
-   * Applies font custom properties directly to documentElement at runtime.
+   * Retorna la configuración de una categoría específica.
    */
-  public static apply(themeOverrides: Partial<TypographyTheme>): void {
+  public static getCategory(category: TypographyCategory): TypographyCategoryConfig {
+    return { ...this.currentTheme[category] };
+  }
+
+  /**
+   * Método genérico para actualizar cualquier categoría.
+   */
+  public static setCategory(
+    category: TypographyCategory,
+    config: Partial<TypographyCategoryConfig> | string
+  ): void {
+    const updated =
+      typeof config === "string" ? { fontFamily: config } : config;
+    this.currentTheme[category] = {
+      ...this.currentTheme[category],
+      ...updated,
+    };
+    this.syncDOM();
+  }
+
+  /**
+   * Métodos dedicados por texto / categoría:
+   */
+  public static setTitulos(config: Partial<TypographyCategoryConfig> | string): void {
+    this.setCategory("titulos", config);
+  }
+
+  public static setSubtitulos(config: Partial<TypographyCategoryConfig> | string): void {
+    this.setCategory("subtitulos", config);
+  }
+
+  public static setBotones(config: Partial<TypographyCategoryConfig> | string): void {
+    this.setCategory("botones", config);
+  }
+
+  public static setOtros1(config: Partial<TypographyCategoryConfig> | string): void {
+    this.setCategory("otros1", config);
+  }
+
+  public static setOtros2(config: Partial<TypographyCategoryConfig> | string): void {
+    this.setCategory("otros2", config);
+  }
+
+  /**
+   * Aplica un conjunto de modificaciones al tema.
+   */
+  public static apply(overrides: Partial<TypographyThemeConfig>): void {
     this.currentTheme = {
       ...this.currentTheme,
-      ...themeOverrides,
+      ...overrides,
     };
-
-    if (typeof document !== "undefined") {
-      const root = document.documentElement;
-      if (this.currentTheme.heading) {
-        root.style.setProperty("--font-heading", this.currentTheme.heading);
-      }
-      if (this.currentTheme.body) {
-        root.style.setProperty("--font-body", this.currentTheme.body);
-        root.style.setProperty("--font-inter", this.currentTheme.body);
-      }
-      if (this.currentTheme.mono) {
-        root.style.setProperty("--font-mono", this.currentTheme.mono);
-        root.style.setProperty("--font-jetbrains-mono", this.currentTheme.mono);
-      }
-      if (this.currentTheme.script) {
-        root.style.setProperty("--font-script", this.currentTheme.script);
-      }
-    }
+    this.syncDOM();
   }
 
   /**
-   * Updates heading font (e.g. 'BBH Bartle')
+   * Sincroniza variables CSS en :root en tiempo de ejecución.
    */
-  public static setHeadingFont(fontFamily: string): void {
-    this.apply({ heading: fontFamily });
+  public static syncDOM(): void {
+    if (typeof document === "undefined") return;
+    const root = document.documentElement;
+
+    // Variables de las 5 categorías:
+    root.style.setProperty("--font-titulos", this.currentTheme.titulos.fontFamily);
+    root.style.setProperty("--font-subtitulos", this.currentTheme.subtitulos.fontFamily);
+    root.style.setProperty("--font-botones", this.currentTheme.botones.fontFamily);
+    root.style.setProperty("--font-otros1", this.currentTheme.otros1.fontFamily);
+    root.style.setProperty("--font-otros2", this.currentTheme.otros2.fontFamily);
+
+    // Compatibilidad retroactiva:
+    root.style.setProperty("--font-heading", this.currentTheme.titulos.fontFamily);
+    root.style.setProperty("--font-body", this.currentTheme.otros2.fontFamily);
+    root.style.setProperty("--font-mono", this.currentTheme.otros1.fontFamily);
+    root.style.setProperty("--font-inter", this.currentTheme.otros2.fontFamily);
+    root.style.setProperty("--font-jetbrains-mono", this.currentTheme.otros1.fontFamily);
   }
 
   /**
-   * Updates body/content font (e.g. 'Share Tech Mono')
-   */
-  public static setBodyFont(fontFamily: string): void {
-    this.apply({ body: fontFamily, mono: fontFamily });
-  }
-
-  /**
-   * Resets typography to default Enacta design system tokens.
+   * Restablece todas las fuentes a los valores por defecto de Enacta.
    */
   public static reset(): void {
-    this.apply(this.defaultTheme);
+    this.currentTheme = { ...this.defaultTheme };
+    this.syncDOM();
   }
 }

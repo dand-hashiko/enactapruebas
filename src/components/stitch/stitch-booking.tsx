@@ -44,36 +44,36 @@ export function StitchBooking() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 relative z-10">
             {/* Column Left: Context & Direct Contact Links */}
             <div className="lg:col-span-5 space-y-6">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading text-white tracking-tight">
+              <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight">
                 Agendemos un Google Meet de 45 minutos
               </h2>
 
-              <p className="font-body-md text-sm sm:text-base text-on-surface-variant leading-relaxed">
+              <p className="typo-subtitulos text-sm sm:text-base text-on-surface-variant leading-relaxed">
                 Analicemos los requerimientos de tu proyecto: ya sea crear un
                 nuevo sitio web profesional, sincronizar tus ventas o instalar
                 cableado y servidores en tu local u oficina.
               </p>
 
               <div className="p-4 bg-black rounded-xl space-y-2 border border-white/[0.06]">
-                <div className="text-xs font-semibold text-white flex items-center gap-2">
+                <div className="typo-otros2 text-xs font-semibold text-white flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
                   <span>Liderazgo técnico del llamado:</span>
                 </div>
-                <div className="text-xs text-on-surface-variant pl-4">
+                <div className="typo-otros2 text-xs text-on-surface-variant pl-4">
                   <strong className="text-white">Daniel Díaz</strong> • Lead Software Architect &amp; Infrastructure
                 </div>
-                <div className="text-xs text-on-surface-variant pl-4">
+                <div className="typo-otros2 text-xs text-on-surface-variant pl-4">
                   <strong className="text-white">Paola Huenuman</strong> • Client Operations Partner
                 </div>
               </div>
 
               <div className="space-y-3 pt-2">
-                <div className="font-code-sm text-xs text-primary uppercase tracking-wider font-semibold">
+                <div className="typo-otros1 text-xs text-primary uppercase tracking-wider font-semibold">
                   ¿Prefieres conversar por WhatsApp ahora mismo?
                 </div>
                 <div className="flex flex-col gap-2.5">
                   <a
-                    className="flex items-center gap-3 p-3 bg-black hover:bg-[#14141c] rounded-xl text-white transition-colors border border-white/[0.06]"
+                    className="typo-botones flex items-center gap-3 p-3 bg-black hover:bg-[#14141c] rounded-xl text-white transition-colors border border-white/[0.06]"
                     href="https://wa.me/56995127788"
                     rel="noopener noreferrer"
                     target="_blank"
@@ -81,12 +81,12 @@ export function StitchBooking() {
                     <span className="material-symbols-outlined text-primary text-[20px]">
                       chat
                     </span>
-                    <span className="font-code-sm text-xs">
+                    <span className="text-xs">
                       WhatsApp Línea 1: <strong className="text-primary">+569 9512 7788</strong>
                     </span>
                   </a>
                   <a
-                    className="flex items-center gap-3 p-3 bg-black hover:bg-[#14141c] rounded-xl text-white transition-colors border border-white/[0.06]"
+                    className="typo-botones flex items-center gap-3 p-3 bg-black hover:bg-[#14141c] rounded-xl text-white transition-colors border border-white/[0.06]"
                     href="https://wa.me/56953797437"
                     rel="noopener noreferrer"
                     target="_blank"
@@ -94,18 +94,18 @@ export function StitchBooking() {
                     <span className="material-symbols-outlined text-primary text-[20px]">
                       chat
                     </span>
-                    <span className="font-code-sm text-xs">
+                    <span className="text-xs">
                       WhatsApp Línea 2: <strong className="text-primary">+569 5379 7437</strong>
                     </span>
                   </a>
                   <a
-                    className="flex items-center gap-3 p-3 bg-black hover:bg-[#14141c] rounded-xl text-white transition-colors border border-white/[0.06]"
+                    className="typo-botones flex items-center gap-3 p-3 bg-black hover:bg-[#14141c] rounded-xl text-white transition-colors border border-white/[0.06]"
                     href="mailto:contacto@enacta.cl"
                   >
                     <span className="material-symbols-outlined text-primary text-[20px]">
                       mail
                     </span>
-                    <span className="font-code-sm text-xs">
+                    <span className="text-xs">
                       Correo: <strong className="text-white">contacto@enacta.cl</strong>
                     </span>
                   </a>

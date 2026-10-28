@@ -1,13 +1,24 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { TypographyManager, TypographyTheme } from "@/lib/typography";
+import {
+  TypographyManager,
+  TypographyCategory,
+  TypographyCategoryConfig,
+  TypographyThemeConfig,
+} from "@/lib/typography";
 
 interface TypographyContextType {
-  theme: TypographyTheme;
-  setHeadingFont: (font: string) => void;
-  setBodyFont: (font: string) => void;
-  updateTheme: (theme: Partial<TypographyTheme>) => void;
+  theme: TypographyThemeConfig;
+  setTitulos: (config: Partial<TypographyCategoryConfig> | string) => void;
+  setSubtitulos: (config: Partial<TypographyCategoryConfig> | string) => void;
+  setBotones: (config: Partial<TypographyCategoryConfig> | string) => void;
+  setOtros1: (config: Partial<TypographyCategoryConfig> | string) => void;
+  setOtros2: (config: Partial<TypographyCategoryConfig> | string) => void;
+  setCategory: (
+    category: TypographyCategory,
+    config: Partial<TypographyCategoryConfig> | string
+  ) => void;
   resetTheme: () => void;
 }
 
@@ -16,29 +27,54 @@ const TypographyContext = createContext<TypographyContextType | undefined>(
 );
 
 export function TypographyProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<TypographyTheme>(
+  const [theme, setTheme] = useState<TypographyThemeConfig>(
     TypographyManager.getTheme()
   );
 
-  const updateTheme = (overrides: Partial<TypographyTheme>) => {
-    TypographyManager.apply(overrides);
+  const updateCategory = (
+    category: TypographyCategory,
+    config: Partial<TypographyCategoryConfig> | string
+  ) => {
+    TypographyManager.setCategory(category, config);
     setTheme(TypographyManager.getTheme());
   };
 
-  const setHeadingFont = (font: string) => updateTheme({ heading: font });
-  const setBodyFont = (font: string) => updateTheme({ body: font });
+  const setTitulos = (config: Partial<TypographyCategoryConfig> | string) =>
+    updateCategory("titulos", config);
+
+  const setSubtitulos = (config: Partial<TypographyCategoryConfig> | string) =>
+    updateCategory("subtitulos", config);
+
+  const setBotones = (config: Partial<TypographyCategoryConfig> | string) =>
+    updateCategory("botones", config);
+
+  const setOtros1 = (config: Partial<TypographyCategoryConfig> | string) =>
+    updateCategory("otros1", config);
+
+  const setOtros2 = (config: Partial<TypographyCategoryConfig> | string) =>
+    updateCategory("otros2", config);
+
   const resetTheme = () => {
     TypographyManager.reset();
     setTheme(TypographyManager.getTheme());
   };
 
   useEffect(() => {
-    TypographyManager.apply(theme);
+    TypographyManager.syncDOM();
   }, [theme]);
 
   return (
     <TypographyContext.Provider
-      value={{ theme, setHeadingFont, setBodyFont, updateTheme, resetTheme }}
+      value={{
+        theme,
+        setTitulos,
+        setSubtitulos,
+        setBotones,
+        setOtros1,
+        setOtros2,
+        setCategory: updateCategory,
+        resetTheme,
+      }}
     >
       {children}
     </TypographyContext.Provider>

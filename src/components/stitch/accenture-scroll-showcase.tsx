@@ -112,55 +112,55 @@ export function AccentureScrollShowcase() {
 function TeamTextContent() {
   return (
     <>
-      {/* Micro-label */}
-      <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#101015] rounded-full border border-primary/30 text-primary font-code-sm text-xs uppercase tracking-wider w-fit">
+      {/* Micro-label (Categoría: otros1) */}
+      <div className="typo-otros1 inline-flex items-center gap-2 px-3 py-1 bg-[#101015] rounded-full border border-primary/30 text-primary text-xs uppercase tracking-wider w-fit">
         <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
         <span>// LIDERAZGO &amp; EQUIPO HUMANO</span>
       </div>
 
-      {/* Main Headline */}
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-heading text-white leading-[1.12] tracking-tight">
+      {/* Main Headline (Categoría: titulos) */}
+      <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] text-white leading-[1.12] tracking-tight">
         Arquitectura de sistemas en el{" "}
         <span className="text-primary underline decoration-primary/40 underline-offset-8">
           corazón de tu negocio
         </span>
       </h2>
 
-      {/* Body */}
-      <p className="font-body-md text-sm sm:text-base text-on-surface-variant leading-relaxed">
+      {/* Body (Categoría: subtitulos) */}
+      <p className="typo-subtitulos text-sm sm:text-base text-on-surface-variant leading-relaxed">
         No somos una agencia distante que delega requerimientos a terceros. Daniel
         Díaz, Paola Huenuman y nuestro equipo de ingenieros diseñan, cablean y
         programan infraestructura de software y hardware con presencia física y
         soporte 24/7 en Chile.
       </p>
 
-      {/* Team Badges */}
+      {/* Team Badges (Categoría: otros2 y otros1) */}
       <div className="space-y-2.5 pt-1">
         <div className="p-3 bg-[#0a0a0e] rounded-xl border border-white/[0.06] flex items-center justify-between">
           <div className="flex flex-col">
-            <span className="text-white font-bold text-sm">Daniel Díaz</span>
-            <span className="text-on-surface-variant text-xs">Santiago &amp; Temuco</span>
+            <span className="typo-titulos text-white font-bold text-sm">Daniel Díaz</span>
+            <span className="typo-otros2 text-on-surface-variant text-xs">Santiago &amp; Temuco</span>
           </div>
-          <span className="text-primary font-code-sm text-xs px-2.5 py-1 bg-primary/10 rounded border border-primary/20">
+          <span className="typo-otros1 text-primary text-xs px-2.5 py-1 bg-primary/10 rounded border border-primary/20">
             Lead Software Architect &amp; Infra
           </span>
         </div>
 
         <div className="p-3 bg-[#0a0a0e] rounded-xl border border-white/[0.06] flex items-center justify-between">
           <div className="flex flex-col">
-            <span className="text-white font-bold text-sm">Paola Huenuman</span>
-            <span className="text-on-surface-variant text-xs">Gestión y Despliegue</span>
+            <span className="typo-titulos text-white font-bold text-sm">Paola Huenuman</span>
+            <span className="typo-otros2 text-on-surface-variant text-xs">Gestión y Despliegue</span>
           </div>
-          <span className="text-primary font-code-sm text-xs px-2.5 py-1 bg-primary/10 rounded border border-primary/20">
+          <span className="typo-otros1 text-primary text-xs px-2.5 py-1 bg-primary/10 rounded border border-primary/20">
             Client Operations Partner
           </span>
         </div>
       </div>
 
-      {/* Action CTA */}
+      {/* Action CTA (Categoría: botones) */}
       <div className="pt-2 flex items-center gap-3">
         <a
-          className="inline-flex items-center gap-2 group font-body-md font-semibold text-white hover:text-primary transition-colors"
+          className="typo-botones inline-flex items-center gap-2 group font-semibold text-white hover:text-primary transition-colors"
           href="#agendamiento"
         >
           <span className="underline decoration-primary/40 group-hover:decoration-primary underline-offset-4 text-sm sm:text-base">

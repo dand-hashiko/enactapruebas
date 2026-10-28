@@ -20,24 +20,24 @@ export function StitchPricing() {
       <div className="max-w-7xl mx-auto space-y-12 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#101015] rounded-full text-primary font-code-sm text-xs border border-primary/20">
+          <div className="typo-otros1 inline-flex items-center gap-2 px-3 py-1 bg-[#101015] rounded-full text-primary text-xs border border-primary/20">
             <span className="material-symbols-outlined text-[14px]">tune</span>
             <span>// PLANES MENSUALES CON MANTENCIÓN PROACTIVA</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading text-white tracking-tight">
+          <h2 className="typo-titulos text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight">
             Tu presencia digital sin pagar fortunas por adelantado
           </h2>
-          <p className="font-body-md sm:font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+          <p className="typo-subtitulos text-sm sm:text-base text-on-surface-variant max-w-2xl mx-auto">
             Suscripción mensual fija sin letras chicas. Incluye desarrollo web de alto impacto,
             dominio .cl, hosting ultra veloz y horas mensuales de cambios con ingenieros en Chile.
           </p>
 
-          {/* Toggle Switch Mensual / Anual */}
+          {/* Toggle Switch Mensual / Anual (Categoría: botones) */}
           <div className="pt-4 flex items-center justify-center gap-3">
             <button
               type="button"
               onClick={() => setIsAnnual(false)}
-              className={`font-code-md text-xs sm:text-sm transition-colors cursor-pointer ${
+              className={`typo-botones text-xs sm:text-sm transition-colors cursor-pointer ${
                 !isAnnual
                   ? "font-bold text-primary"
                   : "text-on-surface-variant hover:text-white"
@@ -60,7 +60,7 @@ export function StitchPricing() {
             <button
               type="button"
               onClick={() => setIsAnnual(true)}
-              className={`font-code-md text-xs sm:text-sm flex items-center gap-1.5 transition-colors cursor-pointer ${
+              className={`typo-botones text-xs sm:text-sm flex items-center gap-1.5 transition-colors cursor-pointer ${
                 isAnnual
                   ? "font-bold text-primary"
                   : "text-on-surface-variant hover:text-white"
@@ -80,17 +80,17 @@ export function StitchPricing() {
           <SpotlightCard className="p-6 sm:p-8 flex flex-col justify-between">
             <div className="space-y-4">
               <div className="flex justify-between items-center">
-                <span className="font-code-sm text-xs text-primary uppercase tracking-wider font-semibold">
+                <span className="typo-otros1 text-xs text-primary uppercase tracking-wider font-semibold">
                   // PLAN 01
                 </span>
-                <span className="font-code-sm text-xs px-2.5 py-0.5 bg-[#14141c] rounded text-on-surface-variant border border-white/[0.04]">
+                <span className="typo-otros1 text-xs px-2.5 py-0.5 bg-[#14141c] rounded text-on-surface-variant border border-white/[0.04]">
                   5 días hábiles
                 </span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-heading text-white">
+              <h3 className="typo-titulos text-xl sm:text-2xl text-white">
                 Landing Inicial / Emprendedor
               </h3>
-              <p className="font-body-sm text-sm text-on-surface-variant leading-relaxed">
+              <p className="typo-subtitulos text-sm text-on-surface-variant leading-relaxed">
                 Ideal para profesionales independientes, consultores y pymes
                 que necesitan capturar clientes por WhatsApp hoy.
               </p>
@@ -98,20 +98,20 @@ export function StitchPricing() {
               {/* Price Container */}
               <div className="p-4 bg-black/90 rounded-xl border border-white/[0.06] space-y-1">
                 <div className="flex items-baseline gap-1.5">
-                  <span className="text-primary text-3xl sm:text-4xl font-bold font-jetbrains-mono">
+                  <span className="typo-otros1 text-primary text-3xl sm:text-4xl font-bold">
                     {prices.plan1}
                   </span>
-                  <span className="font-code-sm text-xs text-on-surface-variant">
+                  <span className="typo-otros2 text-xs text-on-surface-variant">
                     CLP / mes
                   </span>
                 </div>
-                <div className="font-code-sm text-[11px] text-on-surface-variant">
+                <div className="typo-otros2 text-[11px] text-on-surface-variant">
                   {isAnnual ? "Facturado anualmente ($166.500/año)" : "o desde $29.990 inicial llave en mano"}
                 </div>
               </div>
 
-              {/* Features List */}
-              <ul className="space-y-2.5 text-sm text-white pt-2">
+              {/* Features List (Categoría: otros2) */}
+              <ul className="typo-otros2 space-y-2.5 text-sm text-white pt-2">
                 <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     check_circle
@@ -153,7 +153,7 @@ export function StitchPricing() {
 
             <div className="pt-6">
               <a
-                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 bg-[#14141c] hover:bg-[#1e1e28] text-white font-semibold rounded-xl border border-white/[0.08] transition-all"
+                className="typo-botones w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 bg-[#14141c] hover:bg-[#1e1e28] text-white font-semibold rounded-xl border border-white/[0.08] transition-all"
                 href="https://wa.me/56995127788?text=Hola%20Enacta,%20me%20interesa%20contratar%20el%20Plan%20Inicial%20Landing"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -172,23 +172,23 @@ export function StitchPricing() {
             className="p-6 sm:p-8 flex flex-col justify-between border-2 border-primary/50 shadow-2xl shadow-[0_0_40px_rgba(0,229,163,0.14)] relative"
           >
             {/* Top badge */}
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-primary text-black font-code-sm text-xs font-bold rounded-full shadow-lg uppercase tracking-wider z-20">
+            <div className="typo-otros1 absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-primary text-black text-xs font-bold rounded-full shadow-lg uppercase tracking-wider z-20">
               MÁS ELEGIDO POR EMPRESAS
             </div>
 
             <div className="space-y-4 pt-1">
               <div className="flex justify-between items-center">
-                <span className="font-code-sm text-xs text-primary uppercase tracking-wider font-semibold">
+                <span className="typo-otros1 text-xs text-primary uppercase tracking-wider font-semibold">
                   // PLAN 02
                 </span>
-                <span className="font-code-sm text-xs px-2.5 py-0.5 bg-primary/10 text-primary rounded border border-primary/20">
+                <span className="typo-otros1 text-xs px-2.5 py-0.5 bg-primary/10 text-primary rounded border border-primary/20">
                   10 días hábiles
                 </span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-heading text-white">
+              <h3 className="typo-titulos text-xl sm:text-2xl text-white">
                 Pyme Corporativa &amp; Catálogo
               </h3>
-              <p className="font-body-sm text-sm text-on-surface-variant leading-relaxed">
+              <p className="typo-subtitulos text-sm text-on-surface-variant leading-relaxed">
                 Diseñado para empresas de servicios, constructoras, maestranzas o
                 consultoras que requieren credibilidad absoluta y catálogo interactivo.
               </p>
@@ -196,20 +196,20 @@ export function StitchPricing() {
               {/* Price Container */}
               <div className="p-4 bg-black/90 rounded-xl border border-primary/25 space-y-1">
                 <div className="flex items-baseline gap-1.5">
-                  <span className="text-primary text-3xl sm:text-4xl font-bold font-jetbrains-mono">
+                  <span className="typo-otros1 text-primary text-3xl sm:text-4xl font-bold">
                     {prices.plan2}
                   </span>
-                  <span className="font-code-sm text-xs text-on-surface-variant">
+                  <span className="typo-otros2 text-xs text-on-surface-variant">
                     CLP / mes
                   </span>
                 </div>
-                <div className="font-code-sm text-[11px] text-primary">
+                <div className="typo-otros2 text-[11px] text-primary">
                   {isAnnual ? "Facturado anualmente ($249.900/año)" : "Todo lo del Plan Inicial y soporte ampliado"}
                 </div>
               </div>
 
-              {/* Features List */}
-              <ul className="space-y-2.5 text-sm text-white pt-2">
+              {/* Features List (Categoría: otros2) */}
+              <ul className="typo-otros2 space-y-2.5 text-sm text-white pt-2">
                 <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     verified
@@ -251,7 +251,7 @@ export function StitchPricing() {
 
             <div className="pt-6">
               <a
-                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 bg-primary text-black font-bold rounded-xl shadow-[0_0_20px_rgba(0,229,163,0.3)] hover:bg-primary-fixed hover:scale-[1.01] transition-all"
+                className="typo-botones w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 bg-primary text-black font-bold rounded-xl shadow-[0_0_20px_rgba(0,229,163,0.3)] hover:bg-primary-fixed hover:scale-[1.01] transition-all"
                 href="https://wa.me/56995127788?text=Hola%20Enacta,%20quiero%20el%20Plan%20Pyme%20Corporativa%20de%20$29.990"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -268,17 +268,17 @@ export function StitchPricing() {
           <SpotlightCard className="p-6 sm:p-8 flex flex-col justify-between">
             <div className="space-y-4">
               <div className="flex justify-between items-center">
-                <span className="font-code-sm text-xs text-primary uppercase tracking-wider font-semibold">
+                <span className="typo-otros1 text-xs text-primary uppercase tracking-wider font-semibold">
                   // PLAN 03
                 </span>
-                <span className="font-code-sm text-xs px-2.5 py-0.5 bg-[#14141c] rounded text-on-surface-variant border border-white/[0.04]">
+                <span className="typo-otros1 text-xs px-2.5 py-0.5 bg-[#14141c] rounded text-on-surface-variant border border-white/[0.04]">
                   15 días hábiles
                 </span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-heading text-white">
+              <h3 className="typo-titulos text-xl sm:text-2xl text-white">
                 E-Commerce &amp; Plataforma
               </h3>
-              <p className="font-body-sm text-sm text-on-surface-variant leading-relaxed">
+              <p className="typo-subtitulos text-sm text-on-surface-variant leading-relaxed">
                 Comercio online de alta velocidad integrado a pasarelas de pago
                 chilenas (Webpay / Transbank) y listo para sincronizar bodega.
               </p>
@@ -286,20 +286,20 @@ export function StitchPricing() {
               {/* Price Container */}
               <div className="p-4 bg-black/90 rounded-xl border border-white/[0.06] space-y-1">
                 <div className="flex items-baseline gap-1.5">
-                  <span className="text-primary text-3xl sm:text-4xl font-bold font-jetbrains-mono">
+                  <span className="typo-otros1 text-primary text-3xl sm:text-4xl font-bold">
                     {prices.plan3}
                   </span>
-                  <span className="font-code-sm text-xs text-on-surface-variant">
+                  <span className="typo-otros2 text-xs text-on-surface-variant">
                     CLP / mes
                   </span>
                 </div>
-                <div className="font-code-sm text-[11px] text-on-surface-variant">
+                <div className="typo-otros2 text-[11px] text-on-surface-variant">
                   {isAnnual ? "Facturado anualmente ($416.500/año)" : "Tienda con Webpay y stock sincronizado"}
                 </div>
               </div>
 
-              {/* Features List */}
-              <ul className="space-y-2.5 text-sm text-white pt-2">
+              {/* Features List (Categoría: otros2) */}
+              <ul className="typo-otros2 space-y-2.5 text-sm text-white pt-2">
                 <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     check_circle
@@ -341,7 +341,7 @@ export function StitchPricing() {
 
             <div className="pt-6">
               <a
-                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 bg-[#14141c] hover:bg-[#1e1e28] text-white font-semibold rounded-xl border border-white/[0.08] transition-all"
+                className="typo-botones w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 bg-[#14141c] hover:bg-[#1e1e28] text-white font-semibold rounded-xl border border-white/[0.08] transition-all"
                 href="https://wa.me/56995127788?text=Hola%20Enacta,%20quiero%20el%20Plan%20E-Commerce%20y%20Plataforma%20de%20$49.990"
                 rel="noopener noreferrer"
                 target="_blank"

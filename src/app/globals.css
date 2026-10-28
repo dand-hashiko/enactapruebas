@@ -67,12 +67,44 @@
 }
 
 :root {
-  --font-heading: 'BBH Bartle', sans-serif;
-  --font-body: 'Share Tech Mono', monospace;
-  --font-mono: 'Share Tech Mono', monospace;
+  /* 5 Categorías Tipográficas Centralizadas */
+  --font-titulos: 'BBH Bartle', sans-serif;
+  --font-subtitulos: 'Share Tech Mono', monospace;
+  --font-botones: 'Share Tech Mono', monospace;
+  --font-otros1: 'Share Tech Mono', monospace;
+  --font-otros2: 'Share Tech Mono', monospace;
+
+  /* Aliases de compatibilidad */
+  --font-heading: var(--font-titulos);
+  --font-body: var(--font-otros2);
+  --font-mono: var(--font-otros1);
+  --font-inter: var(--font-otros2);
+  --font-jetbrains-mono: var(--font-otros1);
   --font-script: 'Caveat', cursive, sans-serif;
-  --font-inter: var(--font-body);
-  --font-jetbrains-mono: var(--font-mono);
+}
+
+/* Clases Semánticas de las 5 Categorías */
+.typo-titulos, .typo-titulo {
+  font-family: var(--font-titulos), 'BBH Bartle', sans-serif !important;
+  letter-spacing: -0.01em;
+}
+
+.typo-subtitulos, .typo-subtitulo {
+  font-family: var(--font-subtitulos), 'Share Tech Mono', monospace !important;
+}
+
+.typo-botones, .typo-boton {
+  font-family: var(--font-botones), 'Share Tech Mono', monospace !important;
+  letter-spacing: 0.02em;
+}
+
+.typo-otros1, .typo-otro1 {
+  font-family: var(--font-otros1), 'Share Tech Mono', monospace !important;
+  letter-spacing: 0.03em;
+}
+
+.typo-otros2, .typo-otro2 {
+  font-family: var(--font-otros2), 'Share Tech Mono', monospace !important;
 }
 
 html, body {

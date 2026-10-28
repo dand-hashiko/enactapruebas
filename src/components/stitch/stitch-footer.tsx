@@ -18,16 +18,16 @@ export function StitchFooter() {
                   height={24}
                 />
               </div>
-              <span className="font-code-lg text-code-lg font-semibold text-white">
+              <span className="typo-titulos text-base font-semibold text-white">
                 ENACTA INGENIERÍA
               </span>
             </div>
-            <p className="font-body-sm text-sm text-on-surface-variant max-w-sm leading-relaxed">
+            <p className="typo-otros2 text-sm text-on-surface-variant max-w-sm leading-relaxed">
               Arquitectura de software de misión crítica, infraestructura en
               terreno y planes de mantención proactiva para pymes y corporaciones
               en Chile y Latinoamérica.
             </p>
-            <div className="flex items-center gap-2 font-code-sm text-xs text-primary pt-1">
+            <div className="flex items-center gap-2 typo-otros1 text-xs text-primary pt-1">
               <span className="w-2 h-2 rounded-full bg-primary" />
               <span>Operación continua en terreno 24/7</span>
             </div>
@@ -35,15 +35,15 @@ export function StitchFooter() {
 
           {/* Col 2 */}
           <div className="space-y-3">
-            <div className="font-label-md text-xs text-white uppercase tracking-wider font-semibold">
+            <div className="typo-otros1 text-xs text-white uppercase tracking-wider font-semibold">
               // Nodos Operativos
             </div>
-            <div className="space-y-2 font-body-sm text-xs">
+            <div className="space-y-2 typo-otros2 text-xs">
               <div className="p-3 bg-[#0a0a0e] rounded-xl border border-white/[0.04]">
                 <div className="text-white font-semibold">
                   Nodo Central: Santiago de Chile
                 </div>
-                <div className="text-on-surface-variant font-code-sm text-[11px] mt-0.5">
+                <div className="text-on-surface-variant typo-otros1 text-[11px] mt-0.5">
                   Providencia / Las Condes // Región Metropolitana
                 </div>
               </div>
@@ -51,7 +51,7 @@ export function StitchFooter() {
                 <div className="text-white font-semibold">
                   Nodo Sur: Temuco
                 </div>
-                <div className="text-on-surface-variant font-code-sm text-[11px] mt-0.5">
+                <div className="text-on-surface-variant typo-otros1 text-[11px] mt-0.5">
                   Cobertura Araucanía, Los Ríos &amp; Biobío
                 </div>
               </div>
@@ -60,25 +60,25 @@ export function StitchFooter() {
 
           {/* Col 3 */}
           <div className="space-y-3">
-            <div className="font-label-md text-xs text-white uppercase tracking-wider font-semibold">
+            <div className="typo-otros1 text-xs text-white uppercase tracking-wider font-semibold">
               // Contacto Directo &amp; Liderazgo
             </div>
-            <div className="space-y-2 font-body-sm text-xs">
+            <div className="space-y-2 typo-otros2 text-xs">
               <div className="flex flex-col">
                 <span className="text-white font-medium">Daniel Díaz</span>
-                <span className="text-on-surface-variant font-code-sm text-[11px]">
+                <span className="text-on-surface-variant typo-otros1 text-[11px]">
                   Lead Software Architect &amp; Infrastructure
                 </span>
               </div>
               <div className="flex flex-col">
                 <span className="text-white font-medium">Paola Huenuman</span>
-                <span className="text-on-surface-variant font-code-sm text-[11px]">
+                <span className="text-on-surface-variant typo-otros1 text-[11px]">
                   Operations &amp; Client Engineering Partner
                 </span>
               </div>
               <div className="pt-2 space-y-1.5">
                 <a
-                  className="flex items-center gap-2 text-white hover:text-primary transition-colors font-code-sm text-xs"
+                  className="flex items-center gap-2 text-white hover:text-primary transition-colors typo-botones text-xs"
                   href="mailto:contacto@enacta.cl"
                 >
                   <span className="material-symbols-outlined text-[14px] text-primary">
@@ -87,7 +87,7 @@ export function StitchFooter() {
                   contacto@enacta.cl
                 </a>
                 <a
-                  className="flex items-center gap-2 text-white hover:text-primary transition-colors font-code-sm text-xs"
+                  className="flex items-center gap-2 text-white hover:text-primary transition-colors typo-botones text-xs"
                   href="https://wa.me/56995127788"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -103,10 +103,10 @@ export function StitchFooter() {
 
           {/* Col 4 */}
           <div className="space-y-3">
-            <div className="font-label-md text-xs text-white uppercase tracking-wider font-semibold">
+            <div className="typo-otros1 text-xs text-white uppercase tracking-wider font-semibold">
               // Stack &amp; Core Tecnológico
             </div>
-            <div className="flex flex-wrap gap-1.5 font-code-sm text-[11px]">
+            <div className="flex flex-wrap gap-1.5 typo-otros1 text-[11px]">
               <span className="px-2.5 py-1 bg-[#101015] border border-white/[0.06] rounded text-white">
                 PostgreSQL
               </span>
@@ -134,7 +134,7 @@ export function StitchFooter() {
             </div>
             <div className="pt-2">
               <a
-                className="inline-flex items-center gap-1.5 font-code-sm text-xs text-primary hover:text-primary-fixed"
+                className="inline-flex items-center gap-1.5 typo-botones text-xs text-primary hover:text-primary-fixed"
                 href="#agendamiento"
               >
                 <span className="material-symbols-outlined text-[14px]">
@@ -147,7 +147,7 @@ export function StitchFooter() {
         </div>
 
         {/* Bottom copyright */}
-        <div className="pt-space-md border-t border-white/[0.04] flex flex-col md:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-code-sm text-code-sm">
+        <div className="pt-space-md border-t border-white/[0.04] flex flex-col md:flex-row items-center justify-between gap-space-sm text-on-surface-variant typo-otros2 text-xs">
           <div className="flex items-center gap-space-xs">
             <span className="w-1.5 h-1.5 rounded-full bg-primary" />
             <span>

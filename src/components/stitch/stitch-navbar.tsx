@@ -33,9 +33,9 @@ export function StitchNavbar() {
                 priority
               />
             </div>
-            <span className="font-code-lg text-code-lg tracking-wider font-semibold text-white uppercase">
+            <span className="typo-titulos text-base sm:text-lg tracking-wider font-semibold text-white uppercase">
               ENACTA
-              <span className="text-primary font-code-sm text-code-sm">
+              <span className="text-primary text-xs sm:text-sm">
                 .CL
               </span>
             </span>
@@ -43,18 +43,18 @@ export function StitchNavbar() {
 
           <div className="hidden xl:flex items-center gap-space-xs px-space-sm py-1 bg-[#0a0a0d] rounded border border-white/[0.06]">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            <span className="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">
+            <span className="typo-otros1 text-label-md text-on-surface-variant uppercase tracking-wider">
               LATAM Integration Node // Chile
             </span>
           </div>
         </div>
 
-        {/* Desktop Navigation Links — 4 secciones */}
+        {/* Desktop Navigation Links — 4 secciones (Categoría: subtitulos) */}
         <nav className="hidden lg:flex items-center gap-space-md">
           {navLinks.map((link) => (
             <a
               key={link.href}
-              className="font-body-md text-body-md text-on-surface-variant hover:text-white transition-colors py-1 font-medium"
+              className="typo-subtitulos text-sm text-on-surface-variant hover:text-white transition-colors py-1 font-medium"
               href={link.href}
             >
               {link.label}
@@ -62,10 +62,10 @@ export function StitchNavbar() {
           ))}
         </nav>
 
-        {/* Action Button & Mobile Hamburger Toggle */}
+        {/* Action Button & Mobile Hamburger Toggle (Categoría: botones) */}
         <div className="flex items-center gap-2 sm:gap-3">
           <a
-            className="hidden sm:inline-flex items-center gap-space-xs px-space-md py-space-xs bg-primary text-black font-headline-md text-body-sm font-bold rounded-lg hover:bg-primary-fixed transition-colors shadow-[0_0_16px_rgba(0,229,163,0.25)]"
+            className="hidden sm:inline-flex items-center gap-space-xs px-space-md py-space-xs bg-primary text-black typo-botones text-xs sm:text-sm font-bold rounded-lg hover:bg-primary-fixed transition-colors shadow-[0_0_16px_rgba(0,229,163,0.25)]"
             href="#agendamiento"
           >
             <span className="material-symbols-outlined text-[16px]">
