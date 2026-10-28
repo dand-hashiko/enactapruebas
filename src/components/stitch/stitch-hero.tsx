@@ -25,12 +25,6 @@ export function StitchHero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* Left Column: Copy & Actions (lg:col-span-7) */}
           <div className="lg:col-span-7 space-y-6 text-left flex flex-col items-start">
-            {/* Micro-badge (Gian Media Group / Terminal style) */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-black/80 backdrop-blur-md rounded-full border border-primary/40 text-primary font-code-sm text-xs uppercase tracking-wider shadow-lg">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              <span>// ARQUITECTURA DE SOFTWARE &amp; HARDWARE EN TERRENO</span>
-            </div>
-
             {/* Responsive Display Headline */}
             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[64px] xl:text-[72px] leading-[1.08] font-heading text-white tracking-tight text-left drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]">
               Tu sitio web profesional y soporte de infraestructura,{" "}
@@ -67,22 +61,6 @@ export function StitchHero() {
                 </span>
                 <span>Agendar Reunión (Meet 45 min)</span>
               </a>
-            </div>
-
-            {/* Mini Trust Tags */}
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-2 text-xs text-white/75 font-code-sm">
-              <span className="flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-primary text-[15px]">check_circle</span>
-                Dominio .cl propio
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-primary text-[15px]">check_circle</span>
-                SLA 99.9% Uptime
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-primary text-[15px]">check_circle</span>
-                Soporte directo por WhatsApp
-              </span>
             </div>
           </div>
 
