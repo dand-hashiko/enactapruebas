@@ -86,8 +86,8 @@ export function StitchHero() {
             </div>
           </div>
 
-          {/* Right Column: 3D Smartphone Device with Live ENACTA.CL Shader (lg:col-span-5) */}
-          <div className="lg:col-span-5 flex items-center justify-center w-full">
+          {/* Right Column: 3D Smartphone Device Overlapping in Foreground (lg:col-span-5) */}
+          <div className="lg:col-span-5 flex items-center justify-center w-full relative z-30 lg:-ml-6 xl:-ml-10 lg:scale-105 xl:scale-110">
             <PhoneMockup />
           </div>
         </div>
