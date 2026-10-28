@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { SpotlightCard } from "./spotlight-card";
 
 export function StitchPricing() {
   const [isAnnual, setIsAnnual] = useState(false);
@@ -73,10 +74,10 @@ export function StitchPricing() {
           </div>
         </div>
 
-        {/* Pricing Matrix (3 Cards) */}
+        {/* Pricing Matrix with Spotlight Cards (Gian Media Group style) */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 pt-2">
           {/* CARD 1: Landing Inicial */}
-          <div className="bg-[#08080c] rounded-2xl p-6 sm:p-8 flex flex-col justify-between border border-white/[0.08] hover:border-primary/40 transition-all hover:-translate-y-1">
+          <SpotlightCard className="p-6 sm:p-8 flex flex-col justify-between">
             <div className="space-y-4">
               <div className="flex justify-between items-center">
                 <span className="font-code-sm text-xs text-primary uppercase tracking-wider font-semibold">
@@ -95,7 +96,7 @@ export function StitchPricing() {
               </p>
 
               {/* Price Container */}
-              <div className="p-4 bg-black rounded-xl border border-white/[0.06] space-y-1">
+              <div className="p-4 bg-black/90 rounded-xl border border-white/[0.06] space-y-1">
                 <div className="flex items-baseline gap-1.5">
                   <span className="text-primary text-3xl sm:text-4xl font-bold font-jetbrains-mono">
                     {prices.plan1}
@@ -163,12 +164,15 @@ export function StitchPricing() {
                 </span>
               </a>
             </div>
-          </div>
+          </SpotlightCard>
 
           {/* CARD 2: Pyme Corporativa (DESTACADA) */}
-          <div className="bg-[#0b0c12] rounded-2xl p-6 sm:p-8 flex flex-col justify-between border-2 border-primary/50 shadow-2xl shadow-[0_0_40px_rgba(0,229,163,0.14)] relative transition-all hover:-translate-y-1">
+          <SpotlightCard
+            spotlightColor="rgba(0, 229, 163, 0.25)"
+            className="p-6 sm:p-8 flex flex-col justify-between border-2 border-primary/50 shadow-2xl shadow-[0_0_40px_rgba(0,229,163,0.14)] relative"
+          >
             {/* Top badge */}
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-primary text-black font-code-sm text-xs font-bold rounded-full shadow-lg uppercase tracking-wider">
+            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-primary text-black font-code-sm text-xs font-bold rounded-full shadow-lg uppercase tracking-wider z-20">
               MÁS ELEGIDO POR EMPRESAS
             </div>
 
@@ -190,7 +194,7 @@ export function StitchPricing() {
               </p>
 
               {/* Price Container */}
-              <div className="p-4 bg-black rounded-xl border border-primary/25 space-y-1">
+              <div className="p-4 bg-black/90 rounded-xl border border-primary/25 space-y-1">
                 <div className="flex items-baseline gap-1.5">
                   <span className="text-primary text-3xl sm:text-4xl font-bold font-jetbrains-mono">
                     {prices.plan2}
@@ -258,10 +262,10 @@ export function StitchPricing() {
                 </span>
               </a>
             </div>
-          </div>
+          </SpotlightCard>
 
           {/* CARD 3: E-Commerce & Plataforma */}
-          <div className="bg-[#08080c] rounded-2xl p-6 sm:p-8 flex flex-col justify-between border border-white/[0.08] hover:border-primary/40 transition-all hover:-translate-y-1">
+          <SpotlightCard className="p-6 sm:p-8 flex flex-col justify-between">
             <div className="space-y-4">
               <div className="flex justify-between items-center">
                 <span className="font-code-sm text-xs text-primary uppercase tracking-wider font-semibold">
@@ -280,7 +284,7 @@ export function StitchPricing() {
               </p>
 
               {/* Price Container */}
-              <div className="p-4 bg-black rounded-xl border border-white/[0.06] space-y-1">
+              <div className="p-4 bg-black/90 rounded-xl border border-white/[0.06] space-y-1">
                 <div className="flex items-baseline gap-1.5">
                   <span className="text-primary text-3xl sm:text-4xl font-bold font-jetbrains-mono">
                     {prices.plan3}
@@ -348,7 +352,7 @@ export function StitchPricing() {
                 </span>
               </a>
             </div>
-          </div>
+          </SpotlightCard>
         </div>
 
         {/* Legal & Transparent Notice */}

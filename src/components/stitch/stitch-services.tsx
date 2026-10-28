@@ -1,4 +1,5 @@
 import React from "react";
+import { SpotlightCard } from "./spotlight-card";
 
 export function StitchServices() {
   return (
@@ -9,22 +10,22 @@ export function StitchServices() {
       <div className="max-w-7xl mx-auto space-y-12 relative z-10">
         <div className="space-y-3 max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#101015] rounded-full text-primary font-code-sm text-xs border border-primary/20">
-            <span>// ARQUITECTURA COMPLETA EN TERRENO</span>
+            <span>// ARQUITECTURA INTEGRAL EN TERRENO</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
-            Más que desarrollo web: Conectamos tu negocio físico al digital
+            Diseñamos el software. Desplegamos el fierro. Cero caídas.
           </h2>
           <p className="font-body-md sm:font-body-lg text-on-surface-variant leading-relaxed">
-            A diferencia de una agencia de diseño común, en Enacta montamos
+            A diferencia de una agencia digital estándar, en Enacta montamos
             computadores, certificamos cableado estructurado, configuramos switches
             industriales y programamos sistemas que no se caen cuando se corta internet.
           </p>
         </div>
 
-        {/* Services 3-Column Bento Stack */}
+        {/* Services 3-Column Spotlight Bento Stack */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Service 01 */}
-          <div className="bg-[#08080c] rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6 border border-white/[0.08] hover:border-primary/40 transition-all hover:-translate-y-1">
+          <SpotlightCard className="p-6 sm:p-8 flex flex-col justify-between space-y-6">
             <div className="space-y-4">
               <div className="h-44 w-full rounded-xl overflow-hidden bg-black relative group border border-white/[0.06]">
                 <div
@@ -47,14 +48,14 @@ export function StitchServices() {
                 Metropolitana y Macro-zona Sur.
               </p>
             </div>
-            <div className="p-3 bg-black rounded-xl font-code-sm text-xs text-on-surface-variant flex items-center justify-between border border-white/[0.04]">
+            <div className="p-3 bg-black/80 rounded-xl font-code-sm text-xs text-on-surface-variant flex items-center justify-between border border-white/[0.04]">
               <span>Infraestructura LAN &amp; Wi-Fi UniFi</span>
               <span className="text-primary font-bold">Terreno 24/7</span>
             </div>
-          </div>
+          </SpotlightCard>
 
           {/* Service 02 */}
-          <div className="bg-[#08080c] rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6 border border-white/[0.08] hover:border-primary/40 transition-all hover:-translate-y-1">
+          <SpotlightCard className="p-6 sm:p-8 flex flex-col justify-between space-y-6">
             <div className="space-y-4">
               <div className="h-44 w-full rounded-xl overflow-hidden bg-black relative group border border-white/[0.06]">
                 <div
@@ -77,14 +78,14 @@ export function StitchServices() {
                 operando 100% offline si falla el internet.
               </p>
             </div>
-            <div className="p-3 bg-black rounded-xl font-code-sm text-xs text-on-surface-variant flex items-center justify-between border border-white/[0.04]">
+            <div className="p-3 bg-black/80 rounded-xl font-code-sm text-xs text-on-surface-variant flex items-center justify-between border border-white/[0.04]">
               <span>Modo Offline Automático</span>
               <span className="text-primary font-bold">Zero Caídas</span>
             </div>
-          </div>
+          </SpotlightCard>
 
           {/* Service 03 */}
-          <div className="bg-[#08080c] rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6 border border-white/[0.08] hover:border-primary/40 transition-all hover:-translate-y-1">
+          <SpotlightCard className="p-6 sm:p-8 flex flex-col justify-between space-y-6">
             <div className="space-y-4">
               <div className="h-44 w-full rounded-xl overflow-hidden bg-black relative group border border-white/[0.06]">
                 <div
@@ -107,11 +108,11 @@ export function StitchServices() {
                 Debian para máxima eficiencia de cómputo.
               </p>
             </div>
-            <div className="p-3 bg-black rounded-xl font-code-sm text-xs text-on-surface-variant flex items-center justify-between border border-white/[0.04]">
+            <div className="p-3 bg-black/80 rounded-xl font-code-sm text-xs text-on-surface-variant flex items-center justify-between border border-white/[0.04]">
               <span>Docker + Tailscale VPN</span>
               <span className="text-primary font-bold">Seguridad Total</span>
             </div>
-          </div>
+          </SpotlightCard>
         </div>
       </div>
     </section>
