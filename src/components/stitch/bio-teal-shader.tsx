@@ -10,8 +10,8 @@ interface BioTealShaderProps {
 
 export function BioTealShader({
   id = "shader-canvas",
-  className = "w-full h-full block opacity-95",
-  speedMultiplier = 0.16,
+  className = "w-full h-full block",
+  speedMultiplier = 0.2,
 }: BioTealShaderProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -53,11 +53,13 @@ export function BioTealShader({
       }
     `;
 
+    // Dynamic Zoom & Shape-Morphing Bio-Teal Shader
     const fs = `
       precision highp float;
       uniform float u_time;
       uniform vec2 u_resolution;
       uniform vec2 u_mouse;
+      uniform float u_scroll;
       varying vec2 v_texCoord;
 
       vec3 permute(vec3 x) { return mod(((x*34.0)+1.0)*x, 289.0); }
@@ -91,40 +93,74 @@ export function BioTealShader({
 
       void main() {
           vec2 st = gl_FragCoord.xy / u_resolution.xy;
-          st.x *= u_resolution.x / u_resolution.y;
+          float aspect = u_resolution.x / u_resolution.y;
+          st.x *= aspect;
 
-          vec2 mouseNorm = (u_mouse / u_resolution) * 2.0 - 1.0;
-          st += mouseNorm * 0.05;
+          vec2 center = vec2(0.5 * aspect, 0.5);
+          vec2 p = st - center;
+          float dist = length(p);
 
           float t = u_time * ${speedMultiplier.toFixed(2)};
-          
-          vec2 q = vec2(0.);
-          q.x = snoise(st * 1.1 + vec2(t * 0.18, t * 0.12));
-          q.y = snoise(st * 1.3 + vec2(t * 0.08, -t * 0.22));
 
-          vec2 r = vec2(0.);
-          r.x = snoise(st + 1.0 * q + vec2(1.7, 9.2) + 0.14 * t);
-          r.y = snoise(st + 1.0 * q + vec2(8.3, 2.8) + 0.11 * t);
+          // 1. DYNAMIC PULSING ZOOM (Breathing camera that zooms in and out)
+          float zoom = 1.05 + 0.42 * sin(t * 0.8) + 0.16 * cos(t * 1.4);
 
-          float f = snoise(st + r + vec2(t * 0.08, t * 0.04));
-          
-          vec3 black = vec3(0.04, 0.055, 0.08); // #0A0E17 / #0F131C base
-          vec3 deepBioEmerald = vec3(0.01, 0.16, 0.12);
-          vec3 enactaBioTeal = vec3(0.0, 0.90, 0.64);   // #00E5A3
-          vec3 bioluminescentMint = vec3(0.40, 1.0, 0.88);
-          
-          float glow = clamp((f*f)*3.2, 0.0, 1.0);
-          float edge = smoothstep(0.12, 0.88, r.x);
-          
-          vec3 color = mix(black, deepBioEmerald, clamp(f * 1.6, 0.0, 1.0));
-          color = mix(color, enactaBioTeal, glow * 0.68);
-          color += bioluminescentMint * pow(clamp(edge, 0.0, 1.0), 3.0) * 0.42;
-          
-          vec2 uv = gl_FragCoord.xy / u_resolution.xy;
-          float vignette = uv.x * uv.y * (1.0 - uv.x) * (1.0 - uv.y);
-          vignette = clamp(pow(16.0 * vignette, 0.3), 0.0, 1.0);
-          
-          color *= (0.35 + 0.65 * vignette);
+          // Interactive mouse / touch interaction offset
+          vec2 m = u_mouse / u_resolution;
+          m.x *= aspect;
+          vec2 mOffset = m - center;
+          float mouseDist = length(p - mOffset);
+          float mouseWarp = exp(-mouseDist * 2.4);
+
+          // Final dynamic zoom combining breathing pulsation and interaction
+          float activeZoom = zoom * (1.0 - mouseWarp * 0.28) * (1.0 + u_scroll * 0.5);
+          vec2 pos = p * activeZoom;
+
+          // 2. SHAPE MORPHING & ROTATIONAL TWIST (Morphs shape continuously)
+          float twist = sin(t * 0.5 + dist * 2.6) * 0.38 + (mouseWarp * 0.55);
+          float cosT = cos(twist);
+          float sinT = sin(twist);
+          mat2 rot = mat2(cosT, -sinT, sinT, cosT);
+          pos = rot * pos;
+
+          vec2 uv = pos + center;
+
+          // 3. MULTI-LAYER DOMAIN WARPING (Living fluid geometry that expands & folds)
+          float morphX = sin(t * 0.45) * 0.38;
+          float morphY = cos(t * 0.38) * 0.38;
+
+          vec2 q = vec2(0.0);
+          q.x = snoise(uv * (1.2 + morphX) + vec2(t * 0.15, -t * 0.1));
+          q.y = snoise(uv * (1.4 - morphY) + vec2(-t * 0.11, t * 0.16));
+
+          vec2 r = vec2(0.0);
+          r.x = snoise(uv + 1.3 * q + vec2(1.7, 9.2) + vec2(cos(t * 0.3), sin(t * 0.25)) * 0.35);
+          r.y = snoise(uv + 1.2 * q + vec2(8.3, 2.8) + vec2(sin(t * 0.35), cos(t * 0.3)) * 0.35);
+
+          // Ridges and fluid ripples
+          float f = snoise(uv + 1.25 * r + vec2(t * 0.06, t * 0.04));
+
+          // 4. VIBRANT BIO-TEAL PALETTE (Significantly more visible and radiant)
+          vec3 deepBlack = vec3(0.005, 0.015, 0.02);       // Obsidian base
+          vec3 bioEmerald = vec3(0.01, 0.26, 0.18);        // Rich emerald
+          vec3 enactaBioTeal = vec3(0.0, 0.96, 0.68);      // #00E5A3 vibrant electric mint
+          vec3 luminescentMint = vec3(0.60, 1.0, 0.92);    // Radiant silk ridge highlights
+
+          // Glow calculation
+          float glow = clamp(pow(f * 0.5 + 0.5, 2.2) * 3.2, 0.0, 1.0);
+          float edge = smoothstep(0.04, 0.88, r.x);
+          float ridge = pow(clamp(edge, 0.0, 1.0), 2.2);
+
+          // Rich color blending
+          vec3 color = mix(deepBlack, bioEmerald, clamp(f * 1.9 + 0.35, 0.0, 1.0));
+          color = mix(color, enactaBioTeal, glow * 0.88);
+          color += luminescentMint * ridge * 0.62;
+
+          // Gentle edge vignette
+          vec2 screenUV = gl_FragCoord.xy / u_resolution.xy;
+          float vignette = screenUV.x * screenUV.y * (1.0 - screenUV.x) * (1.0 - screenUV.y);
+          vignette = clamp(pow(16.0 * vignette, 0.2), 0.0, 1.0);
+          color *= (0.50 + 0.50 * vignette);
 
           gl_FragColor = vec4(color, 1.0);
       }
@@ -166,27 +202,56 @@ export function BioTealShader({
     const uTime = gl.getUniformLocation(prog, "u_time");
     const uRes = gl.getUniformLocation(prog, "u_resolution");
     const uMouse = gl.getUniformLocation(prog, "u_mouse");
+    const uScroll = gl.getUniformLocation(prog, "u_scroll");
 
-    const mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+    const targetMouse = { x: canvas.width / 2, y: canvas.height / 2 };
+    const currentMouse = { x: canvas.width / 2, y: canvas.height / 2 };
+    let currentScroll = 0;
+    let targetScroll = 0;
 
-    const handleMouseMove = (event: MouseEvent) => {
+    const handlePointerMove = (clientX: number, clientY: number) => {
       const rect = canvas.getBoundingClientRect();
       if (rect.width && rect.height) {
-        const nx = (event.clientX - rect.left) / rect.width;
-        const ny = 1.0 - (event.clientY - rect.top) / rect.height;
-        mouse.x = nx * canvas.width;
-        mouse.y = ny * canvas.height;
+        const nx = (clientX - rect.left) / rect.width;
+        const ny = 1.0 - (clientY - rect.top) / rect.height;
+        targetMouse.x = nx * canvas.width;
+        targetMouse.y = ny * canvas.height;
       }
     };
 
+    const handleMouseMove = (e: MouseEvent) => {
+      handlePointerMove(e.clientX, e.clientY);
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        handlePointerMove(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    };
+
+    const handleScroll = () => {
+      const maxScroll = window.innerHeight || 800;
+      targetScroll = Math.min(1.0, window.scrollY / maxScroll);
+    };
+
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     const render = (t: number) => {
       if (!gl || !canvas) return;
+
+      // Smooth lerp for mouse and scroll
+      currentMouse.x += (targetMouse.x - currentMouse.x) * 0.08;
+      currentMouse.y += (targetMouse.y - currentMouse.y) * 0.08;
+      currentScroll += (targetScroll - currentScroll) * 0.08;
+
       gl.viewport(0, 0, canvas.width, canvas.height);
       if (uTime) gl.uniform1f(uTime, t * 0.001);
       if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
-      if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+      if (uMouse) gl.uniform2f(uMouse, currentMouse.x, currentMouse.y);
+      if (uScroll) gl.uniform1f(uScroll, currentScroll);
+
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
       animationFrameId = requestAnimationFrame(render);
     };
@@ -196,6 +261,8 @@ export function BioTealShader({
     return () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("scroll", handleScroll);
       if (resizeObserver) resizeObserver.disconnect();
     };
   }, [speedMultiplier]);
