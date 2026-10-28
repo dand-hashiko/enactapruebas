@@ -109,14 +109,14 @@ export function StitchHero() {
 
           {/* Métrica 4 */}
           <div className="p-4 rounded-xl bg-black/70 backdrop-blur-md border border-white/[0.08] space-y-1 hover:border-primary/30 transition-colors">
-            <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary font-jetbrains-mono tracking-tight drop-shadow-sm">
-              0 Amarres
+            <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-[40px] font-bold text-primary font-jetbrains-mono tracking-tight drop-shadow-sm leading-tight">
+              0 Preocupaciones
             </div>
             <div className="text-xs sm:text-sm text-white font-semibold">
-              Propiedad 100% de tu Empresa
+              Contratos a la medida
             </div>
             <div className="text-[11px] sm:text-xs text-white/70 font-code-sm">
-              Dominio .cl y código siempre tuyos
+              Siempre personalizados
             </div>
           </div>
         </div>
