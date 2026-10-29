@@ -205,11 +205,11 @@ export function StitchBooking() {
                           setFormData({ ...formData, service: e.target.value })
                         }
                       >
-                        <option value="plan-landing">Plan 01 // Landing Inicial ($19.990/mes)</option>
-                        <option value="plan-pyme">Plan 02 // Pyme Corporativa ($29.990/mes)</option>
-                        <option value="plan-ecommerce">Plan 03 // E-Commerce ($49.990/mes)</option>
-                        <option value="fierro-terreno">Terreno // Cableado, Servidores &amp; Redes</option>
-                        <option value="software-pos">Software // POS &amp; Bodega Offline</option>
+                        <option value="plan-landing">Plan 01 — Landing Inicial ($19.990/mes)</option>
+                        <option value="plan-pyme">Plan 02 — Pyme Corporativa ($29.990/mes)</option>
+                        <option value="plan-ecommerce">Plan 03 — E-Commerce ($49.990/mes)</option>
+                        <option value="fierro-terreno">Terreno — Cableado, Servidores &amp; Redes</option>
+                        <option value="software-pos">Software — POS &amp; Bodega Offline</option>
                       </select>
                     </div>
                   </div>

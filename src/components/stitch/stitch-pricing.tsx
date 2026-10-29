@@ -20,10 +20,6 @@ export function StitchPricing() {
       <div className="max-w-7xl mx-auto space-y-12 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="typo-otros1 inline-flex items-center gap-2 px-3 py-1 bg-[#101015] rounded-full text-primary text-xs border border-primary/20">
-            <span className="material-symbols-outlined text-[14px]">tune</span>
-            <span>// PLANES MENSUALES CON MANTENCIÓN PROACTIVA</span>
-          </div>
           <h2 className="typo-titulos text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight">
             Tu presencia digital sin pagar fortunas por adelantado
           </h2>
@@ -81,7 +77,7 @@ export function StitchPricing() {
             <div className="space-y-4">
               <div className="flex justify-between items-center">
                 <span className="typo-otros1 text-xs text-primary uppercase tracking-wider font-semibold">
-                  // PLAN 01
+                  PLAN 01
                 </span>
                 <span className="typo-otros1 text-xs px-2.5 py-0.5 bg-[#14141c] rounded text-on-surface-variant border border-white/[0.04]">
                   5 días hábiles
@@ -179,7 +175,7 @@ export function StitchPricing() {
             <div className="space-y-4 pt-1">
               <div className="flex justify-between items-center">
                 <span className="typo-otros1 text-xs text-primary uppercase tracking-wider font-semibold">
-                  // PLAN 02
+                  PLAN 02
                 </span>
                 <span className="typo-otros1 text-xs px-2.5 py-0.5 bg-primary/10 text-primary rounded border border-primary/20">
                   10 días hábiles
@@ -269,7 +265,7 @@ export function StitchPricing() {
             <div className="space-y-4">
               <div className="flex justify-between items-center">
                 <span className="typo-otros1 text-xs text-primary uppercase tracking-wider font-semibold">
-                  // PLAN 03
+                  PLAN 03
                 </span>
                 <span className="typo-otros1 text-xs px-2.5 py-0.5 bg-[#14141c] rounded text-on-surface-variant border border-white/[0.04]">
                   15 días hábiles
@@ -356,11 +352,11 @@ export function StitchPricing() {
         </div>
 
         {/* Legal & Transparent Notice */}
-        <div className="p-4 bg-[#0a0a0d] rounded-xl text-center text-xs sm:text-sm text-on-surface-variant flex flex-col md:flex-row items-center justify-center gap-2 border border-white/[0.06]">
+        <div className="text-center text-xs sm:text-sm text-on-surface-variant/80 flex flex-col md:flex-row items-center justify-center gap-2 pt-4">
           <span className="material-symbols-outlined text-primary text-[18px]">
             verified_user
           </span>
-          <span>
+          <span className="typo-otros2">
             Valores netos + IVA en caso de requerir factura. Sin cláusulas de amarre:
             el dominio y el código siempre son 100% de tu propiedad.
           </span>

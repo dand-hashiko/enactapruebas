@@ -40,13 +40,6 @@ export function StitchNavbar() {
               </span>
             </span>
           </a>
-
-          <div className="hidden xl:flex items-center gap-space-xs px-space-sm py-1 bg-[#0a0a0d] rounded border border-white/[0.06]">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            <span className="typo-otros1 text-label-md text-on-surface-variant uppercase tracking-wider">
-              LATAM Integration Node // Chile
-            </span>
-          </div>
         </div>
 
         {/* Desktop Navigation Links — 4 secciones (Categoría: subtitulos) */}

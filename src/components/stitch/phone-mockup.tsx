@@ -127,8 +127,8 @@ export function PhoneMockup() {
             {/* Metric Preview Card */}
             <div className="w-full bg-black/80 backdrop-blur-md p-2.5 rounded-xl border border-white/[0.12] text-left space-y-1 shadow-lg">
               <div className="flex justify-between items-center text-[10px]">
-                <span className="text-on-surface-variant font-code-sm">
-                  // DISPONIBILIDAD
+                <span className="text-on-surface-variant font-code-sm uppercase tracking-wider text-[9px]">
+                  Disponibilidad
                 </span>
                 <span className="text-primary font-bold font-jetbrains-mono">
                   99.9% SLA

@@ -9,9 +9,6 @@ export function StitchServices() {
     >
       <div className="max-w-7xl mx-auto space-y-12 relative z-10">
         <div className="space-y-3 max-w-3xl">
-          <div className="typo-otros1 inline-flex items-center gap-2 px-3 py-1 bg-[#101015] rounded-full text-primary text-xs border border-primary/20">
-            <span>// ARQUITECTURA INTEGRAL EN TERRENO</span>
-          </div>
           <h2 className="typo-titulos text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight">
             Diseñamos el software. Desplegamos el fierro. Cero caídas.
           </h2>
@@ -34,8 +31,8 @@ export function StitchServices() {
                     backgroundImage: "url('/images/service-telecom-rack.jpg')",
                   }}
                 />
-                <span className="typo-otros1 absolute top-3 left-3 px-2.5 py-1 bg-black/90 text-xs text-primary rounded-lg backdrop-blur-md border border-primary/30">
-                  01 // TERRENO &amp; REDES
+                <span className="typo-otros1 absolute top-3 left-3 px-2 py-0.5 bg-black/80 text-xs text-primary rounded-md backdrop-blur-md border border-white/[0.1] font-bold">
+                  01
                 </span>
               </div>
               <h3 className="typo-titulos text-xl text-white">
@@ -64,8 +61,8 @@ export function StitchServices() {
                     backgroundImage: "url('/images/service-pos-terminal.jpg')",
                   }}
                 />
-                <span className="typo-otros1 absolute top-3 left-3 px-2.5 py-1 bg-black/90 text-xs text-primary rounded-lg backdrop-blur-md border border-primary/30">
-                  02 // POS &amp; BODEGA
+                <span className="typo-otros1 absolute top-3 left-3 px-2 py-0.5 bg-black/80 text-xs text-primary rounded-md backdrop-blur-md border border-white/[0.1] font-bold">
+                  02
                 </span>
               </div>
               <h3 className="typo-titulos text-xl text-white">
@@ -94,8 +91,8 @@ export function StitchServices() {
                     backgroundImage: "url('/images/service-dedicated-server.jpg')",
                   }}
                 />
-                <span className="typo-otros1 absolute top-3 left-3 px-2.5 py-1 bg-black/90 text-xs text-primary rounded-lg backdrop-blur-md border border-primary/30">
-                  03 // DEDICATED CLOUD
+                <span className="typo-otros1 absolute top-3 left-3 px-2 py-0.5 bg-black/80 text-xs text-primary rounded-md backdrop-blur-md border border-white/[0.1] font-bold">
+                  03
                 </span>
               </div>
               <h3 className="typo-titulos text-xl text-white">

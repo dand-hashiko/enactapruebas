@@ -112,12 +112,6 @@ export function AccentureScrollShowcase() {
 function TeamTextContent() {
   return (
     <>
-      {/* Micro-label (Categoría: otros1) */}
-      <div className="typo-otros1 inline-flex items-center gap-2 px-3 py-1 bg-[#101015] rounded-full border border-primary/30 text-primary text-xs uppercase tracking-wider w-fit">
-        <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-        <span>// LIDERAZGO &amp; EQUIPO HUMANO</span>
-      </div>
-
       {/* Main Headline (Categoría: titulos) */}
       <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] text-white leading-[1.12] tracking-tight">
         Arquitectura de sistemas en el{" "}

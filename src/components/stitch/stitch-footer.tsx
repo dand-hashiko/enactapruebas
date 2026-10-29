@@ -36,7 +36,7 @@ export function StitchFooter() {
           {/* Col 2 */}
           <div className="space-y-3">
             <div className="typo-otros1 text-xs text-white uppercase tracking-wider font-semibold">
-              // Nodos Operativos
+              Nodos Operativos
             </div>
             <div className="space-y-2 typo-otros2 text-xs">
               <div className="p-3 bg-[#0a0a0e] rounded-xl border border-white/[0.04]">
@@ -44,7 +44,7 @@ export function StitchFooter() {
                   Nodo Central: Santiago de Chile
                 </div>
                 <div className="text-on-surface-variant typo-otros1 text-[11px] mt-0.5">
-                  Providencia / Las Condes // Región Metropolitana
+                  Providencia / Las Condes — Región Metropolitana
                 </div>
               </div>
               <div className="p-3 bg-[#0a0a0e] rounded-xl border border-white/[0.04]">
@@ -61,7 +61,7 @@ export function StitchFooter() {
           {/* Col 3 */}
           <div className="space-y-3">
             <div className="typo-otros1 text-xs text-white uppercase tracking-wider font-semibold">
-              // Contacto Directo &amp; Liderazgo
+              Contacto Directo &amp; Liderazgo
             </div>
             <div className="space-y-2 typo-otros2 text-xs">
               <div className="flex flex-col">
@@ -104,7 +104,7 @@ export function StitchFooter() {
           {/* Col 4 */}
           <div className="space-y-3">
             <div className="typo-otros1 text-xs text-white uppercase tracking-wider font-semibold">
-              // Stack &amp; Core Tecnológico
+              Stack &amp; Core Tecnológico
             </div>
             <div className="flex flex-wrap gap-1.5 typo-otros1 text-[11px]">
               <span className="px-2.5 py-1 bg-[#101015] border border-white/[0.06] rounded text-white">
@@ -151,7 +151,7 @@ export function StitchFooter() {
           <div className="flex items-center gap-space-xs">
             <span className="w-1.5 h-1.5 rounded-full bg-primary" />
             <span>
-              © {new Date().getFullYear()} ENACTA INGENIERÍA SpA. enacta.cl // Todos los derechos
+              © {new Date().getFullYear()} ENACTA INGENIERÍA SpA. enacta.cl — Todos los derechos
               reservados.
             </span>
           </div>
