@@ -102,7 +102,7 @@ export function StitchPricing() {
               <span className="w-2 h-2 rounded-full bg-primary" />
               <span>SOLUCIONES DE INGENIERÍA EN PRODUCCIÓN</span>
             </div>
-            <h2 className="typo-titulos text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight">
+            <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-5xl text-white tracking-tight">
               Respuestas de ingeniería para desafíos críticos de negocio
             </h2>
             <p className="typo-subtitulos text-sm sm:text-base text-on-surface-variant leading-relaxed">
@@ -162,8 +162,8 @@ export function StitchPricing() {
                       : "opacity-100 translate-y-0 scale-100"
                   }`}
                 >
-                  {/* Top: Category & Question */}
-                  <div className="space-y-4">
+                  {/* Top: Category & Question (Tipografía refinada y legible) */}
+                  <div className="space-y-3.5">
                     <div className="flex items-center justify-between">
                       <span className="typo-otros1 text-[11px] font-bold tracking-widest text-white/60 uppercase">
                         {card.category}
@@ -174,7 +174,7 @@ export function StitchPricing() {
                       />
                     </div>
 
-                    <h3 className="typo-titulos text-xl sm:text-[22px] text-white leading-tight tracking-tight">
+                    <h3 className="text-base sm:text-[17px] font-sans font-bold text-white leading-snug tracking-tight">
                       {card.question}
                     </h3>
                   </div>
@@ -195,10 +195,7 @@ export function StitchPricing() {
                       Ver respuesta técnica
                     </span>
                     <div
-                      className="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center text-white/70 group-hover:border-white/50 group-hover:text-white transition-all shadow-sm"
-                      style={{
-                        borderColor: undefined,
-                      }}
+                      className="w-8 h-8 rounded-full border border-white/20 bg-white/[0.04] flex items-center justify-center text-white/80 group-hover:border-white/50 group-hover:text-white transition-all shadow-sm"
                     >
                       <span className="material-symbols-outlined text-[18px]">
                         add
@@ -241,19 +238,19 @@ export function StitchPricing() {
                   </div>
 
                   {/* Middle Content: Question Headline & Complete Answer Description */}
-                  <div className="space-y-4 my-auto overflow-y-auto pr-1 scrollbar-none">
-                    <h4 className="typo-titulos text-base sm:text-lg text-white font-semibold leading-snug">
+                  <div className="space-y-3.5 my-auto overflow-y-auto pr-1 scrollbar-none">
+                    <h4 className="text-sm sm:text-[15px] font-sans font-bold text-white leading-snug">
                       {card.question}
                     </h4>
 
-                    <p className="typo-otros2 text-sm text-white/85 leading-relaxed pl-3.5 border-l-2"
+                    <p className="typo-otros2 text-xs sm:text-sm text-white/85 leading-relaxed pl-3.5 border-l-2"
                       style={{ borderColor: card.themeColor }}
                     >
                       {card.answer}
                     </p>
                   </div>
 
-                  {/* Bottom Action Footer: Direct CTA Button to Booking */}
+                  {/* Bottom Action Footer: Direct CTA Button & Identical Bottom-Right Close Toggle */}
                   <div className="pt-4 border-t border-white/[0.08] flex items-center justify-between">
                     <a
                       href="#agendamiento"
@@ -266,10 +263,20 @@ export function StitchPricing() {
                       </span>
                     </a>
 
-                    <span
-                      className="w-2 h-2 rounded-full animate-pulse"
-                      style={{ backgroundColor: card.themeColor }}
-                    />
+                    {/* Botón de cierre en la misma posición inferior derecha para que el ícono no desaparezca bajo el dedo */}
+                    <button
+                      type="button"
+                      aria-label="Cerrar respuesta"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveCard(null);
+                      }}
+                      className="w-8 h-8 rounded-full bg-white/[0.12] hover:bg-white/[0.22] flex items-center justify-center text-white transition-all cursor-pointer border border-white/20 shadow-sm hover:scale-105"
+                    >
+                      <span className="material-symbols-outlined text-[18px]">
+                        close
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>

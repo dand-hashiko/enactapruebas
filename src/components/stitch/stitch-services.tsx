@@ -1,31 +1,70 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useState } from "react";
 import { SpotlightCard } from "./spotlight-card";
 
 export function StitchServices() {
+  const carouselRef = useRef<HTMLDivElement | null>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  const handleScroll = () => {
+    if (!carouselRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+    const maxScroll = scrollWidth - clientWidth;
+    if (maxScroll > 0) {
+      setScrollProgress(Math.min(1, Math.max(0, scrollLeft / maxScroll)));
+    }
+  };
+
+  const scrollToIndex = (index: number) => {
+    if (!carouselRef.current) return;
+    const cardWidth = carouselRef.current.clientWidth * 0.88;
+    carouselRef.current.scrollTo({
+      left: index * cardWidth,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section
       className="relative w-full px-4 sm:px-6 lg:px-12 py-20 sm:py-28 bg-black overflow-hidden border-b border-white/[0.08]"
       id="servicios"
     >
-      <div className="max-w-7xl mx-auto space-y-12 relative z-10">
+      <div className="max-w-7xl mx-auto space-y-10 sm:space-y-12 relative z-10">
         {/* Section Header */}
-        <div className="space-y-3 max-w-3xl">
-          <h2 className="typo-titulos text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight">
-            Diseñamos el software. Desplegamos el fierro. Cero caídas.
-          </h2>
-          <p className="typo-subtitulos text-sm sm:text-base text-on-surface-variant leading-relaxed">
-            A diferencia de una agencia digital estándar, en Enacta montamos
-            computadores, certificamos cableado estructurado, configuramos switches
-            industriales y programamos sistemas que no se caen cuando se corta internet.
-          </p>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div className="space-y-3 max-w-3xl">
+            <div className="typo-otros1 text-xs text-primary font-bold tracking-widest uppercase flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-primary" />
+              <span>SERVICIOS DE INGENIERÍA EN TERRENO</span>
+            </div>
+            <h2 className="typo-titulos text-2xl sm:text-4xl lg:text-5xl text-white tracking-tight">
+              Diseñamos el software. Desplegamos el fierro. Cero caídas.
+            </h2>
+            <p className="typo-subtitulos text-sm sm:text-base text-on-surface-variant leading-relaxed">
+              A diferencia de una agencia digital estándar, en Enacta montamos
+              computadores, certificamos cableado estructurado, configuramos switches
+              industriales y programamos sistemas que no se caen cuando se corta internet.
+            </p>
+          </div>
+
+          {/* Mobile swipe helper text */}
+          <div className="lg:hidden flex items-center gap-2 text-xs text-on-surface-variant font-mono">
+            <span className="material-symbols-outlined text-[16px] text-primary animate-pulse">
+              swipe
+            </span>
+            <span>Desliza en carrusel</span>
+          </div>
         </div>
 
-        {/* Asymmetric Bento Grid (Awwwards 2026 Standard) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          {/* BENTO CARD 1 (Featured: ERP & POS) - Spans 7 columns on Desktop */}
-          <SpotlightCard className="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-[#0a0a0f] border border-white/[0.08] rounded-2xl relative overflow-hidden group">
+        {/* Responsive Container: Carrusel horizontal con snap en móvil / Bento Grid en Desktop */}
+        <div
+          ref={carouselRef}
+          onScroll={handleScroll}
+          className="max-lg:flex max-lg:overflow-x-auto max-lg:snap-x max-lg:snap-mandatory max-lg:gap-5 max-lg:pb-4 max-lg:scrollbar-none max-lg:px-1 lg:grid lg:grid-cols-12 lg:gap-6"
+        >
+          {/* BENTO CARD 1 (Featured: ERP & POS) */}
+          <SpotlightCard className="max-lg:w-[88vw] max-lg:max-w-[440px] max-lg:flex-shrink-0 max-lg:snap-center lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-[#0a0a0f] border border-white/[0.08] rounded-2xl relative overflow-hidden group">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <span className="typo-otros1 text-xs text-primary font-bold tracking-wider">
@@ -36,7 +75,7 @@ export function StitchServices() {
                 </span>
               </div>
 
-              <h3 className="typo-titulos text-xl sm:text-2xl text-white">
+              <h3 className="typo-titulos text-lg sm:text-xl lg:text-2xl text-white">
                 Sistemas ERP &amp; Puntos de Venta (POS)
               </h3>
               <p className="typo-otros2 text-sm text-on-surface-variant leading-relaxed max-w-xl">
@@ -94,8 +133,8 @@ export function StitchServices() {
             </div>
           </SpotlightCard>
 
-          {/* BENTO CARD 2 (Web & E-Commerce) - Spans 5 columns on Desktop */}
-          <SpotlightCard className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-[#0a0a0f] border border-white/[0.08] rounded-2xl relative overflow-hidden group">
+          {/* BENTO CARD 2 (Web & E-Commerce) */}
+          <SpotlightCard className="max-lg:w-[88vw] max-lg:max-w-[440px] max-lg:flex-shrink-0 max-lg:snap-center lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-[#0a0a0f] border border-white/[0.08] rounded-2xl relative overflow-hidden group">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <span className="typo-otros1 text-xs text-primary font-bold tracking-wider">
@@ -106,7 +145,7 @@ export function StitchServices() {
                 </span>
               </div>
 
-              <h3 className="typo-titulos text-xl sm:text-2xl text-white">
+              <h3 className="typo-titulos text-lg sm:text-xl lg:text-2xl text-white">
                 Desarrollo Web &amp; E-Commerce
               </h3>
               <p className="typo-otros2 text-sm text-on-surface-variant leading-relaxed">
@@ -144,8 +183,8 @@ export function StitchServices() {
             </div>
           </SpotlightCard>
 
-          {/* BENTO CARD 3 (Hardware & Redes en Terreno) - Spans 5 columns on Desktop */}
-          <SpotlightCard className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-[#0a0a0f] border border-white/[0.08] rounded-2xl relative overflow-hidden group">
+          {/* BENTO CARD 3 (Hardware & Redes en Terreno) */}
+          <SpotlightCard className="max-lg:w-[88vw] max-lg:max-w-[440px] max-lg:flex-shrink-0 max-lg:snap-center lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-[#0a0a0f] border border-white/[0.08] rounded-2xl relative overflow-hidden group">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <span className="typo-otros1 text-xs text-primary font-bold tracking-wider">
@@ -156,7 +195,7 @@ export function StitchServices() {
                 </span>
               </div>
 
-              <h3 className="typo-titulos text-xl sm:text-2xl text-white">
+              <h3 className="typo-titulos text-lg sm:text-xl lg:text-2xl text-white">
                 Fierro, Cableado &amp; Infraestructura
               </h3>
               <p className="typo-otros2 text-sm text-on-surface-variant leading-relaxed">
@@ -192,8 +231,8 @@ export function StitchServices() {
             </div>
           </SpotlightCard>
 
-          {/* BENTO CARD 4 (Dedicated Servers & PostgreSQL) - Spans 7 columns on Desktop */}
-          <SpotlightCard className="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-[#0a0a0f] border border-white/[0.08] rounded-2xl relative overflow-hidden group">
+          {/* BENTO CARD 4 (Dedicated Servers & PostgreSQL) */}
+          <SpotlightCard className="max-lg:w-[88vw] max-lg:max-w-[440px] max-lg:flex-shrink-0 max-lg:snap-center lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-[#0a0a0f] border border-white/[0.08] rounded-2xl relative overflow-hidden group">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <span className="typo-otros1 text-xs text-primary font-bold tracking-wider">
@@ -204,7 +243,7 @@ export function StitchServices() {
                 </span>
               </div>
 
-              <h3 className="typo-titulos text-xl sm:text-2xl text-white">
+              <h3 className="typo-titulos text-lg sm:text-xl lg:text-2xl text-white">
                 Servidores Dedicados &amp; Bases de Datos
               </h3>
               <p className="typo-otros2 text-sm text-on-surface-variant leading-relaxed max-w-xl">
@@ -241,6 +280,40 @@ export function StitchServices() {
               <span className="typo-otros1 text-primary font-semibold">Zero Amarres</span>
             </div>
           </SpotlightCard>
+        </div>
+
+        {/* Mobile Carrusel Progress Bar (Estilo exacto Accenture) */}
+        <div className="lg:hidden flex flex-col items-center justify-center gap-3 pt-2">
+          {/* Track Bar with Sliding Indicator */}
+          <div className="w-40 sm:w-52 h-1 bg-white/10 rounded-full relative overflow-hidden">
+            <div
+              className="h-full bg-white rounded-full transition-transform duration-200"
+              style={{
+                width: "25%",
+                transform: `translateX(${scrollProgress * 300}%)`,
+              }}
+            />
+          </div>
+
+          {/* Step Pill Selectors for fast tapping */}
+          <div className="flex items-center gap-2">
+            {[0, 1, 2, 3].map((i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => scrollToIndex(i)}
+                aria-label={`Ver servicio 0${i + 1}`}
+                className="h-1.5 rounded-full transition-all duration-300"
+                style={{
+                  backgroundColor:
+                    Math.round(scrollProgress * 3) === i
+                      ? "#00e5a3"
+                      : "rgba(255,255,255,0.2)",
+                  width: Math.round(scrollProgress * 3) === i ? "20px" : "10px",
+                }}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
