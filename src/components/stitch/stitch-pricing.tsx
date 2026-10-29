@@ -73,7 +73,7 @@ export function StitchPricing() {
         {/* Pricing Matrix with Spotlight Cards (Gian Media Group style) */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 pt-2">
           {/* CARD 1: Landing Inicial */}
-          <SpotlightCard className="p-6 sm:p-8 flex flex-col justify-between">
+          <SpotlightCard className="p-6 sm:p-8 flex flex-col justify-between bg-[#09090e] border border-white/[0.08] rounded-2xl">
             <div className="space-y-4">
               <div className="flex justify-between items-center">
                 <span className="typo-otros1 text-xs text-primary uppercase tracking-wider font-semibold">
@@ -84,17 +84,17 @@ export function StitchPricing() {
                 </span>
               </div>
               <h3 className="typo-titulos text-xl sm:text-2xl text-white">
-                Landing Inicial / Emprendedor
+                Landing Inicial
               </h3>
               <p className="typo-subtitulos text-sm text-on-surface-variant leading-relaxed">
-                Ideal para profesionales independientes, consultores y pymes
-                que necesitan capturar clientes por WhatsApp hoy.
+                Ideal para profesionales independientes y pymes que necesitan captar clientes por
+                WhatsApp con velocidad inmediata.
               </p>
 
               {/* Price Container */}
               <div className="p-4 bg-black/90 rounded-xl border border-white/[0.06] space-y-1">
                 <div className="flex items-baseline gap-1.5">
-                  <span className="typo-otros1 text-primary text-3xl sm:text-4xl font-bold">
+                  <span className="typo-otros1 text-primary text-3xl sm:text-4xl font-bold font-mono">
                     {prices.plan1}
                   </span>
                   <span className="typo-otros2 text-xs text-on-surface-variant">
@@ -102,11 +102,11 @@ export function StitchPricing() {
                   </span>
                 </div>
                 <div className="typo-otros2 text-[11px] text-on-surface-variant">
-                  {isAnnual ? "Facturado anualmente ($166.500/año)" : "o desde $29.990 inicial llave en mano"}
+                  {isAnnual ? "Facturado anualmente ($166.500/año)" : "Dominio .cl y hosting incluidos"}
                 </div>
               </div>
 
-              {/* Features List (Categoría: otros2) */}
+              {/* Features List (5 bullet points ultra-escaneables) */}
               <ul className="typo-otros2 space-y-2.5 text-sm text-white pt-2">
                 <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
@@ -118,13 +118,7 @@ export function StitchPricing() {
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     check_circle
                   </span>
-                  <span><strong>Dominio .cl propio incluido</strong> y configurado</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
-                    check_circle
-                  </span>
-                  <span>Hosting ultrarrápido con <strong>Certificado SSL</strong> bancario</span>
+                  <span><strong>Dominio .cl y hosting SSL bancario</strong> incluidos</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
@@ -136,13 +130,13 @@ export function StitchPricing() {
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     check_circle
                   </span>
-                  <span>SEO técnico base para indexación en Google</span>
+                  <span>SEO técnico optimizado para Google Chile</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     check_circle
                   </span>
-                  <span><strong>45 minutos/mes</strong> de soporte y cambios menores</span>
+                  <span><strong>45 minutos/mes</strong> de soporte técnico y cambios</span>
                 </li>
               </ul>
             </div>
@@ -165,10 +159,10 @@ export function StitchPricing() {
           {/* CARD 2: Pyme Corporativa (DESTACADA) */}
           <SpotlightCard
             spotlightColor="rgba(0, 229, 163, 0.25)"
-            className="p-6 sm:p-8 flex flex-col justify-between border-2 border-primary/50 shadow-2xl shadow-[0_0_40px_rgba(0,229,163,0.14)] relative"
+            className="p-6 sm:p-8 flex flex-col justify-between bg-[#0a0c12] border-2 border-primary/50 shadow-2xl shadow-[0_0_40px_rgba(0,229,163,0.14)] relative rounded-2xl"
           >
             {/* Top badge */}
-            <div className="typo-otros1 absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-primary text-black text-xs font-bold rounded-full shadow-lg uppercase tracking-wider z-20">
+            <div className="typo-otros1 absolute -top-3.5 left-1/2 -translate-x-1/2 px-3.5 py-0.5 bg-primary text-black text-xs font-bold rounded-full shadow-lg uppercase tracking-wider z-20">
               MÁS ELEGIDO POR EMPRESAS
             </div>
 
@@ -182,17 +176,17 @@ export function StitchPricing() {
                 </span>
               </div>
               <h3 className="typo-titulos text-xl sm:text-2xl text-white">
-                Pyme Corporativa &amp; Catálogo
+                Pyme Corporativa
               </h3>
               <p className="typo-subtitulos text-sm text-on-surface-variant leading-relaxed">
-                Diseñado para empresas de servicios, constructoras, maestranzas o
-                consultoras que requieren credibilidad absoluta y catálogo interactivo.
+                Diseñado para empresas de servicios, constructoras o consultoras que requieren
+                credibilidad absoluta y catálogo interactivo.
               </p>
 
               {/* Price Container */}
               <div className="p-4 bg-black/90 rounded-xl border border-primary/25 space-y-1">
                 <div className="flex items-baseline gap-1.5">
-                  <span className="typo-otros1 text-primary text-3xl sm:text-4xl font-bold">
+                  <span className="typo-otros1 text-primary text-3xl sm:text-4xl font-bold font-mono">
                     {prices.plan2}
                   </span>
                   <span className="typo-otros2 text-xs text-on-surface-variant">
@@ -200,23 +194,17 @@ export function StitchPricing() {
                   </span>
                 </div>
                 <div className="typo-otros2 text-[11px] text-primary">
-                  {isAnnual ? "Facturado anualmente ($249.900/año)" : "Todo lo del Plan Inicial y soporte ampliado"}
+                  {isAnnual ? "Facturado anualmente ($249.900/año)" : "Incluye correos corporativos dedicados"}
                 </div>
               </div>
 
-              {/* Features List (Categoría: otros2) */}
+              {/* Features List (5 bullet points ultra-escaneables) */}
               <ul className="typo-otros2 space-y-2.5 text-sm text-white pt-2">
                 <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     verified
                   </span>
-                  <span><strong>Hasta 5 páginas completas</strong> (Inicio, Nosotros, Servicios, etc.)</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
-                    verified
-                  </span>
-                  <span><strong>Catálogo interactivo</strong> de productos o servicios</span>
+                  <span><strong>Hasta 5 páginas completas</strong> con catálogo interactivo</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
@@ -240,7 +228,7 @@ export function StitchPricing() {
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
                     verified
                   </span>
-                  <span><strong>2 horas al mes</strong> de soporte técnico y cambios</span>
+                  <span><strong>2 horas al mes</strong> de soporte técnico directo</span>
                 </li>
               </ul>
             </div>
@@ -261,7 +249,7 @@ export function StitchPricing() {
           </SpotlightCard>
 
           {/* CARD 3: E-Commerce & Plataforma */}
-          <SpotlightCard className="p-6 sm:p-8 flex flex-col justify-between">
+          <SpotlightCard className="p-6 sm:p-8 flex flex-col justify-between bg-[#09090e] border border-white/[0.08] rounded-2xl">
             <div className="space-y-4">
               <div className="flex justify-between items-center">
                 <span className="typo-otros1 text-xs text-primary uppercase tracking-wider font-semibold">
@@ -272,17 +260,17 @@ export function StitchPricing() {
                 </span>
               </div>
               <h3 className="typo-titulos text-xl sm:text-2xl text-white">
-                E-Commerce &amp; Plataforma
+                E-Commerce &amp; Pagos
               </h3>
               <p className="typo-subtitulos text-sm text-on-surface-variant leading-relaxed">
-                Comercio online de alta velocidad integrado a pasarelas de pago
-                chilenas (Webpay / Transbank) y listo para sincronizar bodega.
+                Comercio online de alta velocidad integrado a pasarelas de pago chilenas
+                (Webpay / Transbank) y listo para sincronizar bodega.
               </p>
 
               {/* Price Container */}
               <div className="p-4 bg-black/90 rounded-xl border border-white/[0.06] space-y-1">
                 <div className="flex items-baseline gap-1.5">
-                  <span className="typo-otros1 text-primary text-3xl sm:text-4xl font-bold">
+                  <span className="typo-otros1 text-primary text-3xl sm:text-4xl font-bold font-mono">
                     {prices.plan3}
                   </span>
                   <span className="typo-otros2 text-xs text-on-surface-variant">
@@ -290,11 +278,11 @@ export function StitchPricing() {
                   </span>
                 </div>
                 <div className="typo-otros2 text-[11px] text-on-surface-variant">
-                  {isAnnual ? "Facturado anualmente ($416.500/año)" : "Tienda con Webpay y stock sincronizado"}
+                  {isAnnual ? "Facturado anualmente ($416.500/año)" : "Webpay Plus y stock sincronizado"}
                 </div>
               </div>
 
-              {/* Features List (Categoría: otros2) */}
+              {/* Features List (5 bullet points ultra-escaneables) */}
               <ul className="typo-otros2 space-y-2.5 text-sm text-white pt-2">
                 <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
@@ -319,12 +307,6 @@ export function StitchPricing() {
                     check_circle
                   </span>
                   <span>Sincronización con <strong>software de stock y boletas</strong></span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="material-symbols-outlined text-primary text-[18px] shrink-0">
-                    check_circle
-                  </span>
-                  <span><strong>5 correos corporativos</strong> dedicados</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="material-symbols-outlined text-primary text-[18px] shrink-0">

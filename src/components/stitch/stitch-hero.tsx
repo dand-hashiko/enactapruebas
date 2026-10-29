@@ -2,7 +2,6 @@ import React from "react";
 import { BioTealShader } from "./bio-teal-shader";
 import { PhoneMockup } from "./phone-mockup";
 import { HeroTextView } from "./hero-text-view";
-import { EcosystemFlow } from "./ecosystem-flow";
 
 export function StitchHero() {
   return (
@@ -23,23 +22,20 @@ export function StitchHero() {
 
       {/* Hero Main Content */}
       <div className="max-w-7xl mx-auto w-full relative z-10 space-y-12 pt-4">
-        {/* Split Grid: Headline, Subtitle, Flow & Actions on Left, 3D Phone Mockup on Right */}
+        {/* Split Grid: Clean Editorial Headline & CTAs on Left, 3D Phone Mockup on Right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-          {/* Left Column: Copy, Technical Pipeline & Actions */}
-          <div className="lg:col-span-8 space-y-6 text-left flex flex-col items-start w-full">
-            <div className="w-full max-w-[640px] space-y-5">
-              {/* Dedicated TextView Component: Fits within square ratio without shrinking font or overflowing */}
+          {/* Left Column: Focused Copy & Direct Actions (No clutter, Awwwards standard) */}
+          <div className="lg:col-span-7 space-y-6 text-left flex flex-col items-start w-full">
+            <div className="w-full max-w-[560px] space-y-6">
+              {/* Dedicated TextView Component */}
               <HeroTextView />
 
               {/* Subtitle following the exact same line width boundary (Categoría: subtitulos) */}
-              <p className="typo-subtitulos text-sm sm:text-base text-white/90 max-w-[600px] leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-                Unificamos código de alto rendimiento, gestión operativa ERP y despliegue de fierro en terreno. Soluciones integrales con monitoreo activo 24/7 para empresas en Chile.
+              <p className="typo-subtitulos text-sm sm:text-base text-white/90 max-w-[540px] leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+                Unificamos desarrollo web de alto tráfico, software de gestión ERP y
+                despliegue de fierro en terreno. Presencia física con ingenieros en Chile y
+                soporte 24/7 sin intermediarios.
               </p>
-
-              {/* Technical Pipeline Flow Component (Live Awwwards Standard Hook) */}
-              <div className="pt-1 w-full">
-                <EcosystemFlow />
-              </div>
 
               {/* Direct Call to Actions (Categoría: botones) */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto pt-2">
@@ -63,11 +59,25 @@ export function StitchHero() {
                   <span>Agendar Reunión (Meet 45 min)</span>
                 </a>
               </div>
+
+              {/* Minimalist Trust & Coverage Strip */}
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 text-xs typo-otros2 text-white/70">
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                  <span>Santiago &amp; Temuco (Cobertura Nacional)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-[15px] text-primary">
+                    verified
+                  </span>
+                  <span>SLA 99.9% en Producción</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Right Column: 3D Smartphone Device Overlapping in Foreground (lg:col-span-4) */}
-          <div className="lg:col-span-4 flex items-center justify-center lg:justify-end w-full relative z-30">
+          {/* Right Column: 3D Smartphone Device Overlapping in Foreground (lg:col-span-5) */}
+          <div className="lg:col-span-5 flex items-center justify-center lg:justify-end w-full relative z-30">
             <PhoneMockup />
           </div>
         </div>
