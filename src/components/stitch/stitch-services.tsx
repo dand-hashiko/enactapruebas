@@ -61,7 +61,7 @@ export function StitchServices() {
         <div
           ref={carouselRef}
           onScroll={handleScroll}
-          className="max-lg:flex max-lg:overflow-x-auto max-lg:snap-x max-lg:snap-mandatory max-lg:gap-5 max-lg:pb-4 max-lg:scrollbar-none max-lg:px-1 lg:grid lg:grid-cols-12 lg:gap-6"
+          className="max-lg:flex max-lg:overflow-x-auto max-lg:snap-x max-lg:snap-mandatory max-lg:gap-5 max-lg:pt-3 max-lg:pb-4 max-lg:scrollbar-none max-lg:px-2 lg:grid lg:grid-cols-12 lg:gap-6"
         >
           {/* BENTO CARD 1 (Featured: ERP & POS) */}
           <SpotlightCard className="max-lg:w-[88vw] max-lg:max-w-[440px] max-lg:flex-shrink-0 max-lg:snap-center lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-[#0a0a0f] border border-white/[0.08] rounded-2xl relative overflow-hidden group">

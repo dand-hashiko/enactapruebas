@@ -123,7 +123,7 @@ export function StitchPricing() {
         <div
           ref={carouselRef}
           onScroll={handleScroll}
-          className="max-lg:flex max-lg:overflow-x-auto max-lg:snap-x max-lg:snap-mandatory max-lg:gap-4 max-lg:pb-4 max-lg:scrollbar-none max-lg:px-1 lg:grid lg:grid-cols-4 lg:gap-5"
+          className="max-lg:flex max-lg:overflow-x-auto max-lg:snap-x max-lg:snap-mandatory max-lg:gap-4 max-lg:pt-3 max-lg:pb-4 max-lg:scrollbar-none max-lg:px-2 lg:grid lg:grid-cols-4 lg:gap-5"
         >
           {ACCENTURE_CARDS.map((card, index) => {
             const isFlipped = activeCard === card.id;
@@ -135,13 +135,13 @@ export function StitchPricing() {
                 style={{
                   borderColor: isFlipped ? card.themeColor : undefined,
                   boxShadow: isFlipped
-                    ? `0 20px 50px rgba(0,0,0,0.9), 0 0 25px ${card.themeColor}33`
+                    ? `0 16px 40px rgba(0,0,0,0.9), 0 0 20px ${card.themeColor}33`
                     : undefined,
                 }}
-                className={`group relative rounded-2xl overflow-hidden transition-all duration-500 cursor-pointer select-none h-[500px] sm:h-[530px] flex-shrink-0 max-lg:w-[84vw] max-lg:max-w-[340px] max-lg:snap-center ${
+                className={`group relative rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer select-none h-[500px] sm:h-[530px] flex-shrink-0 max-lg:w-[84vw] max-lg:max-w-[340px] max-lg:snap-center ${
                   isFlipped
-                    ? "bg-[#0b0c14] border-2 -translate-y-1.5"
-                    : "bg-[#08080c] border border-white/[0.08] hover:border-white/[0.22] hover:-translate-y-1"
+                    ? "bg-[#0b0c14] border-2 shadow-2xl lg:-translate-y-1"
+                    : "bg-[#08080c] border border-white/[0.08] hover:border-white/[0.22] hover:lg:-translate-y-1"
                 }`}
               >
                 {/* Subtle Radial Ambient Backlight */}
@@ -162,7 +162,7 @@ export function StitchPricing() {
                       : "opacity-100 translate-y-0 scale-100"
                   }`}
                 >
-                  {/* Top: Category & Question (Tipografía refinada y legible) */}
+                  {/* Top: Category & Question (Tipografía editorial moderna en caja mixta) */}
                   <div className="space-y-3.5">
                     <div className="flex items-center justify-between">
                       <span className="typo-otros1 text-[11px] font-bold tracking-widest text-white/60 uppercase">
@@ -174,9 +174,9 @@ export function StitchPricing() {
                       />
                     </div>
 
-                    <h3 className="text-base sm:text-[17px] font-sans font-bold text-white leading-snug tracking-tight">
+                    <div className="font-modern-sans text-[16px] sm:text-[17px] font-bold text-white leading-snug tracking-normal">
                       {card.question}
-                    </h3>
+                    </div>
                   </div>
 
                   {/* Center Graphic: Abstract Artwork Visual */}
@@ -239,9 +239,9 @@ export function StitchPricing() {
 
                   {/* Middle Content: Question Headline & Complete Answer Description */}
                   <div className="space-y-3.5 my-auto overflow-y-auto pr-1 scrollbar-none">
-                    <h4 className="text-sm sm:text-[15px] font-sans font-bold text-white leading-snug">
+                    <div className="font-modern-sans text-[15px] sm:text-[16px] font-bold text-white leading-snug">
                       {card.question}
-                    </h4>
+                    </div>
 
                     <p className="typo-otros2 text-xs sm:text-sm text-white/85 leading-relaxed pl-3.5 border-l-2"
                       style={{ borderColor: card.themeColor }}

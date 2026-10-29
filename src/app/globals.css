@@ -132,6 +132,13 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   letter-spacing: -0.01em;
 }
 
+/* Modern Sans Typography Override for Editorial Questions & Sentences */
+.font-modern-sans {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif !important;
+  letter-spacing: -0.01em !important;
+  text-transform: none !important;
+}
+
 /* All non-heading elements inherit Share Tech Mono */
 p, span, a, button, input, textarea, select, label, li, small {
   font-family: inherit;
