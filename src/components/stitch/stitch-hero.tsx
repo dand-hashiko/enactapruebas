@@ -2,6 +2,7 @@ import React from "react";
 import { BioTealShader } from "./bio-teal-shader";
 import { PhoneMockup } from "./phone-mockup";
 import { HeroTextView } from "./hero-text-view";
+import { EcosystemFlow } from "./ecosystem-flow";
 
 export function StitchHero() {
   return (
@@ -22,20 +23,23 @@ export function StitchHero() {
 
       {/* Hero Main Content */}
       <div className="max-w-7xl mx-auto w-full relative z-10 space-y-12 pt-4">
-        {/* Split Grid: Headline & Value Prop on Left, 3D Phone Mockup on Right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
-          {/* Left Column: Copy & Actions (lg:col-span-7) constrained to square footprint matching subtitle */}
-          <div className="lg:col-span-7 space-y-6 text-left flex flex-col items-start w-full">
-            <div className="w-full max-w-[530px] space-y-6">
+        {/* Split Grid: Headline, Subtitle, Flow & Actions on Left, 3D Phone Mockup on Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          {/* Left Column: Copy, Technical Pipeline & Actions */}
+          <div className="lg:col-span-8 space-y-6 text-left flex flex-col items-start w-full">
+            <div className="w-full max-w-[640px] space-y-5">
               {/* Dedicated TextView Component: Fits within square ratio without shrinking font or overflowing */}
               <HeroTextView />
 
               {/* Subtitle following the exact same line width boundary (Categoría: subtitulos) */}
-              <p className="typo-subtitulos text-sm sm:text-base text-white/90 max-w-[530px] leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-                Suscripción mensual transparente con desarrollo web de alta velocidad,
-                dominio .cl, hosting administrado y soporte de ingeniería en terreno
-                24/7 para empresas en Chile.
+              <p className="typo-subtitulos text-sm sm:text-base text-white/90 max-w-[600px] leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+                Unificamos código de alto rendimiento, gestión operativa ERP y despliegue de fierro en terreno. Soluciones integrales con monitoreo activo 24/7 para empresas en Chile.
               </p>
+
+              {/* Technical Pipeline Flow Component (Live Awwwards Standard Hook) */}
+              <div className="pt-1 w-full">
+                <EcosystemFlow />
+              </div>
 
               {/* Direct Call to Actions (Categoría: botones) */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto pt-2">
@@ -62,16 +66,22 @@ export function StitchHero() {
             </div>
           </div>
 
-          {/* Right Column: 3D Smartphone Device Overlapping in Foreground (lg:col-span-5) */}
-          <div className="lg:col-span-5 flex items-center justify-center lg:justify-end w-full relative z-30">
+          {/* Right Column: 3D Smartphone Device Overlapping in Foreground (lg:col-span-4) */}
+          <div className="lg:col-span-4 flex items-center justify-center lg:justify-end w-full relative z-30">
             <PhoneMockup />
           </div>
         </div>
 
-        {/* Ticker de Métricas de Impacto con tarjetas traslúcidas (Categoría: otros1 para números, otros2 para texto) */}
+        {/* Ticker de Métricas de Impacto con tarjetas traslúcidas de alta precisión */}
         <div className="pt-8 border-t border-white/[0.12] grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {/* Métrica 1 */}
-          <div className="p-4 rounded-xl bg-black/70 backdrop-blur-md border border-white/[0.08] space-y-1 hover:border-primary/30 transition-colors">
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#08080c]/80 backdrop-blur-xl border border-white/[0.08] hover:border-primary/40 transition-all space-y-1.5 relative overflow-hidden group shadow-lg">
+            <div className="flex items-center justify-between">
+              <span className="typo-otros1 text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold">
+                DISPONIBILIDAD
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            </div>
             <div className="typo-otros1 text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight drop-shadow-sm">
               99.9%
             </div>
@@ -84,7 +94,13 @@ export function StitchHero() {
           </div>
 
           {/* Métrica 2 */}
-          <div className="p-4 rounded-xl bg-black/70 backdrop-blur-md border border-white/[0.08] space-y-1 hover:border-primary/30 transition-colors">
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#08080c]/80 backdrop-blur-xl border border-white/[0.08] hover:border-primary/40 transition-all space-y-1.5 relative overflow-hidden group shadow-lg">
+            <div className="flex items-center justify-between">
+              <span className="typo-otros1 text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold">
+                LATENCIA
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+            </div>
             <div className="typo-otros1 text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight drop-shadow-sm">
               &lt; 0.8s
             </div>
@@ -97,28 +113,40 @@ export function StitchHero() {
           </div>
 
           {/* Métrica 3 */}
-          <div className="p-4 rounded-xl bg-black/70 backdrop-blur-md border border-white/[0.08] space-y-1 hover:border-primary/30 transition-colors">
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#08080c]/80 backdrop-blur-xl border border-white/[0.08] hover:border-primary/40 transition-all space-y-1.5 relative overflow-hidden group shadow-lg">
+            <div className="flex items-center justify-between">
+              <span className="typo-otros1 text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold">
+                OPERACIÓN
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+            </div>
             <div className="typo-otros1 text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight drop-shadow-sm">
-              Terreno
+              100%
             </div>
             <div className="typo-otros2 text-xs sm:text-sm text-white font-semibold">
               Presencia Física RM &amp; Sur
             </div>
             <div className="typo-otros2 text-[11px] sm:text-xs text-white/70">
-              Cableado, racks y switches
+              Cableado, racks y servidores
             </div>
           </div>
 
           {/* Métrica 4 */}
-          <div className="p-4 rounded-xl bg-black/70 backdrop-blur-md border border-white/[0.08] space-y-1 hover:border-primary/30 transition-colors">
-            <div className="typo-otros1 text-2xl sm:text-3xl lg:text-4xl xl:text-[40px] font-bold text-primary tracking-tight drop-shadow-sm leading-tight">
-              0 Preocupaciones
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#08080c]/80 backdrop-blur-xl border border-white/[0.08] hover:border-primary/40 transition-all space-y-1.5 relative overflow-hidden group shadow-lg">
+            <div className="flex items-center justify-between">
+              <span className="typo-otros1 text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold">
+                CONTINUIDAD
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            </div>
+            <div className="typo-otros1 text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight drop-shadow-sm">
+              0 Caídas
             </div>
             <div className="typo-otros2 text-xs sm:text-sm text-white font-semibold">
-              Contratos a la medida
+              Modo Offline Automático
             </div>
             <div className="typo-otros2 text-[11px] sm:text-xs text-white/70">
-              Siempre personalizados
+              Sistemas que no paran sin internet
             </div>
           </div>
         </div>

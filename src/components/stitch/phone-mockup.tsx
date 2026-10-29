@@ -40,13 +40,13 @@ export function PhoneMockup() {
 
       {/* 3D Smartphone Device Mockup ("Como por encima" with deep 3D drop-shadows) */}
       <div
-        className="relative w-[295px] sm:w-[330px] md:w-[350px] aspect-[9/18.8] rounded-[52px] p-3.5 transition-transform duration-300 ease-out shadow-[0_35px_80px_-15px_rgba(0,0,0,0.98),0_0_70px_rgba(0,229,163,0.35)]"
+        className="relative w-[260px] sm:w-[285px] lg:w-[295px] xl:w-[310px] aspect-[9/18.8] rounded-[48px] p-3 transition-transform duration-300 ease-out shadow-[0_35px_80px_-15px_rgba(0,0,0,0.98),0_0_70px_rgba(0,229,163,0.3)]"
         style={{
           transform: `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
           transformStyle: "preserve-3d",
           background:
             "linear-gradient(145deg, #3a3f4e 0%, #1e212b 25%, #0f1117 65%, #050608 100%)",
-          border: "2.5px solid rgba(255, 255, 255, 0.22)",
+          border: "2px solid rgba(255, 255, 255, 0.2)",
         }}
       >
         {/* Exterior Metallic Edge Bezel Highlight & Volume Buttons */}
