@@ -16,6 +16,7 @@ export function KineticSculpture({
 }: KineticSculptureProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [fps, setFps] = useState<number>(60);
+  const [hasInteracted, setHasInteracted] = useState<boolean>(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -28,8 +29,8 @@ export function KineticSculpture({
     const scene = new THREE.Scene();
     scene.fog = new THREE.FogExp2(0x08090c, 0.012);
 
-    const camera = new THREE.PerspectiveCamera(52, width / heightPx, 0.1, 1000);
-    camera.position.z = 70;
+    const camera = new THREE.PerspectiveCamera(50, width / heightPx, 0.1, 1000);
+    camera.position.z = 66;
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
@@ -104,6 +105,7 @@ export function KineticSculpture({
     let targetY = 0;
 
     const handlePointerMove = (clientX: number, clientY: number) => {
+      setHasInteracted(true);
       const rect = container.getBoundingClientRect();
       const halfX = rect.left + rect.width / 2;
       const halfY = rect.top + rect.height / 2;
@@ -241,8 +243,12 @@ export function KineticSculpture({
             </div>
           </div>
 
-          {/* Interactive Hint */}
-          <div className="text-center">
+          {/* Interactive Hint (Desvanece automáticamente al interactuar para dejar la escultura limpia) */}
+          <div
+            className={`text-center transition-opacity duration-700 ${
+              hasInteracted ? "opacity-0 pointer-events-none" : "opacity-100"
+            }`}
+          >
             <div className="inline-block pointer-events-auto backdrop-blur-md bg-[#101216]/80 px-3 py-1 rounded-full text-[10px] sm:text-[11px] text-zinc-300 border border-white/[0.08] shadow-md">
               [ Mueve el cursor sobre la escultura para interactuar ]
             </div>

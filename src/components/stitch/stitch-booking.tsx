@@ -40,71 +40,36 @@ export function StitchBooking() {
       className="relative w-full px-4 sm:px-6 lg:px-12 py-20 sm:py-28 bg-black overflow-hidden border-b border-white/[0.08]"
       id="agendamiento"
     >
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="bg-[#08080c] border border-white/[0.08] rounded-2xl p-6 sm:p-10 lg:p-12 relative overflow-hidden shadow-2xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 relative z-10">
-            {/* Column Left: Context & Interactive 3D Sculpture */}
-            <div className="lg:col-span-5 space-y-5 flex flex-col justify-between">
-              <div className="space-y-3">
-                <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight">
-                  Agendemos un Google Meet de 45 minutos
-                </h2>
+      <div className="max-w-7xl mx-auto space-y-8 lg:space-y-10 relative z-10">
+        {/* Section Header: Agendamiento & Consultoría Técnica (Outside the card) */}
+        <div className="space-y-3 max-w-3xl">
+          <div className="typo-otros1 text-xs text-primary font-bold tracking-widest uppercase flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-primary" />
+            <span>CALENDARIO TÉCNICO &amp; CONSULTORÍA</span>
+          </div>
+          <h2 className="typo-titulos text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight">
+            Agendemos un Google Meet de 45 minutos
+          </h2>
+          <p className="typo-subtitulos text-sm sm:text-base text-on-surface-variant leading-relaxed">
+            Analicemos los requerimientos de tu proyecto: arquitectura web, sistemas
+            ERP o despliegue de fierro y redes con ingenieros en Chile.
+          </p>
+        </div>
 
-                <p className="typo-subtitulos text-sm sm:text-base text-on-surface-variant leading-relaxed">
-                  Analicemos los requerimientos de tu proyecto: arquitectura web, sistemas
-                  ERP o despliegue de fierro y redes con ingenieros en Chile.
-                </p>
-              </div>
-
-              {/* Enacta — Escultura 3D Interactiva (Three.js Standalone) */}
-              <div className="w-full">
-                <KineticSculpture height="h-[260px] sm:h-[300px]" showHud={true} />
-              </div>
-
-              {/* Direct Leadership & Contacts */}
-              <div className="space-y-3">
-                <div className="p-3.5 bg-black rounded-xl space-y-1.5 border border-white/[0.06] text-xs">
-                  <div className="typo-otros2 font-semibold text-white flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-primary" />
-                    <span>Liderazgo técnico del llamado:</span>
-                  </div>
-                  <div className="typo-otros2 text-on-surface-variant pl-4">
-                    <strong className="text-white">Daniel Díaz</strong> • Lead Architect &amp; Infra
-                  </div>
-                  <div className="typo-otros2 text-on-surface-variant pl-4">
-                    <strong className="text-white">Paola Huenuman</strong> • Client Operations Partner
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
-                  <a
-                    className="typo-botones flex items-center justify-center gap-2 p-2.5 bg-black hover:bg-[#14141c] rounded-xl text-white transition-colors border border-white/[0.06] text-xs"
-                    href="https://wa.me/56995127788"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <span className="material-symbols-outlined text-primary text-[18px]">
-                      chat
-                    </span>
-                    <span>WhatsApp Línea 1</span>
-                  </a>
-                  <a
-                    className="typo-botones flex items-center justify-center gap-2 p-2.5 bg-black hover:bg-[#14141c] rounded-xl text-white transition-colors border border-white/[0.06] text-xs"
-                    href="https://wa.me/56953797437"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <span className="material-symbols-outlined text-primary text-[18px]">
-                      chat
-                    </span>
-                    <span>WhatsApp Línea 2</span>
-                  </a>
-                </div>
-              </div>
+        {/* Card Principal con Grid de 2 Columnas */}
+        <div className="bg-[#08080c] border border-white/[0.08] rounded-2xl p-6 sm:p-8 lg:p-10 relative overflow-hidden shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 relative z-10 items-stretch">
+            {/* Column Left: Enacta — Escultura 3D Interactiva Three.js Ampliada */}
+            <div className="lg:col-span-6 flex flex-col h-full min-h-[460px] sm:min-h-[540px] lg:min-h-[580px]">
+              <KineticSculpture
+                className="h-full w-full flex-1"
+                height="h-full min-h-[460px] sm:min-h-[540px] lg:min-h-[580px]"
+                showHud={true}
+              />
             </div>
 
-            {/* Column Right: Fast Booking Form */}
-            <div className="lg:col-span-7 bg-black p-6 sm:p-8 rounded-2xl border border-white/[0.08] shadow-xl flex flex-col justify-between">
+            {/* Column Right: Formulario de Agendamiento + Información de Liderazgo y WhatsApp */}
+            <div className="lg:col-span-6 bg-black p-6 sm:p-8 rounded-2xl border border-white/[0.08] shadow-xl flex flex-col justify-between space-y-6">
               {!isSubmitted ? (
                 <form
                   className="space-y-4"
@@ -276,6 +241,47 @@ export function StitchBooking() {
                       {isSubmitting ? "Enviando solicitud..." : "Confirmar Agendamiento de Reunión"}
                     </span>
                   </button>
+
+                  {/* Cuadro Verde: Información de Liderazgo & Canales Directos WhatsApp (Debajo del botón) */}
+                  <div className="pt-4 border-t border-white/[0.08] space-y-3">
+                    <div className="p-3.5 bg-[#0a0a0d] rounded-xl space-y-1.5 border border-white/[0.06] text-xs">
+                      <div className="typo-otros2 font-semibold text-white flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-primary" />
+                        <span>Liderazgo técnico del llamado:</span>
+                      </div>
+                      <div className="typo-otros2 text-on-surface-variant pl-4">
+                        <strong className="text-white">Daniel Díaz</strong> • Lead Architect &amp; Infra
+                      </div>
+                      <div className="typo-otros2 text-on-surface-variant pl-4">
+                        <strong className="text-white">Paola Huenuman</strong> • Client Operations Partner
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                      <a
+                        className="typo-botones flex items-center justify-center gap-2 p-2.5 bg-[#0a0a0d] hover:bg-[#14141c] rounded-xl text-white transition-colors border border-white/[0.06] text-xs"
+                        href="https://wa.me/56995127788"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <span className="material-symbols-outlined text-primary text-[18px]">
+                          chat
+                        </span>
+                        <span>WhatsApp Línea 1</span>
+                      </a>
+                      <a
+                        className="typo-botones flex items-center justify-center gap-2 p-2.5 bg-[#0a0a0d] hover:bg-[#14141c] rounded-xl text-white transition-colors border border-white/[0.06] text-xs"
+                        href="https://wa.me/56953797437"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <span className="material-symbols-outlined text-primary text-[18px]">
+                          chat
+                        </span>
+                        <span>WhatsApp Línea 2</span>
+                      </a>
+                    </div>
+                  </div>
                 </form>
               ) : (
                 <div className="py-12 flex flex-col items-center justify-center text-center space-y-4">
