@@ -32,29 +32,19 @@ export function StitchServices() {
     >
       <div className="max-w-7xl mx-auto space-y-10 sm:space-y-12 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-          <div className="space-y-3 max-w-3xl">
-            <div className="typo-otros1 text-xs text-primary font-bold tracking-widest uppercase flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-primary" />
-              <span>SERVICIOS DE INGENIERÍA EN TERRENO</span>
-            </div>
-            <h2 className="typo-titulos text-2xl sm:text-4xl lg:text-5xl text-white tracking-tight">
-              Diseñamos el software. Desplegamos el fierro. Cero caídas.
-            </h2>
-            <p className="typo-subtitulos text-sm sm:text-base text-on-surface-variant leading-relaxed">
-              A diferencia de una agencia digital estándar, en Enacta montamos
-              computadores, certificamos cableado estructurado, configuramos switches
-              industriales y programamos sistemas que no se caen cuando se corta internet.
-            </p>
+        <div className="space-y-3 max-w-3xl">
+          <div className="typo-otros1 text-xs text-primary font-bold tracking-widest uppercase flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-primary" />
+            <span>SERVICIOS DE INGENIERÍA EN TERRENO</span>
           </div>
-
-          {/* Mobile swipe helper text */}
-          <div className="lg:hidden flex items-center gap-2 text-xs text-on-surface-variant font-mono">
-            <span className="material-symbols-outlined text-[16px] text-primary animate-pulse">
-              swipe
-            </span>
-            <span>Desliza en carrusel</span>
-          </div>
+          <h2 className="typo-titulos text-2xl sm:text-4xl lg:text-5xl text-white tracking-tight">
+            Diseñamos el software. Desplegamos el fierro. Cero caídas.
+          </h2>
+          <p className="typo-subtitulos text-sm sm:text-base text-on-surface-variant leading-relaxed">
+            A diferencia de una agencia digital estándar, en Enacta montamos
+            computadores, certificamos cableado estructurado, configuramos switches
+            industriales y programamos sistemas que no se caen cuando se corta internet.
+          </p>
         </div>
 
         {/* Responsive Container: Carrusel horizontal con snap en móvil / Bento Grid en Desktop */}

@@ -36,20 +36,6 @@ export function StitchHero() {
                 despliegue de fierro en terreno. Presencia física con ingenieros en Chile y
                 soporte 24/7 sin intermediarios.
               </p>
-
-              {/* Minimalist Trust & Coverage Strip */}
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-1 text-xs typo-otros2 text-white/70">
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                  <span>Santiago &amp; Temuco (Cobertura Nacional)</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[15px] text-primary">
-                    verified
-                  </span>
-                  <span>SLA 99.9% en Producción</span>
-                </div>
-              </div>
             </div>
           </div>
 
