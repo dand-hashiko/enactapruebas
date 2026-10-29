@@ -37,31 +37,8 @@ export function StitchHero() {
                 soporte 24/7 sin intermediarios.
               </p>
 
-              {/* Direct Call to Actions (Categoría: botones) */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto pt-2">
-                <a
-                  href="#soluciones"
-                  className="typo-botones inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary text-black font-bold rounded-xl shadow-[0_0_30px_rgba(0,229,163,0.4)] hover:bg-primary-fixed hover:scale-[1.02] transition-all text-center cursor-pointer text-sm"
-                >
-                  <span>Explorar Soluciones</span>
-                  <span className="material-symbols-outlined text-[18px]">
-                    arrow_forward
-                  </span>
-                </a>
-
-                <a
-                  href="#agendamiento"
-                  className="typo-botones inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-black/80 hover:bg-black text-white font-semibold rounded-xl border border-white/[0.15] backdrop-blur-md shadow-lg transition-all text-center cursor-pointer text-sm"
-                >
-                  <span className="material-symbols-outlined text-[18px] text-primary">
-                    calendar_month
-                  </span>
-                  <span>Agendar Reunión (Meet 45 min)</span>
-                </a>
-              </div>
-
               {/* Minimalist Trust & Coverage Strip */}
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 text-xs typo-otros2 text-white/70">
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-1 text-xs typo-otros2 text-white/70">
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                   <span>Santiago &amp; Temuco (Cobertura Nacional)</span>
