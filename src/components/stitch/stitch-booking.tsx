@@ -8,7 +8,7 @@ export function StitchBooking() {
     name: "",
     email: "",
     phone: "",
-    service: "plan-pyme",
+    service: "software-web",
     date: "",
     time: "10:00",
     notes: "",
@@ -205,11 +205,11 @@ export function StitchBooking() {
                           setFormData({ ...formData, service: e.target.value })
                         }
                       >
-                        <option value="plan-landing">Plan 01 — Landing Inicial ($19.990/mes)</option>
-                        <option value="plan-pyme">Plan 02 — Pyme Corporativa ($29.990/mes)</option>
-                        <option value="plan-ecommerce">Plan 03 — E-Commerce ($49.990/mes)</option>
-                        <option value="fierro-terreno">Terreno — Cableado, Servidores &amp; Redes</option>
-                        <option value="software-pos">Software — POS &amp; Bodega Offline</option>
+                        <option value="software-web">Solución 01 — Software &amp; Desarrollo Web</option>
+                        <option value="seguridad-redes">Solución 02 — Seguridad, Cableado &amp; Redes en Terreno</option>
+                        <option value="erp-pos">Solución 03 — Integración ERP &amp; POS Offline</option>
+                        <option value="database-cloud">Solución 04 — Bases de Datos PostgreSQL &amp; Cloud Dedicada</option>
+                        <option value="consultoria-general">Consultoría General de Ingeniería</option>
                       </select>
                     </div>
                   </div>

@@ -40,10 +40,10 @@ export function StitchHero() {
               {/* Direct Call to Actions (Categoría: botones) */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto pt-2">
                 <a
-                  href="#planes-web"
+                  href="#soluciones"
                   className="typo-botones inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary text-black font-bold rounded-xl shadow-[0_0_30px_rgba(0,229,163,0.4)] hover:bg-primary-fixed hover:scale-[1.02] transition-all text-center cursor-pointer text-sm"
                 >
-                  <span>Ver Planes Mensuales</span>
+                  <span>Explorar Soluciones</span>
                   <span className="material-symbols-outlined text-[18px]">
                     arrow_forward
                   </span>

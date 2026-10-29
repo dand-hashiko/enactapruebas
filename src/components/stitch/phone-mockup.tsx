@@ -142,10 +142,10 @@ export function PhoneMockup() {
             {/* Interactive Quick Buttons */}
             <div className="w-full space-y-1.5 pt-1">
               <a
-                href="#planes-web"
+                href="#soluciones"
                 className="w-full block py-2 px-3 bg-primary text-black font-bold text-xs rounded-xl shadow-[0_0_20px_rgba(0,229,163,0.4)] hover:bg-primary-fixed transition-all"
               >
-                Ver Planes Mensuales
+                Ver Soluciones
               </a>
               <a
                 href="https://wa.me/56995127788"

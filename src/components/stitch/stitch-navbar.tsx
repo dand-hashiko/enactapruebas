@@ -7,7 +7,7 @@ export function StitchNavbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: "Planes Web", href: "#planes-web" },
+    { label: "Soluciones", href: "#soluciones" },
     { label: "Equipo", href: "#equipo" },
     { label: "Servicios", href: "#servicios" },
     { label: "Contacto", href: "#agendamiento" },
