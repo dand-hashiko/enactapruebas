@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 interface AccentureCardData {
   id: string;
@@ -61,7 +61,30 @@ const ACCENTURE_CARDS: AccentureCardData[] = [
 ];
 
 export function StitchPricing() {
+  // Estado para la tarjeta activa / cambiada (Face 2 con respuesta)
   const [activeCard, setActiveCard] = useState<string | null>("software-marketing");
+  
+  // Carrusel móvil estilo Accenture
+  const carouselRef = useRef<HTMLDivElement | null>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  const handleScroll = () => {
+    if (!carouselRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+    const maxScroll = scrollWidth - clientWidth;
+    if (maxScroll > 0) {
+      setScrollProgress(Math.min(1, Math.max(0, scrollLeft / maxScroll)));
+    }
+  };
+
+  const scrollToIndex = (index: number) => {
+    if (!carouselRef.current) return;
+    const cardWidth = carouselRef.current.clientWidth * 0.85;
+    carouselRef.current.scrollTo({
+      left: index * cardWidth,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <section
@@ -71,103 +94,221 @@ export function StitchPricing() {
       {/* Anchor alias to support existing #planes-web links */}
       <div id="planes-web" className="absolute -top-24 left-0" />
 
-      <div className="max-w-7xl mx-auto space-y-12 relative z-10">
+      <div className="max-w-7xl mx-auto space-y-10 sm:space-y-12 relative z-10">
         {/* Section Header (Estilo Consultora Global / Accenture) */}
-        <div className="space-y-4 max-w-3xl">
-          <div className="typo-otros1 text-xs text-primary font-bold tracking-widest uppercase flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-primary" />
-            <span>SOLUCIONES DE INGENIERÍA EN PRODUCCIÓN</span>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div className="space-y-4 max-w-3xl">
+            <div className="typo-otros1 text-xs text-primary font-bold tracking-widest uppercase flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-primary" />
+              <span>SOLUCIONES DE INGENIERÍA EN PRODUCCIÓN</span>
+            </div>
+            <h2 className="typo-titulos text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight">
+              Respuestas de ingeniería para desafíos críticos de negocio
+            </h2>
+            <p className="typo-subtitulos text-sm sm:text-base text-on-surface-variant leading-relaxed">
+              Toca o haz clic en cualquier tarjeta para alternar entre la pregunta y la respuesta técnica sin que cambie de tamaño.
+            </p>
           </div>
-          <h2 className="typo-titulos text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight">
-            Respuestas de ingeniería para desafíos críticos de negocio
-          </h2>
-          <p className="typo-subtitulos text-sm sm:text-base text-on-surface-variant leading-relaxed">
-            Pasa el cursor o presiona cada tarjeta para descubrir nuestra arquitectura técnica
-            y agendar una sesión directa con nuestros ingenieros.
-          </p>
+
+          {/* Mobile swipe helper text */}
+          <div className="lg:hidden flex items-center gap-2 text-xs text-on-surface-variant font-mono">
+            <span className="material-symbols-outlined text-[16px] text-primary animate-pulse">
+              swipe
+            </span>
+            <span>Desliza en carrusel</span>
+          </div>
         </div>
 
-        {/* 4 Accenture Interactive Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {ACCENTURE_CARDS.map((card) => {
-            const isHoveredOrActive = activeCard === card.id;
+        {/* Responsive Container: Carrusel horizontal con snap en móvil / Grid 4 columnas en Desktop */}
+        <div
+          ref={carouselRef}
+          onScroll={handleScroll}
+          className="max-lg:flex max-lg:overflow-x-auto max-lg:snap-x max-lg:snap-mandatory max-lg:gap-4 max-lg:pb-4 max-lg:scrollbar-none max-lg:px-1 lg:grid lg:grid-cols-4 lg:gap-5"
+        >
+          {ACCENTURE_CARDS.map((card, index) => {
+            const isFlipped = activeCard === card.id;
 
             return (
               <div
                 key={card.id}
-                onMouseEnter={() => setActiveCard(card.id)}
-                onMouseLeave={() => setActiveCard(null)}
-                onClick={() =>
-                  setActiveCard(activeCard === card.id ? null : card.id)
-                }
-                className={`group relative rounded-2xl overflow-hidden border transition-all duration-500 flex flex-col justify-between p-6 sm:p-7 min-h-[500px] sm:min-h-[540px] cursor-pointer select-none ${
-                  isHoveredOrActive
-                    ? "bg-[#0b0c12] border-primary/50 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(0,229,163,0.15)] -translate-y-1.5"
-                    : "bg-[#08080c] border-white/[0.08] hover:border-white/[0.18]"
+                onClick={() => setActiveCard(isFlipped ? null : card.id)}
+                style={{
+                  borderColor: isFlipped ? card.themeColor : undefined,
+                  boxShadow: isFlipped
+                    ? `0 20px 50px rgba(0,0,0,0.9), 0 0 25px ${card.themeColor}33`
+                    : undefined,
+                }}
+                className={`group relative rounded-2xl overflow-hidden transition-all duration-500 cursor-pointer select-none h-[500px] sm:h-[530px] flex-shrink-0 max-lg:w-[84vw] max-lg:max-w-[340px] max-lg:snap-center ${
+                  isFlipped
+                    ? "bg-[#0b0c14] border-2 -translate-y-1.5"
+                    : "bg-[#08080c] border border-white/[0.08] hover:border-white/[0.22] hover:-translate-y-1"
                 }`}
               >
-                {/* Subtle Gradient Backlight */}
+                {/* Subtle Radial Ambient Backlight */}
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
                   style={{
-                    background: `radial-gradient(circle at 50% 0%, ${card.themeColor}15, transparent 75%)`,
+                    background: `radial-gradient(circle at 50% 0%, ${card.themeColor}18, transparent 75%)`,
                   }}
                 />
 
-                {/* Top Section: Category & Question */}
-                <div className="space-y-4 relative z-10">
-                  <div className="typo-otros1 text-[11px] font-bold tracking-widest text-white/60 uppercase">
-                    {card.category}
+                {/* ============================================================ */}
+                {/* CARA 1: FRONTAL (Pregunta & Visual de Arte Abstracto)        */}
+                {/* ============================================================ */}
+                <div
+                  className={`absolute inset-0 p-6 sm:p-7 flex flex-col justify-between transition-all duration-500 ${
+                    isFlipped
+                      ? "opacity-0 pointer-events-none -translate-y-4 scale-95"
+                      : "opacity-100 translate-y-0 scale-100"
+                  }`}
+                >
+                  {/* Top: Category & Question */}
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="typo-otros1 text-[11px] font-bold tracking-widest text-white/60 uppercase">
+                        {card.category}
+                      </span>
+                      <span
+                        className="w-2 h-2 rounded-full"
+                        style={{ backgroundColor: card.themeColor }}
+                      />
+                    </div>
+
+                    <h3 className="typo-titulos text-xl sm:text-[22px] text-white leading-tight tracking-tight">
+                      {card.question}
+                    </h3>
                   </div>
 
-                  <h3 className="typo-titulos text-xl sm:text-[22px] text-white leading-tight tracking-tight">
-                    {card.question}
-                  </h3>
+                  {/* Center Graphic: Abstract Artwork Visual */}
+                  <div className="relative w-full h-44 my-auto flex items-center justify-center overflow-hidden">
+                    <div className="w-full h-full flex items-center justify-center opacity-90 group-hover:scale-105 transition-transform duration-700">
+                      {card.visualType === "ribbon" && <AbstractRibbonVisual color={card.themeColor} />}
+                      {card.visualType === "pathway" && <AbstractPathwayVisual color={card.themeColor} />}
+                      {card.visualType === "vortex" && <AbstractVortexVisual color={card.themeColor} />}
+                      {card.visualType === "schematic" && <AbstractSchematicVisual color={card.themeColor} />}
+                    </div>
+                  </div>
 
-                  {/* Answer Revelation (Smoothly fades in & pushes visual down) */}
-                  <div
-                    className={`transition-all duration-500 overflow-hidden ${
-                      isHoveredOrActive
-                        ? "opacity-100 max-h-96 translate-y-0 pt-2"
-                        : "opacity-0 max-h-0 -translate-y-2 pointer-events-none"
-                    }`}
-                  >
-                    <p className="typo-otros2 text-sm text-white/80 leading-relaxed border-l-2 border-primary/60 pl-3.5">
+                  {/* Bottom Action Footer: Click Indicator to Flip Card */}
+                  <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between">
+                    <span className="typo-botones text-xs text-white/80 group-hover:text-white transition-colors">
+                      Ver respuesta técnica
+                    </span>
+                    <div
+                      className="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center text-white/70 group-hover:border-white/50 group-hover:text-white transition-all shadow-sm"
+                      style={{
+                        borderColor: undefined,
+                      }}
+                    >
+                      <span className="material-symbols-outlined text-[18px]">
+                        add
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* ============================================================ */}
+                {/* CARA 2: REVERSO CAMBIABLE (Respuesta Completa, Botón X y CTA)*/}
+                {/* ============================================================ */}
+                <div
+                  className={`absolute inset-0 p-6 sm:p-7 flex flex-col justify-between transition-all duration-500 ${
+                    isFlipped
+                      ? "opacity-100 translate-y-0 scale-100"
+                      : "opacity-0 pointer-events-none translate-y-4 scale-95"
+                  }`}
+                >
+                  {/* Top Bar: Category on Left, 'X' Close Button on Right */}
+                  <div className="flex items-center justify-between pb-3 border-b border-white/[0.08]">
+                    <span
+                      className="typo-otros1 text-[11px] font-bold tracking-widest uppercase font-mono"
+                      style={{ color: card.themeColor }}
+                    >
+                      {card.category}
+                    </span>
+                    <button
+                      type="button"
+                      aria-label="Cerrar respuesta"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveCard(null);
+                      }}
+                      className="w-8 h-8 rounded-full bg-white/[0.08] hover:bg-white/[0.18] flex items-center justify-center text-white transition-all cursor-pointer border border-white/[0.08]"
+                    >
+                      <span className="material-symbols-outlined text-[18px]">
+                        close
+                      </span>
+                    </button>
+                  </div>
+
+                  {/* Middle Content: Question Headline & Complete Answer Description */}
+                  <div className="space-y-4 my-auto overflow-y-auto pr-1 scrollbar-none">
+                    <h4 className="typo-titulos text-base sm:text-lg text-white font-semibold leading-snug">
+                      {card.question}
+                    </h4>
+
+                    <p className="typo-otros2 text-sm text-white/85 leading-relaxed pl-3.5 border-l-2"
+                      style={{ borderColor: card.themeColor }}
+                    >
                       {card.answer}
                     </p>
                   </div>
-                </div>
 
-                {/* Bottom Graphic Area (Abstract Artwork in default state, fades in active state) */}
-                <div className="relative w-full h-44 mt-auto z-0 flex items-center justify-center overflow-hidden">
-                  <div
-                    className={`transition-all duration-500 w-full h-full flex items-center justify-center ${
-                      isHoveredOrActive ? "opacity-15 scale-95" : "opacity-90 scale-100"
-                    }`}
-                  >
-                    {card.visualType === "ribbon" && <AbstractRibbonVisual color={card.themeColor} />}
-                    {card.visualType === "pathway" && <AbstractPathwayVisual color={card.themeColor} />}
-                    {card.visualType === "vortex" && <AbstractVortexVisual color={card.themeColor} />}
-                    {card.visualType === "schematic" && <AbstractSchematicVisual color={card.themeColor} />}
+                  {/* Bottom Action Footer: Direct CTA Button to Booking */}
+                  <div className="pt-4 border-t border-white/[0.08] flex items-center justify-between">
+                    <a
+                      href="#agendamiento"
+                      onClick={(e) => e.stopPropagation()}
+                      className="typo-botones inline-flex items-center gap-2 text-xs font-bold text-white hover:text-primary transition-colors py-1.5"
+                    >
+                      <span>{card.ctaText}</span>
+                      <span className="material-symbols-outlined text-[16px]">
+                        arrow_forward
+                      </span>
+                    </a>
+
+                    <span
+                      className="w-2 h-2 rounded-full animate-pulse"
+                      style={{ backgroundColor: card.themeColor }}
+                    />
                   </div>
-                </div>
-
-                {/* Bottom Action Footer (Always present, highlights on hover) */}
-                <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between relative z-10">
-                  <a
-                    href="#agendamiento"
-                    className="typo-botones inline-flex items-center gap-1.5 text-xs font-semibold text-white group-hover:text-primary transition-colors"
-                  >
-                    <span>{card.ctaText}</span>
-                    <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">
-                      arrow_forward
-                    </span>
-                  </a>
-                  <span className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary transition-colors" />
                 </div>
               </div>
             );
           })}
+        </div>
+
+        {/* Mobile Carrusel Progress Bar (Estilo exacto Accenture.com) */}
+        <div className="lg:hidden flex flex-col items-center justify-center gap-3 pt-2">
+          {/* Track Bar with Sliding Indicator */}
+          <div className="w-40 sm:w-52 h-1 bg-white/10 rounded-full relative overflow-hidden">
+            <div
+              className="h-full bg-white rounded-full transition-transform duration-200"
+              style={{
+                width: "25%",
+                transform: `translateX(${scrollProgress * 300}%)`,
+              }}
+            />
+          </div>
+
+          {/* Step Pill Selectors for fast tapping */}
+          <div className="flex items-center gap-2">
+            {ACCENTURE_CARDS.map((c, i) => (
+              <button
+                key={c.id}
+                type="button"
+                onClick={() => scrollToIndex(i)}
+                aria-label={`Ver solución ${i + 1}`}
+                className="w-2.5 h-1.5 rounded-full transition-all duration-300"
+                style={{
+                  backgroundColor:
+                    Math.round(scrollProgress * 3) === i
+                      ? c.themeColor
+                      : "rgba(255,255,255,0.2)",
+                  width: Math.round(scrollProgress * 3) === i ? "20px" : "10px",
+                }}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Legal & Transparent Notice */}
