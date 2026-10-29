@@ -9,13 +9,13 @@ export function StitchFooter() {
           {/* Col 1 */}
           <div className="space-y-3">
             <div className="flex items-center gap-2.5 mb-2">
-              <div className="relative h-6 w-6">
+              <div className="relative h-7 w-7 shrink-0">
                 <Image
                   alt="Enacta Logo"
-                  className="h-6 w-auto object-contain"
+                  className="h-7 w-auto object-contain drop-shadow-[0_0_10px_rgba(0,229,163,0.3)]"
                   src="/images/enacta-logo.png"
-                  width={24}
-                  height={24}
+                  width={28}
+                  height={28}
                 />
               </div>
               <span className="typo-titulos text-base font-semibold text-white">

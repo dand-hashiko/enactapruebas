@@ -29,7 +29,8 @@ export const metadata: Metadata = {
   description:
     "Arquitectura de software de misión crítica, infraestructura en terreno y planes de mantención proactiva para pymes y corporaciones en Chile y Latinoamérica.",
   icons: {
-    icon: "/images/enacta-logo.png",
+    icon: "/images/enacta-logo-white-bg.png",
+    apple: "/images/enacta-logo-white-bg.png",
   },
 };
 

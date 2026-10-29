@@ -103,14 +103,14 @@ export function PhoneMockup() {
 
           {/* CENTER SCREEN: ENACTA.CL Live Brand Experience */}
           <div className="relative z-20 px-5 py-3 space-y-3.5 flex flex-col items-center text-center my-auto">
-            {/* Logo Icon */}
-            <div className="relative h-6 w-6">
+            {/* Logo Icon with crisp iOS-style app emblem */}
+            <div className="relative h-8 w-8 rounded-xl overflow-hidden shadow-lg border border-white/20">
               <Image
-                alt="Enacta"
-                className="h-6 w-auto object-contain"
-                src="/images/enacta-logo.png"
-                width={24}
-                height={24}
+                alt="Enacta Icon"
+                className="h-full w-full object-cover"
+                src="/images/enacta-logo-white-bg.png"
+                width={32}
+                height={32}
               />
             </div>
 
@@ -120,7 +120,7 @@ export function PhoneMockup() {
                 ENACTA<span className="text-primary">.CL</span>
               </h2>
               <p className="text-[11px] text-white/90 leading-tight font-medium max-w-[220px]">
-                Tu sitio web profesional y soporte sin dolores de cabeza.
+                Arquitectura de Software, ERP &amp; Fierro en Terreno.
               </p>
             </div>
 

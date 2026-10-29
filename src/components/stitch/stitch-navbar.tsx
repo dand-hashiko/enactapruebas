@@ -23,13 +23,13 @@ export function StitchNavbar() {
             href="#"
             onClick={() => setMobileMenuOpen(false)}
           >
-            <div className="relative h-8 w-8 shrink-0">
+            <div className="relative h-9 w-9 shrink-0 flex items-center justify-center">
               <Image
                 alt="Enacta Logo"
-                className="h-8 w-auto object-contain"
+                className="h-9 w-auto object-contain drop-shadow-[0_0_14px_rgba(0,229,163,0.35)] group-hover:scale-105 transition-transform"
                 src="/images/enacta-logo.png"
-                width={32}
-                height={32}
+                width={36}
+                height={36}
                 priority
               />
             </div>
