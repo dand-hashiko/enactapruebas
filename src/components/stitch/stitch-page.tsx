@@ -7,6 +7,7 @@ import { StitchServices } from "./stitch-services";
 import { StitchBooking } from "./stitch-booking";
 import { StitchFooter } from "./stitch-footer";
 import { StitchFloatingWidget } from "./stitch-floating-widget";
+import { AiChatWidget } from "./ai-chat-widget";
 
 /**
  * StitchPage — Layout principal de la landing page Enacta.cl
@@ -49,6 +50,9 @@ export function StitchPage() {
 
       {/* Floating Tactile Quick Contact Widget (Nike Style) */}
       <StitchFloatingWidget />
+
+      {/* Enacta AI Engineering Assistant (Chat Widget) */}
+      <AiChatWidget />
     </div>
   );
 }
