@@ -37,7 +37,7 @@ export function StitchServices() {
             <span className="w-2 h-2 rounded-full bg-primary" />
             <span>SERVICIOS DE INGENIERÍA EN TERRENO</span>
           </div>
-          <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white tracking-tight text-balance break-words max-w-full">
+          <h2 className="typo-titulos text-[20px] xs:text-[22px] sm:text-3xl lg:text-4xl xl:text-5xl text-white tracking-tight text-balance break-words max-w-full leading-[1.18]">
             Diseñamos el software. Desplegamos el fierro. Cero caídas.
           </h2>
           <p className="typo-subtitulos text-sm sm:text-base text-on-surface-variant leading-relaxed">

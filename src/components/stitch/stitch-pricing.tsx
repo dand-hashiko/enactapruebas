@@ -204,7 +204,7 @@ export function StitchPricing() {
                       : "opacity-0 pointer-events-none translate-y-4 scale-95"
                   }`}
                 >
-                  {/* Top Bar: Category on Left, 'X' Close Button on Right */}
+                  {/* Top Bar: Category on Left, Dot on Right (Consistente con Cara 1) */}
                   <div className="flex items-center justify-between pb-3 border-b border-white/[0.08]">
                     <span
                       className="typo-otros1 text-[11px] font-bold tracking-widest uppercase font-mono"
@@ -212,19 +212,10 @@ export function StitchPricing() {
                     >
                       {card.category}
                     </span>
-                    <button
-                      type="button"
-                      aria-label="Cerrar respuesta"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setActiveCard(null);
-                      }}
-                      className="w-8 h-8 rounded-full bg-white/[0.08] hover:bg-white/[0.18] flex items-center justify-center text-white transition-all cursor-pointer border border-white/[0.08]"
-                    >
-                      <span className="material-symbols-outlined text-[18px]">
-                        close
-                      </span>
-                    </button>
+                    <span
+                      className="w-2 h-2 rounded-full"
+                      style={{ backgroundColor: card.themeColor }}
+                    />
                   </div>
 
                   {/* Middle Content: Question Headline & Complete Answer Description */}

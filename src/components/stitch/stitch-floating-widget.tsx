@@ -7,7 +7,7 @@ export function StitchFloatingWidget() {
 
   return (
     <aside
-      className="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex items-center"
+      className="fixed right-0 top-1/2 -translate-y-1/2 z-50 hidden lg:flex items-center"
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >

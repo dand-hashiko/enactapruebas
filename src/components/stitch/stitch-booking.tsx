@@ -21,9 +21,28 @@ export function StitchBooking() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 600));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+
+    try {
+      await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          date: formData.date,
+          time: formData.time,
+          notes: formData.notes,
+          source: "booking-form",
+        }),
+      });
+    } catch (err) {
+      console.error("Error submitting lead:", err);
+    } finally {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+    }
 
     try {
       confetti({

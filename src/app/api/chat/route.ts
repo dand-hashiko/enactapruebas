@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ENACTA_SYSTEM_INSTRUCTION, FALLBACK_RULES } from "@/lib/ai/enacta-knowledge";
+import { notifyAiChatInquiry } from "@/lib/telegram/telegram-service";
 
 interface ChatMessage {
   role: "user" | "assistant";
@@ -18,10 +19,14 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const lastUserMessage = [...messages].reverse().find((m) => m.role === "user")?.content || "";
+    const lastUserMessage =
+      [...messages].reverse().find((m) => m.role === "user")?.content || "";
     const apiKey = process.env.GEMINI_API_KEY;
 
-    // 1. Si existe GEMINI_API_KEY en variables de entorno, llamamos a la API oficial de Google AI Studio
+    let finalReply = "";
+    let isAi = false;
+
+    // 1. Si existe GEMINI_API_KEY, invocar Gemini Flash de Google
     if (apiKey) {
       try {
         const geminiContents = messages.map((m) => ({
@@ -29,6 +34,7 @@ export async function POST(req: NextRequest) {
           parts: [{ text: m.content }],
         }));
 
+        // Gemini 1.5 Flash / 2.0 Flash endpoint oficial
         const response = await fetch(
           `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
           {
@@ -56,32 +62,29 @@ export async function POST(req: NextRequest) {
             data.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
 
           if (candidateText) {
-            return NextResponse.json({
-              reply: candidateText,
-              isAiPowered: true,
-            });
+            finalReply = candidateText;
+            isAi = true;
           }
         }
       } catch (geminiError) {
-        console.error("Gemini API call failed, falling back to knowledge engine:", geminiError);
+        console.error(
+          "Gemini API call failed, falling back to knowledge engine:",
+          geminiError
+        );
       }
     }
 
-    // 2. Fallback resiliente: Motor de conocimiento local mientras se configura GEMINI_API_KEY
-    const normalizedQuery = lastUserMessage.toLowerCase();
-    const matchedRule = FALLBACK_RULES.find((rule) =>
-      rule.keywords.some((kw) => normalizedQuery.includes(kw))
-    );
+    // 2. Fallback resiliente: Motor de conocimiento local
+    if (!finalReply) {
+      const normalizedQuery = lastUserMessage.toLowerCase();
+      const matchedRule = FALLBACK_RULES.find((rule) =>
+        rule.keywords.some((kw) => normalizedQuery.includes(kw))
+      );
 
-    if (matchedRule) {
-      return NextResponse.json({
-        reply: matchedRule.reply,
-        isAiPowered: Boolean(apiKey),
-      });
-    }
-
-    // Respuesta por defecto si la consulta es general
-    const defaultReply = `¡Hola! Soy el asistente de ingeniería de **ENACTA**.
+      if (matchedRule) {
+        finalReply = matchedRule.reply;
+      } else {
+        finalReply = `¡Hola! Soy el asistente de ingeniería de **ENACTA**.
 
 Podemos ayudarte en cualquiera de nuestras 4 áreas principales:
 • **Software & Web:** Sitios ultrarrápidos sobre Next.js con carga <0.8s y pagos Transbank.
@@ -90,10 +93,37 @@ Podemos ayudarte en cualquiera de nuestras 4 áreas principales:
 • **Servidores & Cloud:** Clústeres dedicados PostgreSQL sobre Linux Debian con Docker.
 
 ¿Sobre cuál de estas soluciones te gustaría recibir detalles, o prefieres agendar una reunión de 45 minutos por Google Meet?`;
+      }
+    }
+
+    // 3. Detección proactiva de datos de contacto o alta intención para alerta a Telegram
+    const emailMatch = lastUserMessage.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/);
+    const phoneMatch = lastUserMessage.match(/(?:\+?56\s?9\d{8}|9\d{8}|\b\d{8,9}\b)/);
+    const isHighIntent =
+      Boolean(emailMatch || phoneMatch) ||
+      /cotiz|reuni|presupuesto|agendar|contrat|demo|precio/i.test(lastUserMessage);
+
+    if (isHighIntent) {
+      const contactInfo = [
+        emailMatch ? `Email: ${emailMatch[0]}` : null,
+        phoneMatch ? `Teléfono: ${phoneMatch[0]}` : null,
+      ]
+        .filter(Boolean)
+        .join(" | ");
+
+      // Despachar alerta a Telegram en background sin demorar respuesta HTTP
+      notifyAiChatInquiry({
+        userMessage: lastUserMessage,
+        aiResponse: finalReply,
+        contactHint: contactInfo || undefined,
+      }).catch((err) => {
+        console.error("[Chat Route] Error despachando alerta Telegram:", err);
+      });
+    }
 
     return NextResponse.json({
-      reply: defaultReply,
-      isAiPowered: Boolean(apiKey),
+      reply: finalReply,
+      isAiPowered: isAi,
     });
   } catch (err: unknown) {
     const error = err as Error;
