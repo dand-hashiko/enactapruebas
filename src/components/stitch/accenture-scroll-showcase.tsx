@@ -35,10 +35,10 @@ export function AccentureScrollShowcase() {
 
   return (
     <section
-      className="relative w-full bg-black border-b border-white/[0.08]"
+      className="relative w-full px-4 sm:px-6 lg:px-12 bg-black border-b border-white/[0.08] overflow-hidden"
       id="equipo"
     >
-      <div className="w-full max-w-7xl mx-auto relative z-10 px-4 sm:px-6 lg:px-12">
+      <div className="w-full max-w-7xl mx-auto relative z-10">
         {/* Mobile Layout: stacked */}
         <div className="lg:hidden py-12 space-y-6">
           {/* Image — 16:9 exact natural aspect ratio matching enacta4.jpg (4128x2322) */}
@@ -54,20 +54,20 @@ export function AccentureScrollShowcase() {
           </div>
 
           {/* Cursive quote */}
-          <p className="font-cursive text-primary text-2xl sm:text-3xl tracking-wide select-none">
+          <p className="font-cursive text-primary text-xl sm:text-2xl tracking-wide select-none">
             &ldquo;Ingeniería en terreno para sistemas que no se pueden detener&rdquo;
           </p>
 
           {/* Text content */}
-          <div className="space-y-4">
+          <div className="space-y-4 max-w-full overflow-hidden">
             <TeamTextContent />
           </div>
         </div>
 
-        {/* Desktop Layout: two-column sticky */}
-        <div className="hidden lg:grid lg:grid-cols-12 gap-10 lg:gap-14 py-20 items-start">
-          {/* Left Column: Sticky image — stays pinned while scrolling */}
-          <div className="lg:col-span-7 relative">
+        {/* Desktop Layout: two-column balanced 50/50 bento sticky */}
+        <div className="hidden lg:grid lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-14 py-20 items-start">
+          {/* Left Column: Sticky image — stays pinned while scrolling (6 cols) */}
+          <div className="lg:col-span-6 relative">
             <div className="sticky top-28 space-y-4">
               {/* Image container — exact 16:9 ratio, displays full image */}
               <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/[0.1] shadow-2xl shadow-[0_0_50px_rgba(0,229,163,0.12)] bg-black">
@@ -77,22 +77,22 @@ export function AccentureScrollShowcase() {
                   src="/images/enacta4.jpg"
                   fill
                   priority
-                  sizes="(max-width: 1024px) 100vw, 58vw"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
 
               {/* Cursive quote below image */}
-              <p className="pt-2 font-cursive text-primary text-2xl sm:text-3xl lg:text-4xl tracking-wide select-none">
+              <p className="pt-2 font-cursive text-primary text-xl sm:text-2xl lg:text-3xl tracking-wide select-none">
                 &ldquo;Ingeniería en terreno para sistemas que no se pueden detener&rdquo;
               </p>
             </div>
           </div>
 
-          {/* Right Column: Scrollable text that triggers reveal */}
-          <div className="lg:col-span-5 relative flex flex-col justify-center">
+          {/* Right Column: Scrollable text that triggers reveal (6 cols con formato cerrado) */}
+          <div className="lg:col-span-6 relative flex flex-col justify-center max-w-full overflow-hidden">
             <div
               ref={textFade.ref}
-              className="space-y-5 transition-all duration-700 ease-out"
+              className="space-y-5 transition-all duration-700 ease-out w-full max-w-xl"
               style={{
                 opacity: textFade.isVisible ? 1 : 0,
                 transform: textFade.isVisible
@@ -112,9 +112,9 @@ export function AccentureScrollShowcase() {
 function TeamTextContent() {
   return (
     <>
-      {/* Main Headline (Categoría: titulos) */}
-      <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] text-white leading-[1.12] tracking-tight">
-        Arquitectura de sistemas en el{" "}
+      {/* Main Headline (Categoría: titulos con formato de cerrado seguro) */}
+      <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-[32px] xl:text-[38px] text-white leading-[1.15] tracking-tight max-w-full break-words text-balance">
+        Tecnología en el{" "}
         <span className="text-primary underline decoration-primary/40 underline-offset-8">
           corazón de tu negocio
         </span>

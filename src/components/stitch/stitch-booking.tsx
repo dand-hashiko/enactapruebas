@@ -47,7 +47,7 @@ export function StitchBooking() {
             <span className="w-2 h-2 rounded-full bg-primary" />
             <span>CALENDARIO TÉCNICO &amp; CONSULTORÍA</span>
           </div>
-          <h2 className="typo-titulos text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight">
+          <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white tracking-tight text-balance break-words max-w-full">
             Agendemos un Google Meet de 45 minutos
           </h2>
           <p className="typo-subtitulos text-sm sm:text-base text-on-surface-variant leading-relaxed">

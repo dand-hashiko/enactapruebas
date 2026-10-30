@@ -101,7 +101,7 @@ export function StitchPricing() {
             <span className="w-2 h-2 rounded-full bg-primary" />
             <span>SOLUCIONES DE INGENIERÍA EN PRODUCCIÓN</span>
           </div>
-          <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-5xl text-white tracking-tight">
+          <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white tracking-tight text-balance break-words max-w-full">
             Respuestas de ingeniería para desafíos críticos de negocio
           </h2>
           <p className="typo-subtitulos text-sm sm:text-base text-on-surface-variant leading-relaxed">
