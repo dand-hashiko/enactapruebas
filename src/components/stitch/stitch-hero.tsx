@@ -26,12 +26,12 @@ export function StitchHero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           {/* Left Column: Focused Copy & Direct Actions (No clutter, Awwwards standard) */}
           <div className="lg:col-span-7 space-y-6 text-left flex flex-col items-start w-full">
-            <div className="w-full max-w-[560px] space-y-6">
+            <div className="w-full max-w-[720px] space-y-6 sm:space-y-7">
               {/* Dedicated TextView Component */}
               <HeroTextView />
 
               {/* Subtitle following the exact same line width boundary (Categoría: subtitulos) */}
-              <p className="typo-subtitulos text-sm sm:text-base text-white/90 max-w-[540px] leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+              <p className="typo-subtitulos text-base sm:text-lg lg:text-[18px] xl:text-[19px] text-white/90 max-w-[650px] leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
                 Unificamos desarrollo web de alto tráfico, software de gestión ERP y
                 despliegue de infraestructura en terreno. Presencia física con ingenieros en Chile y
                 soporte 24/7 sin intermediarios.
@@ -39,8 +39,8 @@ export function StitchHero() {
             </div>
           </div>
 
-          {/* Right Column: 3D Smartphone Device Overlapping in Foreground (lg:col-span-5) */}
-          <div className="lg:col-span-5 flex items-center justify-center lg:justify-end w-full relative z-30">
+          {/* Right Column: 3D Smartphone Device Overlapping in Foreground (Shifted towards center: yellow box) */}
+          <div className="lg:col-span-5 flex items-center justify-center lg:justify-center w-full relative z-30 lg:-translate-x-10 xl:-translate-x-16">
             <PhoneMockup />
           </div>
         </div>
