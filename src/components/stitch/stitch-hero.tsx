@@ -39,8 +39,8 @@ export function StitchHero() {
             </div>
           </div>
 
-          {/* Right Column: 3D Smartphone Device Overlapping in Foreground (Shifted towards center: yellow box) */}
-          <div className="lg:col-span-5 flex items-center justify-center lg:justify-center w-full relative z-30 lg:-translate-x-10 xl:-translate-x-16">
+          {/* Right Column: 3D Smartphone Device Overlapping in Foreground (Calibrated position: red box) */}
+          <div className="lg:col-span-5 flex items-center justify-center lg:justify-center w-full relative z-30 lg:-translate-x-3 xl:-translate-x-5">
             <PhoneMockup />
           </div>
         </div>
