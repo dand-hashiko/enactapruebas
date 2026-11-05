@@ -38,7 +38,7 @@ export function StitchServices() {
             <span>CAPACIDADES TÉCNICAS</span>
           </div>
           <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white tracking-tight text-balance break-words max-w-full leading-[1.15]">
-            Del código al fierro en terreno.{" "}
+            Del código a la acción en terreno.{" "}
             <span className="text-primary underline decoration-primary/40 underline-offset-8">
               Sistemas que nunca se detienen.
             </span>
