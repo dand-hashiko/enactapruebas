@@ -69,7 +69,7 @@ export function StitchBooking() {
           <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white tracking-tight text-balance break-words max-w-full">
             Agendemos un Google Meet de 45 minutos
           </h2>
-          <p className="typo-subtitulos text-sm sm:text-base text-on-surface-variant leading-relaxed">
+          <p className="typo-subtitulos text-base sm:text-lg text-on-surface-variant leading-relaxed">
             Analicemos los requerimientos de tu proyecto: arquitectura web, sistemas
             ERP o despliegue de infraestructura tecnológica y redes con ingenieros en Chile.
           </p>

@@ -40,7 +40,7 @@ export function StitchServices() {
           <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white tracking-tight text-balance break-words max-w-full leading-[1.15]">
             Diseñamos el software. Desplegamos la infraestructura. Cero caídas.
           </h2>
-          <p className="typo-subtitulos text-sm sm:text-base text-on-surface-variant leading-relaxed">
+          <p className="typo-subtitulos text-base sm:text-lg text-on-surface-variant leading-relaxed">
             A diferencia de una agencia digital estándar, en Enacta montamos
             computadores, certificamos cableado estructurado, configuramos switches
             industriales y programamos sistemas que no se caen cuando se corta internet.

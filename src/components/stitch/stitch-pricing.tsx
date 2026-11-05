@@ -104,7 +104,7 @@ export function StitchPricing() {
           <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white tracking-tight text-balance break-words max-w-full">
             Respuestas de ingeniería para desafíos críticos de negocio
           </h2>
-          <p className="typo-subtitulos text-sm sm:text-base text-on-surface-variant leading-relaxed">
+          <p className="typo-subtitulos text-base sm:text-lg text-on-surface-variant leading-relaxed">
             Toca o haz clic en cualquier tarjeta para alternar entre la pregunta y la respuesta técnica sin que cambie de tamaño.
           </p>
         </div>

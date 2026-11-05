@@ -121,7 +121,7 @@ function TeamTextContent() {
       </h2>
 
       {/* Body (Categoría: subtitulos) */}
-      <p className="typo-subtitulos text-sm sm:text-base text-on-surface-variant leading-relaxed">
+      <p className="typo-subtitulos text-base sm:text-lg text-on-surface-variant leading-relaxed">
         No somos una agencia distante que delega requerimientos a terceros. Daniel
         Díaz, Paola Huenuman, Matias Parra y nuestro equipo de ingenieros diseñan, cablean y
         programan infraestructura de software y hardware con presencia física y

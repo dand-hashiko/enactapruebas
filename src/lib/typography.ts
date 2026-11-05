@@ -38,13 +38,13 @@ export class TypographyManager {
       textTransform: "uppercase",
     },
     subtitulos: {
-      fontFamily: "'Share Tech Mono', monospace",
-      letterSpacing: "normal",
+      fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+      letterSpacing: "-0.01em",
       textTransform: "none",
     },
     botones: {
-      fontFamily: "'Share Tech Mono', monospace",
-      letterSpacing: "0.02em",
+      fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+      letterSpacing: "0.01em",
       textTransform: "none",
     },
     otros1: {
@@ -53,7 +53,7 @@ export class TypographyManager {
       textTransform: "uppercase",
     },
     otros2: {
-      fontFamily: "'Share Tech Mono', monospace",
+      fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
       letterSpacing: "normal",
       textTransform: "none",
     },
