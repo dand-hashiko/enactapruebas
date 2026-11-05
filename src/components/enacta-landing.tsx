@@ -244,7 +244,7 @@ export function EnactaLanding() {
                 </div>
                 <h3 className="text-2xl font-medium">¡Mensaje Recibido!</h3>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Gracias <strong>{formData.name}</strong>. Paola Huenuman o Daniel Díaz se pondrán en contacto contigo en breve.
+                  Gracias <strong>{formData.name}</strong>. Paola Huenuman, Daniel Díaz o Matias Parra se pondrán en contacto contigo en breve.
                 </p>
                 <button
                   onClick={() => {

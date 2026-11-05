@@ -116,11 +116,11 @@ export function PhoneMockup() {
 
             {/* Hero Brand Title inside Phone */}
             <div className="space-y-1">
-              <h2 className="text-2xl sm:text-3xl font-black text-white font-jetbrains-mono tracking-tight drop-shadow-md">
+              <h2 className="font-brand text-2xl sm:text-3xl font-bold text-white tracking-wider drop-shadow-md">
                 ENACTA<span className="text-primary">.CL</span>
               </h2>
               <p className="text-[11px] text-white/90 leading-tight font-medium max-w-[220px]">
-                Arquitectura de Software, ERP &amp; Fierro en Terreno.
+                Arquitectura de Software, ERP e Infraestructura en Terreno.
               </p>
             </div>
 

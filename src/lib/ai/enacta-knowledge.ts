@@ -9,11 +9,12 @@ Tu rol es actuar como un Arquitecto de Sistemas consultivo, profesional, claro, 
 
 ### INFORMACIÓN CLAVE DE ENACTA:
 - Empresa: ENACTA INGENIERÍA SpA (sitio web: enacta.cl).
-- Liderazgo técnico:
+- Liderazgo técnico & comercial:
   * Daniel Díaz: Lead Software Architect & Infraestructura.
   * Paola Huenuman: Client Operations Partner (Gestión y Despliegue de Proyectos).
+  * Matias Parra: Ingeniero Comercial (Asesoría comercial, consejos de crecimiento de negocio y mejoras en el sistema de datos para todos los servicios de Enacta).
 - Cobertura geográfica: Presencia física en terreno en Santiago (Región Metropolitana), Temuco y cobertura nacional en Chile.
-- Filosofía: "Diseñamos el software. Desplegamos el fierro. Cero caídas." A diferencia de agencias comunes, Enacta programa código y también va a terreno a montar racks, cablear y configurar switches.
+- Filosofía: "Diseñamos el software. Desplegamos la infraestructura. Cero caídas." A diferencia de agencias comunes, Enacta programa código y también va a terreno a montar racks, cablear y configurar switches.
 
 ### LAS 4 LÍNEAS DE SOLUCIONES:
 1. Software & Desarrollo Web de Alta Conversión:
@@ -42,13 +43,13 @@ Tu rol es actuar como un Arquitecto de Sistemas consultivo, profesional, claro, 
 ### OBJETIVO Y CANALES DE CONTACTO:
 - Tu objetivo es resolver las dudas del visitante y guiarlo a dar el siguiente paso:
   1. Agendar una reunión técnica de 45 minutos por Google Meet sin compromiso (enlace: #agendamiento).
-  2. Hablar directamente por WhatsApp con Daniel Díaz (+56 9 9512 7788) o Paola Huenuman (+56 9 5379 7437).
+  2. Hablar directamente por WhatsApp con Daniel Díaz (+56 9 9512 7788) o Paola Huenuman (+56 9 5379 7437), o solicitar asesoría con Matias Parra (Ingeniero Comercial) para crecimiento de negocio y optimización de datos.
   3. Correo: contacto@enacta.cl
 
 ### REGLAS DE RESPUESTA:
 - Responde siempre en español con tono profesional, cercano y seguro.
 - Sé conciso: respuestas de 2 a 4 párrafos cortos o listas con viñetas. Evita rodeos innecesarios.
-- Si te preguntan precios específicos, explica que cada proyecto se dimensiona según requerimientos de software y fierro, e invítalos a agendar el Google Meet de 45 minutos para entregarles una propuesta formal.
+- Si te preguntan precios específicos, explica que cada proyecto se dimensiona según requerimientos de software e infraestructura, e invítalos a agendar el Google Meet de 45 minutos para entregarles una propuesta formal.
 `;
 
 export interface FallbackRule {
@@ -98,13 +99,14 @@ Podemos realizar una visita técnica a tu local, galpón u oficina. Puedes agend
 Garantizamos 99.99% de Uptime SLA para operaciones críticas corporativas.`,
   },
   {
-    keywords: ["reunion", "meet", "agendar", "calendario", "cita", "hora", "contacto", "telefono", "whatsapp"],
-    reply: `¡Excelente! Puedes coordinar una reunión técnica de 45 minutos por **Google Meet** de forma inmediata:
+    keywords: ["reunion", "meet", "agendar", "calendario", "cita", "hora", "contacto", "telefono", "whatsapp", "matias"],
+    reply: `¡Excelente! Puedes coordinar una reunión técnica o comercial de 45 minutos por **Google Meet** de forma inmediata:
 
 1. **Formulario web:** Desplázate a la sección **#agendamiento** en esta página para elegir tu horario preferido.
-2. **WhatsApp directo:**
+2. **Equipo y canales directos:**
    • Daniel Díaz (Lead Architect & Infra): [+56 9 9512 7788](https://wa.me/56995127788)
    • Paola Huenuman (Client Operations): [+56 9 5379 7437](https://wa.me/56953797437)
+   • Matias Parra (Ingeniero Comercial): Asesoría en crecimiento de negocio y sistemas de datos.
 3. **Correo:** contacto@enacta.cl`,
   },
   {

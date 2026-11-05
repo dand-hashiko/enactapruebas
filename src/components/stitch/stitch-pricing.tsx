@@ -32,7 +32,7 @@ const ACCENTURE_CARDS: AccentureCardData[] = [
     answer:
       "Ingeniería presencial en terreno: instalación y certificación de cableado Cat 6, canalización limpia, switches Gigabit PoE UniFi y routers MikroTik de alto rendimiento. Monitoreo proactivo y soporte 24/7 en la Región Metropolitana y Macro-zona Sur.",
     ctaText: "Agendar Inspección en Terreno",
-    serviceId: "fierro-terreno",
+    serviceId: "infraestructura-terreno",
     themeColor: "#38bdf8",
     visualType: "pathway",
   },

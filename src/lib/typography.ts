@@ -33,8 +33,8 @@ export interface TypographyThemeConfig {
 export class TypographyManager {
   private static defaultTheme: TypographyThemeConfig = {
     titulos: {
-      fontFamily: "'BBH Bartle', sans-serif",
-      letterSpacing: "-0.01em",
+      fontFamily: "'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif",
+      letterSpacing: "-0.02em",
       textTransform: "uppercase",
     },
     subtitulos: {

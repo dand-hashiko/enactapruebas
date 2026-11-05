@@ -2,7 +2,7 @@
  * Telegram Notifier Service — Enacta
  *
  * Arquitectura: Servicio desacoplado (SoC) para notificación instantánea
- * a los ingenieros de Enacta (Daniel Díaz & Paola Huenuman) vía Telegram Bot API.
+ * al equipo de Enacta (Daniel Díaz, Paola Huenuman & Matias Parra) vía Telegram Bot API.
  * Costo: $0 CLP (100% gratuito e ilimitado).
  *
  * Manejo de errores: Si no hay credenciales configuradas en las variables de

@@ -71,7 +71,7 @@ export function StitchBooking() {
           </h2>
           <p className="typo-subtitulos text-sm sm:text-base text-on-surface-variant leading-relaxed">
             Analicemos los requerimientos de tu proyecto: arquitectura web, sistemas
-            ERP o despliegue de fierro y redes con ingenieros en Chile.
+            ERP o despliegue de infraestructura tecnológica y redes con ingenieros en Chile.
           </p>
         </div>
 
@@ -183,6 +183,7 @@ export function StitchBooking() {
                         <option value="seguridad-redes">Solución 02 — Seguridad, Cableado &amp; Redes en Terreno</option>
                         <option value="erp-pos">Solución 03 — Integración ERP &amp; POS Offline</option>
                         <option value="database-cloud">Solución 04 — Bases de Datos PostgreSQL &amp; Cloud Dedicada</option>
+                        <option value="crecimiento-datos">Solución 05 — Crecimiento Comercial &amp; Mejoras en Datos (Matias Parra)</option>
                         <option value="consultoria-general">Consultoría General de Ingeniería</option>
                       </select>
                     </div>
@@ -261,19 +262,30 @@ export function StitchBooking() {
                     </span>
                   </button>
 
-                  {/* Cuadro Verde: Información de Liderazgo & Canales Directos WhatsApp (Debajo del botón) */}
+                  {/* Información de Liderazgo, Asesoría & Canales Directos */}
                   <div className="pt-4 border-t border-white/[0.08] space-y-3">
-                    <div className="p-3.5 bg-[#0a0a0d] rounded-xl space-y-1.5 border border-white/[0.06] text-xs">
+                    <div className="p-3.5 bg-[#0a0a0d] rounded-xl space-y-2 border border-white/[0.06] text-xs">
                       <div className="typo-otros2 font-semibold text-white flex items-center gap-2">
                         <span className="w-2 h-2 rounded-full bg-primary" />
-                        <span>Liderazgo técnico del llamado:</span>
+                        <span>Liderazgo técnico &amp; comercial del llamado:</span>
                       </div>
-                      <div className="typo-otros2 text-on-surface-variant pl-4">
-                        <strong className="text-white">Daniel Díaz</strong> • Lead Architect &amp; Infra
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1">
+                        <div className="p-2 rounded-lg bg-black/50 border border-white/[0.04]">
+                          <strong className="text-white block">Daniel Díaz</strong>
+                          <span className="text-on-surface-variant text-[11px]">Lead Architect &amp; Infra</span>
+                        </div>
+                        <div className="p-2 rounded-lg bg-black/50 border border-white/[0.04]">
+                          <strong className="text-white block">Paola Huenuman</strong>
+                          <span className="text-on-surface-variant text-[11px]">Client Operations</span>
+                        </div>
+                        <div className="p-2 rounded-lg bg-black/50 border border-white/[0.04]">
+                          <strong className="text-white block">Matias Parra</strong>
+                          <span className="text-on-surface-variant text-[11px]">Ing. Comercial &amp; Datos</span>
+                        </div>
                       </div>
-                      <div className="typo-otros2 text-on-surface-variant pl-4">
-                        <strong className="text-white">Paola Huenuman</strong> • Client Operations Partner
-                      </div>
+                      <p className="typo-otros2 text-[11px] text-on-surface-variant/90 pt-1 leading-snug">
+                        <span className="text-primary font-medium">Asesoría Integral:</span> Matias Parra te ayuda con consejos estratégicos, crecimiento de negocio y mejoras en el sistema de datos para todos nuestros servicios.
+                      </p>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
@@ -313,7 +325,7 @@ export function StitchBooking() {
                     ¡Solicitud de Reunión Recibida!
                   </h3>
                   <p className="text-sm text-on-surface-variant max-w-md">
-                    Daniel Díaz o Paola Huenuman se pondrán en contacto contigo vía
+                    Daniel Díaz, Paola Huenuman o Matias Parra se pondrán en contacto contigo vía
                     WhatsApp o correo para confirmar la invitación de Google Meet.
                   </p>
                   <button

@@ -33,7 +33,7 @@ export function StitchHero() {
               {/* Subtitle following the exact same line width boundary (Categoría: subtitulos) */}
               <p className="typo-subtitulos text-sm sm:text-base text-white/90 max-w-[540px] leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
                 Unificamos desarrollo web de alto tráfico, software de gestión ERP y
-                despliegue de fierro en terreno. Presencia física con ingenieros en Chile y
+                despliegue de infraestructura en terreno. Presencia física con ingenieros en Chile y
                 soporte 24/7 sin intermediarios.
               </p>
             </div>

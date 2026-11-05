@@ -18,7 +18,7 @@ export function StitchFooter() {
                   height={28}
                 />
               </div>
-              <span className="typo-titulos text-base font-semibold text-white">
+              <span className="font-brand text-lg font-bold text-white tracking-wider">
                 ENACTA INGENIERÍA
               </span>
             </div>
@@ -74,6 +74,12 @@ export function StitchFooter() {
                 <span className="text-white font-medium">Paola Huenuman</span>
                 <span className="text-on-surface-variant typo-otros1 text-[11px]">
                   Operations &amp; Client Engineering Partner
+                </span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-white font-medium">Matias Parra</span>
+                <span className="text-on-surface-variant typo-otros1 text-[11px]">
+                  Ingeniero Comercial • Crecimiento &amp; Sistemas de Datos
                 </span>
               </div>
               <div className="pt-2 space-y-1.5">

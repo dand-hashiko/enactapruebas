@@ -33,7 +33,7 @@ export function StitchNavbar() {
                 priority
               />
             </div>
-            <span className="typo-titulos text-base sm:text-lg tracking-wider font-semibold text-white uppercase">
+            <span className="font-brand text-lg sm:text-xl tracking-wider font-bold text-white uppercase">
               ENACTA
               <span className="text-primary text-xs sm:text-sm">
                 .CL

@@ -123,7 +123,7 @@ function TeamTextContent() {
       {/* Body (Categoría: subtitulos) */}
       <p className="typo-subtitulos text-sm sm:text-base text-on-surface-variant leading-relaxed">
         No somos una agencia distante que delega requerimientos a terceros. Daniel
-        Díaz, Paola Huenuman y nuestro equipo de ingenieros diseñan, cablean y
+        Díaz, Paola Huenuman, Matias Parra y nuestro equipo de ingenieros diseñan, cablean y
         programan infraestructura de software y hardware con presencia física y
         soporte 24/7 en Chile.
       </p>
@@ -147,6 +147,16 @@ function TeamTextContent() {
           </div>
           <span className="typo-otros1 text-primary text-xs px-2.5 py-1 bg-primary/10 rounded border border-primary/20">
             Client Operations Partner
+          </span>
+        </div>
+
+        <div className="p-3 bg-[#0a0a0e] rounded-xl border border-white/[0.06] flex items-center justify-between">
+          <div className="flex flex-col">
+            <span className="typo-titulos text-white font-bold text-sm">Matias Parra</span>
+            <span className="typo-otros2 text-on-surface-variant text-xs">Crecimiento &amp; Sistemas de Datos</span>
+          </div>
+          <span className="typo-otros1 text-primary text-xs px-2.5 py-1 bg-primary/10 rounded border border-primary/20">
+            Ingeniero Comercial
           </span>
         </div>
       </div>

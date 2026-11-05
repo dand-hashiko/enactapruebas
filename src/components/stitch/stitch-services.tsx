@@ -37,8 +37,8 @@ export function StitchServices() {
             <span className="w-2 h-2 rounded-full bg-primary" />
             <span>SERVICIOS DE INGENIERÍA EN TERRENO</span>
           </div>
-          <h2 className="typo-titulos text-[20px] xs:text-[22px] sm:text-3xl lg:text-4xl xl:text-5xl text-white tracking-tight text-balance break-words max-w-full leading-[1.18]">
-            Diseñamos el software. Desplegamos el fierro. Cero caídas.
+          <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white tracking-tight text-balance break-words max-w-full leading-[1.15]">
+            Diseñamos el software. Desplegamos la infraestructura. Cero caídas.
           </h2>
           <p className="typo-subtitulos text-sm sm:text-base text-on-surface-variant leading-relaxed">
             A diferencia de una agencia digital estándar, en Enacta montamos
@@ -186,7 +186,7 @@ export function StitchServices() {
               </div>
 
               <h3 className="typo-titulos text-lg sm:text-xl lg:text-2xl text-white">
-                Fierro, Cableado &amp; Infraestructura
+                Infraestructura Física, Cableado &amp; Redes
               </h3>
               <p className="typo-otros2 text-sm text-on-surface-variant leading-relaxed">
                 Montaje presencial en terreno: racks de telecomunicaciones, cableado

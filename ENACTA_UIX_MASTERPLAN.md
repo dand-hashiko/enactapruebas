@@ -40,7 +40,7 @@ Antes de modificar archivos, **inspecciona todo el árbol de directorios del pro
 Una vez completada la Fase 1, prepárate para implementar las siguientes mejoras en orden de prioridad:
 
 ### Prioridad 1: El Hero Interactivo (High-Impact Hook)
-* **Copywriting Técnico y Directo:** Cambiar títulos genéricos por una propuesta de valor que una código y fierros (ej. *"Ingeniería de Software, Sistemas ERP e Infraestructura Física sin fricción"*).
+* **Copywriting Técnico y Directo:** Cambiar títulos genéricos por una propuesta de valor que una código e infraestructura (ej. *"Ingeniería de Software, Sistemas ERP e Infraestructura Física sin fricción"*).
 * **Componente Visual Vivo:** Crear un componente interactivo en código (React/CSS) al costado o debajo del título que simule en tiempo real el ecosistema Enacta: por ejemplo, un panel oscuro que muestre el flujo `[Terminal POS / Hardware] ──(0.4ms)──> [Core ERP / Base de Datos] ──> [Dashboard Web]`, con indicadores de estado pulsando sutilmente.
 
 ### Prioridad 2: Servicios en Formato "Bento Grid" Asimétrica

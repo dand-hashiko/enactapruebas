@@ -206,6 +206,26 @@ export function Contact() {
                   </span>
                 </a>
 
+                {/* Asesoría Comercial & Datos: Matias Parra */}
+                <div
+                  className="flex items-center justify-between p-3.5 rounded-xl border border-emerald-200/80 dark:border-emerald-900/50 bg-emerald-50/50 dark:bg-emerald-950/20"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-sm">
+                      <UserCheck className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-xs text-slate-500 dark:text-slate-400 font-medium">Crecimiento & Datos</div>
+                      <div className="text-sm font-bold text-slate-900 dark:text-white">
+                        Matias Parra <span className="text-xs font-normal text-slate-500 dark:text-slate-400 ml-1">• Ingeniero Comercial</span>
+                      </div>
+                      <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
+                        Consejos de negocio y mejoras en sistemas de datos
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="flex items-center gap-3.5 p-3 rounded-xl">
                   <div className="w-10 h-10 rounded-lg bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5" />
