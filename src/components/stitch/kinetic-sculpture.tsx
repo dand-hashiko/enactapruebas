@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
+import { createOuroborosHead } from "./ouroboros-head";
 
 interface KineticSculptureProps {
   className?: string;
@@ -55,6 +56,12 @@ export function KineticSculpture({
     });
     const wireMesh = new THREE.LineSegments(wireGeo, lineMaterial);
     mainGroup.add(wireMesh);
+
+    // 2.1. Cabeza de Serpiente Cibernética — Uróboros (Mascándose a sí misma)
+    const uroboros = createOuroborosHead();
+    uroboros.headGroup.position.set(-3.0, 7.6, 1.7);
+    uroboros.headGroup.lookAt(8.1, 1.0, -1.5);
+    mainGroup.add(uroboros.headGroup);
 
     // 3. Nube de Partículas de Alta Velocidad (Nodos Cuánticos de Telemetría)
     const count = 320;
@@ -172,6 +179,9 @@ export function KineticSculpture({
       coreBox.rotation.y = -t * 0.25;
       coreBox.rotation.z = t * 0.18;
 
+      // Animación viva del Uróboros (respiración de mandíbula, ojos y lengua)
+      uroboros.animate(t);
+
       // Particle oscillation
       const positions = pGeo.attributes.position.array as Float32Array;
       for (let i = 0; i < count; i++) {
@@ -206,6 +216,7 @@ export function KineticSculpture({
       boxGeo.dispose();
       boxWire.dispose();
       boxMat.dispose();
+      uroboros.dispose();
       renderer.dispose();
 
       if (renderer.domElement && container.contains(renderer.domElement)) {
@@ -231,7 +242,7 @@ export function KineticSculpture({
               <span className="font-bold text-primary font-mono">ENACTA® /SYS.3D</span>
               <span className="text-zinc-600 hidden sm:inline">|</span>
               <span className="text-zinc-300 font-mono hidden sm:inline text-[10px]">
-                KINETIC CORE
+                URÓBOROS CORE
               </span>
             </div>
 
@@ -261,7 +272,7 @@ export function KineticSculpture({
                 Matriz Geométrica
               </div>
               <div className="text-white text-[11px] font-mono">
-                Torus Knot + 320 Nodos Cuánticos
+                Uróboros Knot + 320 Nodos Cuánticos
               </div>
             </div>
 
