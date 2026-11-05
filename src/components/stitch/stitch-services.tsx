@@ -35,7 +35,7 @@ export function StitchServices() {
         <div className="space-y-3 max-w-3xl">
           <div className="typo-otros1 text-xs text-primary font-bold tracking-widest uppercase flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-primary" />
-            <span>// 01. CAPACIDADES TÉCNICAS</span>
+            <span>CAPACIDADES TÉCNICAS</span>
           </div>
           <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white tracking-tight text-balance break-words max-w-full leading-[1.15]">
             Del código al fierro en terreno.{" "}
@@ -59,7 +59,7 @@ export function StitchServices() {
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <span className="typo-otros1 text-xs text-primary font-bold tracking-wider">
-                  01. GESTIÓN OPERATIVA
+                  GESTIÓN OPERATIVA
                 </span>
                 <span className="typo-otros1 text-[11px] px-2.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">
                   Modo Offline Nativo
@@ -126,7 +126,7 @@ export function StitchServices() {
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <span className="typo-otros1 text-xs text-primary font-bold tracking-wider">
-                  02. ALTA CONVERSIÓN
+                  ALTA CONVERSIÓN
                 </span>
                 <span className="typo-otros1 text-[11px] px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/80 border border-white/[0.08]">
                   Edge CDN
@@ -174,7 +174,7 @@ export function StitchServices() {
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <span className="typo-otros1 text-xs text-primary font-bold tracking-wider">
-                  03. TERRENO &amp; REDES
+                  TERRENO &amp; REDES
                 </span>
                 <span className="typo-otros1 text-[11px] px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/80 border border-white/[0.08]">
                   Cat 6 Certificado
@@ -220,7 +220,7 @@ export function StitchServices() {
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <span className="typo-otros1 text-xs text-primary font-bold tracking-wider">
-                  04. SERVIDORES &amp; CLOUD
+                  SERVIDORES &amp; CLOUD
                 </span>
                 <span className="typo-otros1 text-[11px] px-2.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">
                   Docker + Tailscale

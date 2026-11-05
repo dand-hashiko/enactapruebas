@@ -27,12 +27,6 @@ export function StitchHero() {
           {/* Left Column: Focused Copy & Direct Actions (No clutter, Awwwards standard) */}
           <div className="lg:col-span-7 space-y-6 text-left flex flex-col items-start w-full">
             <div className="w-full max-w-[720px] space-y-6 sm:space-y-7">
-              {/* Eyebrow — Módulo 1: Business & Brand Positioning */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#0a0a0d]/90 backdrop-blur-md rounded-full border border-primary/30 text-primary typo-otros1 text-xs tracking-wider shadow-lg">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                <span>// ENACTA.CL — SOFTWARE, ERP &amp; INFRASTRUCTURE</span>
-              </div>
-
               {/* Dedicated TextView Component */}
               <HeroTextView />
 
@@ -46,85 +40,6 @@ export function StitchHero() {
           {/* Right Column: 3D Smartphone Device Overlapping in Foreground (Calibrated position: red box) */}
           <div className="lg:col-span-5 flex items-center justify-center lg:justify-center w-full relative z-30 lg:-translate-x-3 xl:-translate-x-5">
             <PhoneMockup />
-          </div>
-        </div>
-
-        {/* Ticker de Métricas de Impacto con tarjetas traslúcidas de alta precisión */}
-        <div className="pt-8 border-t border-white/[0.12] grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {/* Card 1 (Uptime) */}
-          <div className="p-4 sm:p-5 rounded-2xl bg-[#08080c]/80 backdrop-blur-xl border border-white/[0.08] hover:border-primary/40 transition-all space-y-1.5 relative overflow-hidden group shadow-lg">
-            <div className="flex items-center justify-between">
-              <span className="typo-otros1 text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold">
-                UPTIME
-              </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            </div>
-            <div className="typo-otros1 text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight drop-shadow-sm">
-              99.9%
-            </div>
-            <div className="typo-otros2 text-xs sm:text-sm text-white font-semibold">
-              Uptime Garantizado en Producción
-            </div>
-            <div className="typo-otros2 text-[11px] sm:text-xs text-white/70">
-              Monitoreo activo 24/7 sin caídas.
-            </div>
-          </div>
-
-          {/* Card 2 (Latencia) */}
-          <div className="p-4 sm:p-5 rounded-2xl bg-[#08080c]/80 backdrop-blur-xl border border-white/[0.08] hover:border-primary/40 transition-all space-y-1.5 relative overflow-hidden group shadow-lg">
-            <div className="flex items-center justify-between">
-              <span className="typo-otros1 text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold">
-                LATENCIA
-              </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-            </div>
-            <div className="typo-otros1 text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight drop-shadow-sm">
-              &lt; 0.8s
-            </div>
-            <div className="typo-otros2 text-xs sm:text-sm text-white font-semibold">
-              Latencia Global &amp; Edge Network
-            </div>
-            <div className="typo-otros2 text-[11px] sm:text-xs text-white/70">
-              Next.js optimizado con Vercel Edge.
-            </div>
-          </div>
-
-          {/* Card 3 (Infraestructura) */}
-          <div className="p-4 sm:p-5 rounded-2xl bg-[#08080c]/80 backdrop-blur-xl border border-white/[0.08] hover:border-primary/40 transition-all space-y-1.5 relative overflow-hidden group shadow-lg">
-            <div className="flex items-center justify-between">
-              <span className="typo-otros1 text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold">
-                INFRAESTRUCTURA
-              </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-            </div>
-            <div className="typo-otros1 text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight drop-shadow-sm">
-              100%
-            </div>
-            <div className="typo-otros2 text-xs sm:text-sm text-white font-semibold">
-              Despliegue Físico RM &amp; Sur
-            </div>
-            <div className="typo-otros2 text-[11px] sm:text-xs text-white/70">
-              Racks, redes y servidores en terreno.
-            </div>
-          </div>
-
-          {/* Card 4 (Resiliencia) */}
-          <div className="p-4 sm:p-5 rounded-2xl bg-[#08080c]/80 backdrop-blur-xl border border-white/[0.08] hover:border-primary/40 transition-all space-y-1.5 relative overflow-hidden group shadow-lg">
-            <div className="flex items-center justify-between">
-              <span className="typo-otros1 text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold">
-                RESILIENCIA
-              </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            </div>
-            <div className="typo-otros1 text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight drop-shadow-sm">
-              0 Caídas
-            </div>
-            <div className="typo-otros2 text-xs sm:text-sm text-white font-semibold">
-              Resiliencia Operativa
-            </div>
-            <div className="typo-otros2 text-[11px] sm:text-xs text-white/70">
-              Sistemas ERP con modo offline nativo.
-            </div>
           </div>
         </div>
       </div>

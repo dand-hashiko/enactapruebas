@@ -64,7 +64,7 @@ export function StitchBooking() {
         <div className="space-y-3 max-w-3xl">
           <div className="typo-otros1 text-xs text-primary font-bold tracking-widest uppercase flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-primary" />
-            <span>// 05. AGENDA DE INGENIERÍA</span>
+            <span>AGENDA DE INGENIERÍA</span>
           </div>
           <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white tracking-tight text-balance break-words max-w-full leading-[1.15]">
             Diseñemos la arquitectura de tu próximo proyecto.{" "}
@@ -181,11 +181,11 @@ export function StitchBooking() {
                           setFormData({ ...formData, service: e.target.value })
                         }
                       >
-                        <option value="software-web">Solución 01 — Software &amp; Desarrollo Web</option>
-                        <option value="seguridad-redes">Solución 02 — Seguridad, Cableado &amp; Redes en Terreno</option>
-                        <option value="erp-pos">Solución 03 — Integración ERP &amp; POS Offline</option>
-                        <option value="database-cloud">Solución 04 — Bases de Datos PostgreSQL &amp; Cloud Dedicada</option>
-                        <option value="crecimiento-datos">Solución 05 — Crecimiento Comercial &amp; Mejoras en Datos (Matias Parra)</option>
+                        <option value="software-web">Software &amp; Desarrollo Web</option>
+                        <option value="seguridad-redes">Seguridad, Cableado &amp; Redes en Terreno</option>
+                        <option value="erp-pos">Integración ERP &amp; POS Offline</option>
+                        <option value="database-cloud">Bases de Datos PostgreSQL &amp; Cloud Dedicada</option>
+                        <option value="crecimiento-datos">Crecimiento Comercial &amp; Mejoras en Datos (Matías Parra)</option>
                         <option value="consultoria-general">Consultoría General de Ingeniería</option>
                       </select>
                     </div>
