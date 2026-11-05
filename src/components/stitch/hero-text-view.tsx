@@ -10,12 +10,10 @@ import React from "react";
 export function HeroTextView() {
   return (
     <div className="w-full max-w-[720px] select-none">
-      <h1 className="typo-titulos text-[22px] min-[360px]:text-[25px] min-[400px]:text-[28px] sm:text-[38px] md:text-[46px] lg:text-[52px] xl:text-[60px] leading-[1.04] text-white tracking-tight text-left drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] uppercase break-normal">
-        <span className="block">INGENIERÍA DE SOFTWARE,</span>
-        <span className="block">SISTEMAS ERP E</span>
-        <span className="block">INFRAESTRUCTURA FÍSICA</span>
+      <h1 className="typo-titulos text-[28px] min-[360px]:text-[32px] min-[400px]:text-[36px] sm:text-[46px] md:text-[54px] lg:text-[58px] xl:text-[62px] leading-[1.08] text-white tracking-tight text-left drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]">
+        <span className="block">Diseño, código y hardware,</span>
         <span className="block text-primary underline decoration-primary/50 underline-offset-8">
-          SIN FRICCIÓN.
+          creciendo en perfecta sincronía.
         </span>
       </h1>
     </div>

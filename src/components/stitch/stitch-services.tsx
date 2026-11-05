@@ -35,15 +35,16 @@ export function StitchServices() {
         <div className="space-y-3 max-w-3xl">
           <div className="typo-otros1 text-xs text-primary font-bold tracking-widest uppercase flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-primary" />
-            <span>SERVICIOS DE INGENIERÍA EN TERRENO</span>
+            <span>// 01. CAPACIDADES TÉCNICAS</span>
           </div>
           <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white tracking-tight text-balance break-words max-w-full leading-[1.15]">
-            Diseñamos el software. Desplegamos la infraestructura. Cero caídas.
+            Del código al fierro en terreno.{" "}
+            <span className="text-primary underline decoration-primary/40 underline-offset-8">
+              Sistemas que nunca se detienen.
+            </span>
           </h2>
           <p className="typo-subtitulos text-base sm:text-lg text-on-surface-variant leading-relaxed">
-            A diferencia de una agencia digital estándar, en Enacta montamos
-            computadores, certificamos cableado estructurado, configuramos switches
-            industriales y programamos sistemas que no se caen cuando se corta internet.
+            A diferencia de una agencia digital estándar, en Enacta ensamblamos estaciones de trabajo, certificamos cableado estructurado y programamos sistemas ERP con modo offline nativo que resisten cortes de internet.
           </p>
         </div>
 
@@ -66,13 +67,10 @@ export function StitchServices() {
               </div>
 
               <h3 className="typo-titulos text-lg sm:text-xl lg:text-2xl text-white">
-                Sistemas ERP &amp; Puntos de Venta (POS)
+                Gestión Operativa (ERP &amp; POS)
               </h3>
               <p className="typo-otros2 text-sm text-on-surface-variant leading-relaxed max-w-xl">
-                Control de inventario en tiempo real, cobro rápido en mostrador y boleta
-                electrónica DTE. Integración directa con balanzas comerciales, lectores de
-                código de barra e impresoras térmicas. Si se corta la conexión a internet, el
-                sistema sigue operando y se sincroniza automáticamente al volver la red.
+                Control de inventario en tiempo real, POS y facturación electrónica DTE. Conectividad directa con balanzas, lectores e impresoras térmicas. Operación continua incluso sin internet gracias a su sincronización bidireccional automática.
               </p>
 
               {/* Real Technical UI Mockup: Interactive POS Terminal Status */}
@@ -136,12 +134,10 @@ export function StitchServices() {
               </div>
 
               <h3 className="typo-titulos text-lg sm:text-xl lg:text-2xl text-white">
-                Desarrollo Web &amp; E-Commerce
+                Desarrollo Web &amp; E-commerce
               </h3>
               <p className="typo-otros2 text-sm text-on-surface-variant leading-relaxed">
-                Arquitecturas modernas sobre Next.js optimizadas para cargar en menos de 0.8
-                segundos en todo Chile. Pasarelas de pago Webpay Plus, Transbank y MercadoPago
-                con cálculo automatizado de envíos.
+                Arquitecturas modernas sobre Next.js optimizadas para cargar en menos de 0.8 segundos en todo Chile. Pasarelas de pago Webpay Plus, Transbank y MercadoPago con cálculo automatizado de envíos (con badges de Lighthouse 100/100).
               </p>
 
               {/* Technical Performance Metric Gauge */}
@@ -189,9 +185,7 @@ export function StitchServices() {
                 Infraestructura Física, Cableado &amp; Redes
               </h3>
               <p className="typo-otros2 text-sm text-on-surface-variant leading-relaxed">
-                Montaje presencial en terreno: racks de telecomunicaciones, cableado
-                estructurado categoría 6, switches industriales Gigabit PoE, canalización limpia
-                y routers MikroTik en la Región Metropolitana y Macro-zona Sur.
+                Montaje presencial de racks, cableado estructurado categoría 6, switches Gigabit PoE y enrutamiento MikroTik. Presencia física garantizada en RM y Zona Sur.
               </p>
 
               {/* Hardware Topology Visual Snippet */}

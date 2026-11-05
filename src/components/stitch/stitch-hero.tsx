@@ -27,14 +27,18 @@ export function StitchHero() {
           {/* Left Column: Focused Copy & Direct Actions (No clutter, Awwwards standard) */}
           <div className="lg:col-span-7 space-y-6 text-left flex flex-col items-start w-full">
             <div className="w-full max-w-[720px] space-y-6 sm:space-y-7">
+              {/* Eyebrow — Módulo 1: Business & Brand Positioning */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#0a0a0d]/90 backdrop-blur-md rounded-full border border-primary/30 text-primary typo-otros1 text-xs tracking-wider shadow-lg">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                <span>// ENACTA.CL — SOFTWARE, ERP &amp; INFRASTRUCTURE</span>
+              </div>
+
               {/* Dedicated TextView Component */}
               <HeroTextView />
 
               {/* Subtitle following the exact same line width boundary (Categoría: subtitulos) */}
               <p className="typo-subtitulos text-base sm:text-lg lg:text-[18px] xl:text-[19px] text-white/90 max-w-[650px] leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-                Unificamos desarrollo web de alto tráfico, software de gestión ERP y
-                despliegue de infraestructura en terreno. Presencia física con ingenieros en Chile y
-                soporte 24/7 sin intermediarios.
+                Unificamos desarrollo web de alto rendimiento, sistemas de gestión ERP a medida y despliegue de infraestructura física en terreno. Sin intermediarios.
               </p>
             </div>
           </div>
@@ -47,11 +51,11 @@ export function StitchHero() {
 
         {/* Ticker de Métricas de Impacto con tarjetas traslúcidas de alta precisión */}
         <div className="pt-8 border-t border-white/[0.12] grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {/* Métrica 1 */}
+          {/* Card 1 (Uptime) */}
           <div className="p-4 sm:p-5 rounded-2xl bg-[#08080c]/80 backdrop-blur-xl border border-white/[0.08] hover:border-primary/40 transition-all space-y-1.5 relative overflow-hidden group shadow-lg">
             <div className="flex items-center justify-between">
               <span className="typo-otros1 text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold">
-                DISPONIBILIDAD
+                UPTIME
               </span>
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             </div>
@@ -59,14 +63,14 @@ export function StitchHero() {
               99.9%
             </div>
             <div className="typo-otros2 text-xs sm:text-sm text-white font-semibold">
-              Uptime SLA en Producción
+              Uptime Garantizado en Producción
             </div>
             <div className="typo-otros2 text-[11px] sm:text-xs text-white/70">
-              Monitoreo activo 24/7 sin caídas
+              Monitoreo activo 24/7 sin caídas.
             </div>
           </div>
 
-          {/* Métrica 2 */}
+          {/* Card 2 (Latencia) */}
           <div className="p-4 sm:p-5 rounded-2xl bg-[#08080c]/80 backdrop-blur-xl border border-white/[0.08] hover:border-primary/40 transition-all space-y-1.5 relative overflow-hidden group shadow-lg">
             <div className="flex items-center justify-between">
               <span className="typo-otros1 text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold">
@@ -78,18 +82,18 @@ export function StitchHero() {
               &lt; 0.8s
             </div>
             <div className="typo-otros2 text-xs sm:text-sm text-white font-semibold">
-              Velocidad de Carga en Chile
+              Latencia Global &amp; Edge Network
             </div>
             <div className="typo-otros2 text-[11px] sm:text-xs text-white/70">
-              Next.js + Vercel Edge CDN
+              Next.js optimizado con Vercel Edge.
             </div>
           </div>
 
-          {/* Métrica 3 */}
+          {/* Card 3 (Infraestructura) */}
           <div className="p-4 sm:p-5 rounded-2xl bg-[#08080c]/80 backdrop-blur-xl border border-white/[0.08] hover:border-primary/40 transition-all space-y-1.5 relative overflow-hidden group shadow-lg">
             <div className="flex items-center justify-between">
               <span className="typo-otros1 text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold">
-                OPERACIÓN
+                INFRAESTRUCTURA
               </span>
               <span className="w-1.5 h-1.5 rounded-full bg-primary" />
             </div>
@@ -97,18 +101,18 @@ export function StitchHero() {
               100%
             </div>
             <div className="typo-otros2 text-xs sm:text-sm text-white font-semibold">
-              Presencia Física RM &amp; Sur
+              Despliegue Físico RM &amp; Sur
             </div>
             <div className="typo-otros2 text-[11px] sm:text-xs text-white/70">
-              Cableado, racks y servidores
+              Racks, redes y servidores en terreno.
             </div>
           </div>
 
-          {/* Métrica 4 */}
+          {/* Card 4 (Resiliencia) */}
           <div className="p-4 sm:p-5 rounded-2xl bg-[#08080c]/80 backdrop-blur-xl border border-white/[0.08] hover:border-primary/40 transition-all space-y-1.5 relative overflow-hidden group shadow-lg">
             <div className="flex items-center justify-between">
               <span className="typo-otros1 text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold">
-                CONTINUIDAD
+                RESILIENCIA
               </span>
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             </div>
@@ -116,10 +120,10 @@ export function StitchHero() {
               0 Caídas
             </div>
             <div className="typo-otros2 text-xs sm:text-sm text-white font-semibold">
-              Modo Offline Automático
+              Resiliencia Operativa
             </div>
             <div className="typo-otros2 text-[11px] sm:text-xs text-white/70">
-              Sistemas que no paran sin internet
+              Sistemas ERP con modo offline nativo.
             </div>
           </div>
         </div>

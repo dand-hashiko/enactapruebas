@@ -64,14 +64,16 @@ export function StitchBooking() {
         <div className="space-y-3 max-w-3xl">
           <div className="typo-otros1 text-xs text-primary font-bold tracking-widest uppercase flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-primary" />
-            <span>CALENDARIO TÉCNICO &amp; CONSULTORÍA</span>
+            <span>// 05. AGENDA DE INGENIERÍA</span>
           </div>
-          <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white tracking-tight text-balance break-words max-w-full">
-            Agendemos un Google Meet de 45 minutos
+          <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white tracking-tight text-balance break-words max-w-full leading-[1.15]">
+            Diseñemos la arquitectura de tu próximo proyecto.{" "}
+            <span className="text-primary underline decoration-primary/40 underline-offset-8">
+              Agendemos una sesión técnica de 45 minutos.
+            </span>
           </h2>
           <p className="typo-subtitulos text-base sm:text-lg text-on-surface-variant leading-relaxed">
-            Analicemos los requerimientos de tu proyecto: arquitectura web, sistemas
-            ERP o despliegue de infraestructura tecnológica y redes con ingenieros en Chile.
+            Evaluaremos sin compromiso los requerimientos de tu software, sistema ERP o infraestructura en terreno directamente con nuestros ingenieros especializados en Chile.
           </p>
         </div>
 
@@ -250,15 +252,12 @@ export function StitchBooking() {
                   </div>
 
                   <button
-                    className="w-full py-3.5 px-4 bg-primary text-black font-bold rounded-xl shadow-[0_0_24px_rgba(0,229,163,0.3)] hover:bg-primary-fixed hover:scale-[1.01] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full py-3.5 px-4 bg-primary text-black font-bold rounded-xl shadow-[0_0_24px_rgba(0,229,163,0.3)] hover:bg-primary-fixed hover:scale-[1.01] transition-all flex items-center justify-center gap-2 cursor-pointer typo-botones text-sm sm:text-base"
                     disabled={isSubmitting}
                     type="submit"
                   >
-                    <span className="material-symbols-outlined text-[18px]">
-                      send
-                    </span>
                     <span>
-                      {isSubmitting ? "Enviando solicitud..." : "Confirmar Agendamiento de Reunión"}
+                      {isSubmitting ? "Enviando solicitud..." : "> Agendar Sesión Técnica"}
                     </span>
                   </button>
 
@@ -267,7 +266,7 @@ export function StitchBooking() {
                     <div className="p-3.5 bg-[#0a0a0d] rounded-xl space-y-2 border border-white/[0.06] text-xs">
                       <div className="typo-otros2 font-semibold text-white flex items-center gap-2">
                         <span className="w-2 h-2 rounded-full bg-primary" />
-                        <span>Liderazgo técnico &amp; comercial del llamado:</span>
+                        <span>• Equipo de Ingeniería &amp; Operaciones: (Daniel Díaz - Lead Architect &amp; Infra, Paola Huenuman - Client Operations, Matías Parra - Ing. Comercial &amp; Datos)</span>
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1">
                         <div className="p-2 rounded-lg bg-black/50 border border-white/[0.04]">
@@ -279,37 +278,37 @@ export function StitchBooking() {
                           <span className="text-on-surface-variant text-[11px]">Client Operations</span>
                         </div>
                         <div className="p-2 rounded-lg bg-black/50 border border-white/[0.04]">
-                          <strong className="text-white block">Matias Parra</strong>
+                          <strong className="text-white block">Matías Parra</strong>
                           <span className="text-on-surface-variant text-[11px]">Ing. Comercial &amp; Datos</span>
                         </div>
                       </div>
                       <p className="typo-otros2 text-[11px] text-on-surface-variant/90 pt-1 leading-snug">
-                        <span className="text-primary font-medium">Asesoría Integral:</span> Matias Parra te ayuda con consejos estratégicos, crecimiento de negocio y mejoras en el sistema de datos para todos nuestros servicios.
+                        <span className="text-primary font-medium">Asesoría Integral:</span> Matías Parra te ayuda con consejos estratégicos, crecimiento de negocio y mejoras en el sistema de datos para todos nuestros servicios.
                       </p>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
                       <a
-                        className="typo-botones flex items-center justify-center gap-2 p-2.5 bg-[#0a0a0d] hover:bg-[#14141c] rounded-xl text-white transition-colors border border-white/[0.06] text-xs"
+                        className="typo-botones flex items-center justify-center gap-2 p-2.5 bg-[#0a0a0d] hover:bg-[#14141c] rounded-xl text-white transition-colors border border-white/[0.06] text-xs font-semibold"
                         href="https://wa.me/56995127788"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
                         <span className="material-symbols-outlined text-primary text-[18px]">
-                          chat
+                          support_agent
                         </span>
-                        <span>WhatsApp Línea 1</span>
+                        <span>Soporte Técnico Directo</span>
                       </a>
                       <a
-                        className="typo-botones flex items-center justify-center gap-2 p-2.5 bg-[#0a0a0d] hover:bg-[#14141c] rounded-xl text-white transition-colors border border-white/[0.06] text-xs"
+                        className="typo-botones flex items-center justify-center gap-2 p-2.5 bg-[#0a0a0d] hover:bg-[#14141c] rounded-xl text-white transition-colors border border-white/[0.06] text-xs font-semibold"
                         href="https://wa.me/56953797437"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
                         <span className="material-symbols-outlined text-primary text-[18px]">
-                          chat
+                          business_center
                         </span>
-                        <span>WhatsApp Línea 2</span>
+                        <span>Ventas &amp; Arquitectura</span>
                       </a>
                     </div>
                   </div>

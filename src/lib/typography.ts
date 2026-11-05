@@ -35,7 +35,7 @@ export class TypographyManager {
     titulos: {
       fontFamily: "'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif",
       letterSpacing: "-0.02em",
-      textTransform: "uppercase",
+      textTransform: "none",
     },
     subtitulos: {
       fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
