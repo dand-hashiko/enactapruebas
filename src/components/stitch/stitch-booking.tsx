@@ -62,10 +62,6 @@ export function StitchBooking() {
       <div className="max-w-7xl mx-auto space-y-8 lg:space-y-10 relative z-10">
         {/* Section Header: Agendamiento & Consultoría Técnica (Outside the card) */}
         <div className="space-y-3 max-w-3xl">
-          <div className="typo-otros1 text-xs text-primary font-bold tracking-widest uppercase flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-primary" />
-            <span>AGENDA DE INGENIERÍA</span>
-          </div>
           <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white tracking-tight text-balance break-words max-w-full leading-[1.15]">
             Diseñemos la arquitectura de tu próximo proyecto.{" "}
             <span className="text-primary underline decoration-primary/40 underline-offset-8">

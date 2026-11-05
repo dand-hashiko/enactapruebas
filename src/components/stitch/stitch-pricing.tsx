@@ -97,10 +97,6 @@ export function StitchPricing() {
       <div className="max-w-7xl mx-auto space-y-10 sm:space-y-12 relative z-10">
         {/* Section Header (Estilo Consultora Global / Accenture) */}
         <div className="space-y-4 max-w-3xl">
-          <div className="typo-otros1 text-xs text-primary font-bold tracking-widest uppercase flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-primary" />
-            <span>SOLUCIONES DE INGENIERÍA EN PRODUCCIÓN</span>
-          </div>
           <h2 className="typo-titulos text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white tracking-tight text-balance break-words max-w-full">
             Respuestas de ingeniería para desafíos críticos de negocio
           </h2>
