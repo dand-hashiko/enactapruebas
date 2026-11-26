@@ -81,9 +81,9 @@ function extractTasksFromGeminiDoc_(text, docTitle, docUrl) {
 
     const match = line.match(taskRegex);
     if (match) {
-      const assignee = normalizeAssignee_(match[1].trim());
       const title = match[2].trim();
       const detail = match[3].trim();
+      const assignee = normalizeAssignee_(match[1].trim(), `${title} ${detail}`);
 
       tasks.push({
         name: `[${assignee}] ${title}`,
@@ -94,16 +94,28 @@ function extractTasksFromGeminiDoc_(text, docTitle, docUrl) {
   return tasks;
 }
 
-function normalizeAssignee_(raw) {
+function normalizeAssignee_(raw, context) {
   const map = {
     "Daniel Díaz": "Daniel",
+    "Daniel Diaz": "Daniel",
     "Matías Nicolás Parra Bórquez": "Matías",
     "Paola Huenuman": "Paola",
+    "Enacta enacta": "Paola",
     "El grupo": "Equipo",
+    "El equipo": "Equipo",
+    "The group": "Equipo",
   };
+  const ctx = (context || "").toLowerCase();
   return raw
     .split(",")
-    .map((p) => map[p.trim()] || p.trim())
+    .map((p) => {
+      const name = p.trim();
+      if (map[name]) return map[name];
+      if (/daniel|mat[ií]as|paola|grupo|equipo/i.test(name)) return name;
+      if (/dominio|pago|contrato|cobro|venta|compra/i.test(ctx)) return `Matías (Cliente: ${name})`;
+      if (/logo|imagen|captura|contenido|web|chat|formulario|diseño/i.test(ctx)) return `Paola (Cliente: ${name})`;
+      return `Paola / Matías (Cliente: ${name})`;
+    })
     .join(" / ");
 }
 

@@ -109,17 +109,37 @@ def infer_label_names(text: str) -> list[str]:
     return labels
 
 
-def normalize_assignee(raw: str) -> str:
-    """Normaliza nombres largos a nombres cortos del equipo."""
+def normalize_assignee(raw: str, context: str = "") -> str:
+    """Normaliza nombres del equipo y reasigna tareas de clientes externos a Paola/Matías."""
     mapping = {
         "Daniel Díaz": "Daniel",
+        "Daniel Diaz": "Daniel",
         "Matías Nicolás Parra Bórquez": "Matías",
         "Paola Huenuman": "Paola",
+        "Enacta enacta": "Paola",
         "El grupo": "Equipo",
+        "El equipo": "Equipo",
+        "The group": "Equipo",
     }
+    ctx_lower = context.lower()
     parts = [p.strip() for p in raw.split(",")]
-    short_parts = [mapping.get(p, p) for p in parts]
-    return " / ".join(short_parts)
+    resolved: list[str] = []
+
+    for p in parts:
+        if p in mapping:
+            resolved.append(mapping[p])
+        elif any(k in p.lower() for k in ["daniel", "matías", "matias", "paola", "grupo", "equipo"]):
+            resolved.append(p)
+        else:
+            # Es un cliente externo: asignar responsable interno según contexto
+            if any(k in ctx_lower for k in ["dominio", "pago", "contrato", "cobro", "venta", "compra"]):
+                resolved.append(f"Matías (Cliente: {p})")
+            elif any(k in ctx_lower for k in ["logo", "imagen", "captura", "contenido", "web", "chat", "formulario", "diseño"]):
+                resolved.append(f"Paola (Cliente: {p})")
+            else:
+                resolved.append(f"Paola / Matías (Cliente: {p})")
+
+    return " / ".join(dict.fromkeys(resolved))
 
 
 def parse_gemini_notes(md_content: str) -> dict:
@@ -166,7 +186,7 @@ def parse_gemini_notes(md_content: str) -> dict:
         short_title = match.group(2).strip()
         detail = match.group(3).strip()
 
-        assignee = normalize_assignee(raw_assignee)
+        assignee = normalize_assignee(raw_assignee, f"{short_title} {detail}")
         card_name = f"[{assignee}] {short_title}"
         due_iso = infer_due_date(detail, base_date)
         label_names = infer_label_names(f"{short_title} {detail}")
