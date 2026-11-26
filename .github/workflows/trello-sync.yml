@@ -1,0 +1,71 @@
+name: Enacta GitHub -> Trello Sync
+
+on:
+  push:
+    branches: ["main", "develop", "feat/*", "fix/*"]
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  sync-trello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Trello on Code Push / PR
+        env:
+          TRELLO_API_KEY: ${{ secrets.TRELLO_API_KEY }}
+          TRELLO_TOKEN: ${{ secrets.TRELLO_TOKEN }}
+          TRELLO_BOARD_ID: ${{ secrets.TRELLO_BOARD_ID }}
+          COMMIT_MSG: ${{ github.event.head_commit.message || github.event.pull_request.title }}
+          AUTHOR: ${{ github.actor }}
+          REPO_URL: ${{ github.event.head_commit.url || github.event.pull_request.html_url }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          if [ -z "$TRELLO_API_KEY" ] || [ -z "$TRELLO_TOKEN" ] || [ -z "$TRELLO_BOARD_ID" ]; then
+            echo "Faltan secretos TRELLO_API_KEY, TRELLO_TOKEN o TRELLO_BOARD_ID en GitHub Actions."
+            exit 0
+          fi
+
+          python3 - << 'EOF'
+          import os, json, urllib.request, urllib.parse
+
+          key = os.environ["TRELLO_API_KEY"]
+          token = os.environ["TRELLO_TOKEN"]
+          board_id = os.environ["TRELLO_BOARD_ID"]
+          commit_msg = os.environ["COMMIT_MSG"]
+          author = os.environ["AUTHOR"]
+          repo_url = os.environ["REPO_URL"]
+          branch = os.environ["BRANCH"]
+
+          def trello(ep, method="GET", params=None):
+              p = {"key": key, "token": token, **(params or {})}
+              url = f"https://api.trello.com/1/{ep}?" + urllib.parse.urlencode(p)
+              req = urllib.request.Request(url, data=b"" if method in ("POST","PUT") else None, method=method)
+              with urllib.request.urlopen(req) as r:
+                  return json.loads(r.read().decode("utf-8"))
+
+          lists = trello(f"boards/{board_id}/lists")
+          in_progress = next((l for l in lists if "Proceso" in l["name"]), None)
+          cards = trello(f"boards/{board_id}/cards")
+
+          # Si el commit menciona parte del título de una tarjeta (ej: [Paola] o GitHub), mover a En Proceso y comentar
+          matched = None
+          msg_lower = commit_msg.lower()
+          for c in cards:
+              name_clean = c["name"].lower()
+              # Match explícito por ID corto o palabras clave de proyecto
+              if c["shortLink"].lower() in msg_lower or any(
+                  kw in msg_lower and kw in name_clean
+                  for kw in ["maquetación", "viajes", "github", "contrato", "erp", "redes"]
+              ):
+                  matched = c
+                  break
+
+          if matched:
+              comment = f"💻 **Actualización automática desde GitHub ({branch})**\n👤 **Autor:** {author}\n📝 **Commit:** {commit_msg}\n🔗 {repo_url}"
+              trello(f"cards/{matched['id']}/actions/comments", method="POST", params={"text": comment})
+              if in_progress and matched["idList"] != in_progress["id"]:
+                  trello(f"cards/{matched['id']}", method="PUT", params={"idList": in_progress["id"]})
+              print(f"Tarjeta actualizada y movida a En Proceso: {matched['name']}")
+          else:
+              print("Commit registrado, sin tarjeta específica coincidente.")
+          EOF

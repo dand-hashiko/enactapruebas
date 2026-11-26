@@ -274,7 +274,7 @@ def fetch_latest_notes_from_gdrive() -> list[str]:
         safe_name = re.sub(r"[^\w\s-]", "_", item["name"]) + ".md"
         out_path = os.path.join(tmp_dir, safe_name)
         exp = subprocess.run(
-            [gdrive_bin, "readonly", "export", file_id, "--format", "markdown", "--out", out_path],
+            [gdrive_bin, "readonly", "export", file_id, out_path, "--format", "md"],
             capture_output=True,
             text=True,
             encoding="utf-8",
